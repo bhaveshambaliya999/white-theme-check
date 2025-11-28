@@ -1,0 +1,19 @@
+.shop-acs__select {
+  padding-right: $input-padding-y;
+  background-position: right center;
+  padding-left: $input-padding-x;
+  cursor: pointer;
+  box-shadow: none !important;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.shop-asc__seprator {
+  width: 2px;
+  height: 22px;
+}
+
+.aside-filters {
+  overflow-x: hidden;
+  overflow-y: auto;
+}

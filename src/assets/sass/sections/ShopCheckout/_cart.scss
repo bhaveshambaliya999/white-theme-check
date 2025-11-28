@@ -1,0 +1,346 @@
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.10rem;
+
+  @include media-breakpoint-up(xl) {
+    flex-direction: row;
+    gap: 1.625rem;
+  }
+
+  .cart-table__wrapper {
+    padding-top: 3.125rem;
+    flex-grow: 1;
+    @include media-breakpoint-down(sm) {
+      padding-top: 1.25rem;
+    }
+  }
+
+  &__totals-wrapper {
+    .sticky-content {
+      padding-top: 3.125rem;
+      @include media-breakpoint-down(lg) {
+        padding-top: 0rem;
+      }
+    }
+    
+
+    .mobile_fixed-btn_wrapper {
+      .button-wrapper:not(.fixed-btn) {
+        padding: 0;
+      }
+
+      .fixed-btn {
+        position: fixed;
+        left: var(--bs-gutter-x, 0.9375rem);
+        right: var(--bs-gutter-x, 0.9375rem);
+        bottom: 4rem;
+        width: auto;
+
+        @include media-breakpoint-up(md) {
+          bottom: 1rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          position: static;
+        }
+      }
+    }
+
+    .btn-checkout {
+      width: 100%;
+      height: 3.25rem;
+      font-size: 0.875rem;
+      margin-top: 20px;
+    }
+  }
+
+  &__totals {
+    border: 1px solid $secondary;
+    margin-bottom: 1.25rem;
+    padding: 1.5rem 15px 15px;
+    max-width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      width: 28.25rem;
+      padding: 1.5rem 1.5rem 0.5rem;
+    }
+
+    >h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+
+      th,
+      td {
+        border-bottom: 1px solid $border-color;
+        padding: 0.875rem 0;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      th {
+        text-transform: uppercase;
+        vertical-align: baseline;
+        span{
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          width: 260px;
+          font-size: 12px;
+          font-weight: normal;
+        }
+      }
+
+      tr:last-child {
+
+        th,
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .cart-table {
+    width: 100%;
+    .shopping-cart-row, .shopping-diy-row{
+      display: flex ;
+      flex-wrap: wrap;
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .shopping-cart-img {
+        padding-right: 15px;
+        img{
+          width: 100px;
+          height: auto;
+        }
+      }
+      .shopping-cart-col {
+        flex: 1;
+        padding-right: 12px;
+        .shopping-cart-detail{
+          .shopping-sky{
+            margin-bottom: 0.25rem;
+          }
+          
+          h4{
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0;
+          }
+          .shopping-title{
+            font-size: 16px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+          }
+        }
+        
+        .shopping-cart-price {
+          font-weight: 500;
+          font-size: 16px;
+        } 
+      }
+      .shopping-cart-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      .shopping-cart-qty{
+        padding-right: 20px;
+      }
+      .shopping-cart-remove {
+        position: absolute;
+        right: 8px;
+        top: 12px;
+        font-size: 15px;
+      }
+      .shopping-diy-prodect, .shopping-diy-diamond{
+        display: flex ;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .diy-product{
+        flex: 1;
+        &>div{
+          border-bottom: 1px solid #e4e4e4;
+          padding: 12px 0;
+          width: 100%;
+          &:last-child{
+            border: 0;
+            padding-bottom: 0;
+          }
+          &:first-child{
+            padding-top: 0;
+          }
+        }
+        .shopping-cart-remove{
+          right: 0;
+          top: 0;
+        }
+      }
+      @media (max-width: 575px) {
+        .shopping-cart-img{
+          width: 100%;
+          padding: 0 0 15px;
+          text-align: center;
+          img{
+            width: 150px;
+          }
+        }
+        .priceTd {
+          .shopping-cart__subtotal{
+            font-size: 18px;
+          }
+        }
+        .shopping-cart-col{
+          flex: auto;
+          padding: 0;
+        }
+        .shopping-cart-qty{
+          padding: 0;
+        }
+        .diy-product{
+          flex: auto;
+        }
+        .shopping-cart-right{
+          width: 100%;
+          flex-direction: row;
+        }
+      }
+    }
+
+    .priceTd {
+      .shopping-cart__subtotal {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+    }
+
+    .qty-control {
+      margin: 0.5rem 0;
+
+      @include media-breakpoint-up(md) {
+        width: 7.25rem;
+        margin: 0;
+      }
+
+      &__number {
+        border: 0;
+
+        @include media-breakpoint-up(md) {
+          border: 1px solid $border-color;
+          height: 3.125rem;
+          padding: 0 2rem;
+          min-width: 6.875rem;
+        }
+      }
+
+      &__reduce,
+      &__increase {
+        font-size: 1rem;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &__reduce {
+        left: 0;
+
+        @include media-breakpoint-up(md) {
+          left: 1.25rem;
+        }
+      }
+
+      &__increase {
+        right: 0;
+
+        @include media-breakpoint-up(md) {
+          right: 1.25rem;
+        }
+      }
+    }
+    .shopping-cart__product-item__options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: .5rem;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.875rem;
+      gap: 1.875rem;
+      flex-wrap: wrap;
+
+      form {
+        max-width: 100%;
+      }
+
+      .form-control {
+        width: 23.125rem;
+        max-width: 100%;
+        height: 3.875rem;
+      }
+
+      button {
+        height: 3.875rem;
+      }
+    }
+    &__product {
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 1.875rem;
+  
+        img {
+          width: 7.5rem;
+          height: auto;
+        }
+  
+        &__detail {
+          h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0;
+          }
+        }
+  
+        &__options {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          margin-top: 0.5rem;
+  
+          li {
+            font-size: 0.875rem;
+            color: $secondary;
+          }
+        }
+      }
+  
+      &-price {
+        font-size: 1rem;
+        color: $secondary;
+      }
+    }
+  
+    &__subtotal {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+}

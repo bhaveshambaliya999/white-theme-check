@@ -1,0 +1,28 @@
+.service-promotion {
+  border-bottom: 1px solid #cfcdcd;
+  &__icon i {
+    font-size: 3.25rem;
+  }
+  
+  &__content {
+    font-size: 0.9375rem;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  &.horizontal {
+    padding-top: 2.9375rem;
+    padding-bottom: 2.3rem;
+
+    .service-promotion__icon{
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      line-height: 1;
+    }
+  }
+}

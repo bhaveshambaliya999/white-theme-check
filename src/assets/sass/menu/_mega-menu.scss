@@ -1,0 +1,46 @@
+.mega-menu {
+  border-top: $mega-menu-border;
+  @include create-menu($mega-menu-padding, 100%);
+  .mega-menu-row{
+    display: flex;
+    flex-wrap: wrap;
+    .menu-link{
+      display: inline-flex;
+      align-items: center; 
+      padding: .40em 0;
+      &::after{
+        display: none;
+      }
+      &:hover{
+        // color: $header-cart-amount-bg;
+        color: #656565;
+      }
+      
+      .shape-icon {
+        font-size: 20px;
+      }
+    }
+  }
+  .sub-menu__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .menu-link {
+        font-size: 13px;
+    }
+  }
+}
+
+.sub-menu__list + .sub-menu__title {
+  margin-top: 1.875rem;
+}
+
+.mega-menu__media {
+  flex: 2 0 0;
+  max-width: 28rem;
+}
+
+.mega-menu__img {
+  max-width: 100%;
+  object-fit: cover;
+}

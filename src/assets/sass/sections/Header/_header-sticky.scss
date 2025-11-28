@@ -1,0 +1,33 @@
+.header_sticky {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 9;
+  transition: all .3s ease;
+  height: 68px;
+}
+
+.header_sticky-active {
+  position: fixed;
+  animation: moveDown .5s;
+  background-color: $header-background;
+  // box-shadow: $header-sticky-box-shadow;
+  z-index: $zindex-sticky;
+
+  &.header_sticky-bg_dark {
+    background-color: $primary;
+  }
+
+  .header-desk_type_3 {
+    padding-top: 1.5rem;
+  }
+
+  .header-desk_type_5 {
+    height: auto;
+  }
+
+  .logo__image {
+    height: auto;
+  }
+}

@@ -1,0 +1,28 @@
+$items-space-mobile: 7px;
+$items-space-desktop: 10px;
+
+.instagram__img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram {
+  .row {
+    margin: 0 - $items-space-mobile;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 - $items-space-desktop;
+    }
+  }
+}
+
+.instagram__title {
+  padding: $items-space-mobile;
+
+  @include media-breakpoint-up(md) {
+    padding: $items-space-desktop;
+  }
+}

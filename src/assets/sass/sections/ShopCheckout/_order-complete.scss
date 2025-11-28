@@ -1,0 +1,310 @@
+.order-complete {
+  width: 65rem;
+  max-width: 100%;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @include media-breakpoint-down(sm) {
+    gap: 15px;
+  }
+  
+  &__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 2.1875rem;
+      text-align: center;
+    }
+
+    p {
+      color: $secondary;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  .order-info {
+    width: 100%;
+    border: 2px dashed $secondary;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex-grow: 1;
+
+      label {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: $secondary;
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .checkout__totals {
+    width: 100%;
+    border: 1px solid $color-gray-300;
+    background-color: $white;
+
+    .checkout-cart-items thead th:last-child {
+      text-align: right;
+    }
+
+    .checkout-cart-items tbody td:last-child {
+      text-align: right;
+    }
+  }
+
+  .checkout-totals {
+    tbody td:last-child {
+      text-align: right;
+    }
+  }
+  .shopping-cart__product-item__detail{
+    .shopping-cart__product-item__options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: .5rem;
+      h4{
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+    .shopping-title{
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .shopping-sky {
+      margin-bottom: 0.25rem;
+    }
+  } 
+  .shopping-cart__subtotal {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .image_previews img{
+    width: 25px;
+    height: 25px;
+  }
+  .shopping-cart__product-item{
+    img{
+      width: 100px;
+      height: auto;
+      @include media-breakpoint-down(xl) {
+        width: 150px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .order-diy-row{
+      flex: 1;
+    }
+  }
+  .order-details-row{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    .order-details-img{
+      width: 100px;
+      height: auto;
+    }
+    .order-details-info {
+      flex: 1;
+      padding-right: 12px; 
+    }
+    .order-details-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .orders-engraving {
+      .form-check {
+        font-size: 14px;
+      }
+
+      .off_engraving {
+        font-size: 14px;
+        margin-right: 12px;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      .order-details-info{
+        flex: auto;
+        padding-right: 0;
+      }
+      .order-details-img{
+        width: 100%;
+        text-align: center;
+       img{
+        margin: 0 auto;
+       }
+      }
+      .order-details-right{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+  .timeline {
+    .timeline__list {
+      margin: 0;
+      padding: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      >li {
+        display: inline-block;
+        text-align: center;
+        margin: 20px 0 0;
+        position: relative;
+
+        &:before {
+          height: 30px;
+          width: 30px;
+          border-radius: 2.2em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          top: -2px;
+          left: 50%;
+          line-height: 1;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+
+        .timeline__timestamp {
+          position: relative;
+          min-height: 34px;
+
+          .timeline_title {
+            font-weight: 500;
+            font-size: 14px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .timeline_date {
+            font-size: 12px;
+          }
+
+          .timeline_time {
+            font-size: 12px;
+            padding-left: 5px;
+          }
+        }
+
+        &.timeline_todo {
+          color: $secondary;
+          border-top: 3px solid $secondary;
+          flex: 1;
+
+          .icon_tick {
+            height: 30px;
+            width: 30px;
+            border-radius: 2.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: -2px;
+            left: 50%;
+            line-height: 1;
+            transform: translate(-50%, -50%);
+            background-color: $white;
+            border: 3px solid $secondary;
+            color: $white;
+
+            &::before {
+              opacity: 0;
+            }
+          }
+
+          &.active {
+            border-color: $black;
+
+            .icon_tick {
+              background-color: $black;
+              color: $white;
+              border-color: $black;
+
+              &::before {
+                opacity: 1;
+              }
+            }
+
+            .timeline__timestamp {
+              .timeline_title {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 575px) {
+        display: block;
+        padding-left: 10px;
+
+        &>li {
+          &.timeline_todo {
+            width: 100%;
+            border-top: unset;
+            border-left: 3px solid $secondary;
+            padding-bottom: 15px;
+            margin: 0;
+            text-align: left;
+
+            .icon_tick {
+              left: -2px;
+              top: 10px;
+              position: absolute;
+            }
+
+            .timeline__timestamp {
+              padding-left: 20px;
+              top: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+  .faildTransaction {
+    p {
+      font-size: 40px;
+    }
+  }
+}

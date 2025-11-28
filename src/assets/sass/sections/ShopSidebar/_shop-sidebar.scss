@@ -1,0 +1,18 @@
+$sidebar-width: 18.75rem;
+$sidebar-space: 3.75rem;
+
+.aside-filters,
+.shop-sidebar {
+  .accordion-button__icon {
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+}
+
+.shop-list {
+  max-width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    max-width: calc(100% - #{$sidebar-width + $sidebar-space});
+  }
+}
