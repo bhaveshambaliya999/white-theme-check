@@ -491,8 +491,8 @@ $grid-breakpoints: (
 ) !default;
 // scss-docs-end grid-breakpoints
 
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+@include bs._assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include bs._assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 
 // Grid containers
