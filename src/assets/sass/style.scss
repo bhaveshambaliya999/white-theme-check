@@ -1,9 +1,10 @@
     @import "bootstrap/bootstrap";
     @import "bootstrap-slider/bootstrap-slider.scss";
-    @import "settings/variables";
-    @import "settings/helpers";
-    @import "settings/theme";
     @import "settings/typography";
+    @import "settings/theme";
+    @import "settings/helpers";
+    @import "settings/variables";
+   
 
     @import "mixins/mixins";
 
