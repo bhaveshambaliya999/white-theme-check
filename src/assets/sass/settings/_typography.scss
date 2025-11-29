@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@use 'settings/variables' as vars;
 
 body {
-  color: $color-gray-900;
+  color: vars.$color-gray-900;
   font-family: var(--font-family-base);
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
+  font-size: vars.$font-size-base;
+  font-weight: vars.$font-weight-base;
+  line-height: vars.$line-height-base;
 }
 
 /*============================================*/
@@ -17,9 +18,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: $heading-color;
+  color: vars.$heading-color;
   font-family: var(--fontfamily-poppins);
-  font-weight: $font-weight-heading;
+  font-weight: vars.$font-weight-heading;
 }
 
 .font-special {
@@ -28,11 +29,11 @@ h6 {
 
 .fs-base,
 .form-title {
-  font-size: $font-size-base !important;
+  font-size: vars.$font-size-base !important;
 }
 
 .third-color {
-  color: $third !important;
+  color: vars.$third !important;
 }
 
 .white-color {
@@ -44,23 +45,23 @@ h6 {
 }
 
 .page-title {
-  font-weight: $page-title-weight;
+  font-weight: vars.$page-title-weight;
   font-size: 1.4rem;
   margin-bottom: 1.2rem;
   // text-transform: uppercase;
 
   @include media-breakpoint-up(lg) {
-    font-size: $page-title-size;
+    font-size: vars.$page-title-size;
     margin-bottom: 3.125rem;
     // text-transform: uppercase;
   }
 }
 
 .section-title {
-  font-size: $section-title-mobile-size;
+  font-size: vars.$section-title-mobile-size;
 
   @include media-breakpoint-up(lg) {
-    font-size: $section-title-size;
+    font-size: vars.$section-title-size;
   }
 }
 
@@ -74,7 +75,7 @@ h6 {
 
 .block-title {
   margin-bottom: 1rem;
-  font-size: $block-title-size;
+  font-size: vars.$block-title-size;
 }
 
 /*============================================*/
@@ -83,8 +84,8 @@ h6 {
 
 .content {
   margin-bottom: 1.5rem;
-  font-size: $content-size;
-  line-height: $content-line-height;
+  font-size: vars.$content-size;
+  line-height: vars.$content-line-height;
 }
 
 .text-list {
@@ -92,7 +93,7 @@ h6 {
 }
 
 .text-list__item {
-  line-height: $list-item-line-height;
+  line-height: vars.$list-item-line-height;
 }
 
 

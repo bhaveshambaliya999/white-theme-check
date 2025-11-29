@@ -1,15 +1,7 @@
-body {
-  background-color: $body-bg;
-}
-
+@use 'settings/variables' as vars;
 .flex-1 {
   flex: 1 !important;
 }
-
-.bg-black {
-  background-color: $primary !important;
-}
-
 .bg-yellow {
   background-color: #f3eddf !important;
 }
@@ -46,12 +38,12 @@ body {
   top: 100%;
   width: 100%;
   min-width: 16rem;
-  transition: $hover-content-appear-animation;
-  background-color: $body-bg;
-  box-shadow: $popover-box-shadow;
+  transition: vars.$hover-content-appear-animation;
+  background-color: vars.$body-bg;
+  box-shadow: vars.$popover-box-shadow;
   opacity: 0;
   visibility: hidden;
-  z-index: $zindex-dropdown;
+  z-index: vars.$zindex-dropdown;
 }
 
 .hover-container {
@@ -64,7 +56,7 @@ body {
 
 .content_abs {
   position: absolute;
-  --content-space: #{$content-space};
+  --content-space: #{vars.$content-space};
 }
 
 .content_center {
@@ -96,13 +88,13 @@ body {
 
 .content_bottom-lg {
   @include media-breakpoint-up(md) {
-    --content-space: #{$content-space-md};
+    --content-space: #{vars.$content-space-md};
   }
 }
 
 .content_left-lg {
   @include media-breakpoint-up(md) {
-    --content-space: #{$content-space-md};
+    --content-space: #{vars.$content-space-md};
   }
 }
 .h-md-100 {
@@ -240,11 +232,11 @@ body {
 }
 
 .body-color {
-  color: $body-color !important;
+  color: vars.$body-color !important;
 }
 
 .body-color-secondary {
-  color: $body-color-secondary !important;
+  color: vars.$body-color-secondary !important;
 }
 
 .theme-color {
