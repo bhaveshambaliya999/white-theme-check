@@ -3,11 +3,11 @@
 // -------------------------------------------------------
 @use "sass:math";
 @use "sass:color";
-@use "../assets/sass/bootstrap/functions" as *;
-@use "../assets/sass/bootstrap/variables" as *;
-@use "../assets/sass/bootstrap/variables-dark" as *;
-@use "../assets/sass/bootstrap/maps" as *;
-@use "../assets/sass/bootstrap/mixins" as *;
+@use "../assets/sass/bootstrap/functions";
+@use "../assets/sass/bootstrap/variables";
+@use "../assets/sass/bootstrap/variables-dark";
+@use "../assets/sass/bootstrap/maps";
+@use "../assets/sass/bootstrap/mixins";
 
 // -------------------------------------------------------
 // 2. NORMAL CSS FILES (can only come AFTER @use rules)
@@ -17,39 +17,39 @@
 // -------------------------------------------------------
 // 3. BOOTSTRAP PARTIALS
 // -------------------------------------------------------
-@use "../assets/sass/bootstrap/root" as *;
-@use "../assets/sass/bootstrap/reboot" as *;
-@use "../assets/sass/bootstrap/type" as *;
-@use "../assets/sass/bootstrap/images" as *;
-@use "../assets/sass/bootstrap/containers" as *;
-@use "../assets/sass/bootstrap/grid" as *;
-@use "../assets/sass/bootstrap/tables" as *;
-@use "../assets/sass/bootstrap/forms" as *;
-@use "../assets/sass/bootstrap/buttons" as *;
-@use "../assets/sass/bootstrap/transitions" as *;
-@use "../assets/sass/bootstrap/dropdown" as *;
-@use "../assets/sass/bootstrap/button-group" as *;
-@use "../assets/sass/bootstrap/nav" as *;
-@use "../assets/sass/bootstrap/navbar" as *;
-@use "../assets/sass/bootstrap/card" as *;
-@use "../assets/sass/bootstrap/accordion" as *;
-@use "../assets/sass/bootstrap/breadcrumb" as *;
-@use "../assets/sass/bootstrap/pagination" as *;
-@use "../assets/sass/bootstrap/badge" as *;
-@use "../assets/sass/bootstrap/alert" as *;
-@use "../assets/sass/bootstrap/progress" as *;
-@use "../assets/sass/bootstrap/list-group" as *;
-@use "../assets/sass/bootstrap/close" as *;
-@use "../assets/sass/bootstrap/toasts" as *;
-@use "../assets/sass/bootstrap/modal" as *;
-@use "../assets/sass/bootstrap/tooltip" as *;
-@use "../assets/sass/bootstrap/popover" as *;
-@use "../assets/sass/bootstrap/carousel" as *;
-@use "../assets/sass/bootstrap/spinners" as *;
-@use "../assets/sass/bootstrap/offcanvas" as *;
-@use "../assets/sass/bootstrap/placeholders" as *;
-@use "../assets/sass/bootstrap/helpers" as *;
-@use "../assets/sass/bootstrap/utilities/api" as *;
+@use "../assets/sass/bootstrap/root";
+@use "../assets/sass/bootstrap/reboot";
+@use "../assets/sass/bootstrap/type";
+@use "../assets/sass/bootstrap/images";
+@use "../assets/sass/bootstrap/containers";
+@use "../assets/sass/bootstrap/grid";
+@use "../assets/sass/bootstrap/tables";
+@use "../assets/sass/bootstrap/forms";
+@use "../assets/sass/bootstrap/buttons";
+@use "../assets/sass/bootstrap/transitions";
+@use "../assets/sass/bootstrap/dropdown";
+@use "../assets/sass/bootstrap/button-group";
+@use "../assets/sass/bootstrap/nav";
+@use "../assets/sass/bootstrap/navbar";
+@use "../assets/sass/bootstrap/card";
+@use "../assets/sass/bootstrap/accordion";
+@use "../assets/sass/bootstrap/breadcrumb";
+@use "../assets/sass/bootstrap/pagination";
+@use "../assets/sass/bootstrap/badge";
+@use "../assets/sass/bootstrap/alert";
+@use "../assets/sass/bootstrap/progress";
+@use "../assets/sass/bootstrap/list-group";
+@use "../assets/sass/bootstrap/close";
+@use "../assets/sass/bootstrap/toasts";
+@use "../assets/sass/bootstrap/modal";
+@use "../assets/sass/bootstrap/tooltip";
+@use "../assets/sass/bootstrap/popover";
+@use "../assets/sass/bootstrap/carousel";
+@use "../assets/sass/bootstrap/spinners";
+@use "../assets/sass/bootstrap/offcanvas";
+@use "../assets/sass/bootstrap/placeholders";
+@use "../assets/sass/bootstrap/helpers";
+@use "../assets/sass/bootstrap/utilities/api";
 
 // -------------------------------------------------------
 // 4. YOUR CUSTOM STYLES
