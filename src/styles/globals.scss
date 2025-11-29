@@ -1,22 +1,17 @@
-// -------------------------------------------------------
-// 1. SASS MODULES (must be first)
-// -------------------------------------------------------
-@use "sass:math";
-@use "sass:color";
-@use "../assets/sass/bootstrap/functions" as *;
-@use "../assets/sass/bootstrap/variables" as *;
-@use "../assets/sass/bootstrap/variables-dark" as *;
-@use "../assets/sass/bootstrap/maps" as *;
-@use "../assets/sass/bootstrap/mixins" as *;
-
-// -------------------------------------------------------
-// 2. NORMAL CSS FILES (can only come AFTER @use rules)
-// -------------------------------------------------------
 @import "../assets/css/plugins/swiper.min.css";
 
-// -------------------------------------------------------
-// 3. BOOTSTRAP PARTIALS
-// -------------------------------------------------------
+/* 1. Bootstrap core */
+@import "../assets/sass/bootstrap/functions";
+
+/* 2. Bootstrap variables (must come AFTER functions but BEFORE mixins) */
+@import "../assets/sass/bootstrap/variables";
+@import "../assets/sass/bootstrap/variables-dark";
+@import "../assets/sass/bootstrap/maps";
+
+/* 3. Mixins MUST come before any file using mixins */
+@import "../assets/sass/bootstrap/mixins";
+
+/* 4. Now import all Bootstrap components */
 @import "../assets/sass/bootstrap/root";
 @import "../assets/sass/bootstrap/reboot";
 @import "../assets/sass/bootstrap/type";
@@ -51,19 +46,20 @@
 @import "../assets/sass/bootstrap/helpers";
 @import "../assets/sass/bootstrap/utilities/api";
 
-// -------------------------------------------------------
-// 4. YOUR CUSTOM STYLES
-// -------------------------------------------------------
+/* 5. Your theme files */
 @import "../assets/sass/settings/variables";
 @import "../assets/sass/settings/helpers";
 @import "../assets/sass/settings/theme";
 @import "../assets/sass/settings/typography";
 @import "../assets/sass/settings/animations";
 
+/* 6. Mixins */
 @import "../assets/sass/mixins/mixins";
 
-@import "../assets/sass/layout/layout";
+/* 7. Layout */
+@import '../assets/sass/layout/layout';
 
+/* 8. Components */
 @import "../assets/sass/components/close";
 @import "../assets/sass/components/accordions";
 @import "../assets/sass/components/tabs";
@@ -79,8 +75,10 @@
 @import "../assets/sass/components/modals";
 @import "../assets/sass/components/effects";
 
+/* 9. Menu */
 @import "../assets/sass/menu/menu";
 
+/* 10. Sections */
 @import "../assets/sass/sections/Header/header";
 @import "../assets/sass/sections/Footer/footer";
 @import "../assets/sass/sections/Footer/footer-mobile-fixed";
@@ -102,6 +100,7 @@
 @import "../assets/sass/sections/ContactUs/contact-us";
 @import "../assets/sass/sections/LoginRegister/login-register";
 
+/* 11. Custom */
 @import "../assets/sass/custom";
 @import "../assets/sass/icon";
 
