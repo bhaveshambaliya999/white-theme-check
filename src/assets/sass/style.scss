@@ -1,13 +1,7 @@
 /* -----------------------------------------------
-   Load Bootstrap core (MUST be first)
+   Load Bootstrap core (must be first)
 ------------------------------------------------- */
-
 @use "bootstrap/scss/bootstrap" as *;
-
-/* -----------------------------------------------
-   Load 3rd-party plugins
-------------------------------------------------- */
-// @use "bootstrap-slider/bootstrap-slider" as *;
 
 /* -----------------------------------------------
    Settings
