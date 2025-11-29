@@ -155,51 +155,51 @@ h6 {
 }
 
 .fs-18 {
-  @include font-size(1.125rem !important);
+  font-size:1.125rem !important;
 }
 
 .fs-20 {
-  @include font-size(1.25rem);
+  font-size:1.25rem;
 }
 
 .fs-22 {
-  @include font-size(1.375rem);
+  font-size:1.375rem;
 }
 
 .fs-25 {
-  @include font-size(1.5625rem);
+  font-size:1.5625rem;
 }
 
 .fs-30 {
-  @include font-size(1.875rem);
+  font-size:1.875rem;
 }
 
 .fs-35 {
-  @include font-size(2.1875rem);
+  font-size:2.1875rem;
 }
 
 .fs-40 {
-  @include font-size(2.5rem);
+  font-size:2.5rem;
 }
 
 .fs-45 {
-  @include font-size(2.8125rem);
+  font-size:2.8125rem;
 }
 
 .fs-50 {
-  @include font-size(3.125rem);
+  font-size:3.125rem;
 }
 
 .fs-70 {
-  @include font-size(4.375rem);
+  font-size:4.375rem;
 }
 
 .fs-80 {
-  @include font-size(5rem);
+  font-size:5rem
 }
 
 .fs-100 {
-  @include font-size(6.25rem);
+  font-size:6.25rem;
 }
 
 .fw-semi-bold {
