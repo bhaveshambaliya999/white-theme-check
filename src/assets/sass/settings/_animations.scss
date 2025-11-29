@@ -143,7 +143,7 @@ $move-distance: 0.625rem;
   top: 50%;
   transform: translateY(-50%);
   transition: vars.$hover-content-appear-animation;
-  font-size: $font-size-base;
+  font-size: vars.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
