@@ -76,12 +76,12 @@
 
 .search-field__focused {
   .search-popup__input {
-    border-bottom-color: $body-color;
+    border-bottom-color: $color-gray-900;
   }
 
   .search-popup__reset,
   .search-popup__submit {
-    color: $body-color;
+    color: $color-gray-900;
   }
 
   .search-popup__submit {

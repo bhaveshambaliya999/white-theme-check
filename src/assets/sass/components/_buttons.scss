@@ -7,7 +7,7 @@
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
-  color: $body-color;
+  color: $color-gray-900;
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
   white-space: $btn-white-space;
@@ -32,7 +32,7 @@
   padding-bottom: $btn-padding-bottom * 0.75;
 
   &:hover {
-    color: $body-color;
+    color: $color-gray-900;
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 
