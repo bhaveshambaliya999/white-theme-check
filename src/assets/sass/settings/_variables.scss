@@ -21,7 +21,6 @@ $color-olive: #927238;
 $color-brick: #704634;
 $color-beige: #b9a16b;
 $color-dark-purple: #2f2d51;
-$white: #ffffff;
 
 $primary: $color-gray-900;
 $secondary: $color-gray-500;
@@ -41,13 +40,9 @@ $dark: $color-gray-900;
 $heading-color: $primary;
 $body-color: $primary;
 $body-color-secondary: $secondary;
-$body-bg: $color-white;
-$body-color: $color-gray-900;
 
+$body-bg: $color-white;
 $color-component-active: $color-white;
-$btn-close-color: #333;
-$input-height-border: 0.125rem;
-$zindex-fixed: 1030;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -71,7 +66,6 @@ $theme-colors: (
 $font-size-base: 0.875rem;
 $h1-font-size: $font-size-base * 5;
 $h2-font-size: $font-size-base * 2;
-$h3-font-size: $font-size-base * 1.50;
 $h4-font-size: 1.25rem;
 $h5-font-size: 1rem;
 $h6-font-size: 1rem;
@@ -160,7 +154,7 @@ $table-striped-bg: $lighter;
 
 $table-variants: (
   "primary": $color-white,
-  "secondary": $secondary,
+  "secondary": shift-color($secondary, $table-bg-scale),
   "success": $success,
   "info": $info,
   "warning": $warning,
@@ -289,7 +283,7 @@ $input-padding-x-lg: 1.3125rem;
 $input-font-size: $font-size-base;
 $input-line-height: $line-height-base;
 $input-color: $body-color;
-$input-placeholder-color: $color-gray-500;
+$input-placeholder-color: $gray-600;
 
 $input-border-width: .125rem;
 $input-border-color: $border-color;

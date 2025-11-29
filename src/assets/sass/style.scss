@@ -1,76 +1,54 @@
-/* -----------------------------------------------
-   Load Bootstrap core (must be first)
-------------------------------------------------- */
-@use "bootstrap/scss/bootstrap" as *;
+@import "bootstrap/bootstrap";
+@import "bootstrap-slider/bootstrap-slider.scss";
+@import "settings/variables";
+@import "settings/helpers";
+@import "settings/theme";
+@import "settings/typography";
 
-/* -----------------------------------------------
-   Settings
-------------------------------------------------- */
-// @use "settings/variables" as *;
-// @use "settings/typography" as *;
-// @use "settings/theme" as *;
-// @use "settings/helpers" as *;
+@import "mixins/mixins";
 
-/* -----------------------------------------------
-   Mixins
-------------------------------------------------- */
-// @use "mixins/mixins" as *;
+@import "settings/animations";
+@import "layout/layout";
 
-// /* -----------------------------------------------
-//    Animations + Layout
-// ------------------------------------------------- */
-// @use "settings/animations" as *;
-// @use "layout/layout" as *;
+@import "components/close";
+@import "components/accordions";
+@import "components/tabs";
+@import "components/checkbox";  
+@import "components/tables";
+@import "components/alert";
+@import "components/buttons";
+@import "components/forms";
+@import "components/product-card";
+@import "components/aside-popup";
+@import "components/search-popup";
+@import "components/cart-drawer";
+@import "components/modals";
+@import "components/effects";
 
-/* -----------------------------------------------
-   Components
-------------------------------------------------- */
-// @use "components/close" as *;
-// @use "components/accordions" as *;
-// @use "components/tabs" as *;
-// @use "components/checkbox" as *;
-// @use "components/tables" as *;
-// @use "components/alert" as *;
-// @use "components/buttons" as *;
-// @use "components/forms" as *;
-// @use "components/product-card" as *;
-// @use "components/aside-popup" as *;
-// @use "components/search-popup" as *;
-// @use "components/cart-drawer" as *;
-// @use "components/modals" as *;
-// @use "components/effects" as *;
+@import "menu/menu";
 
-/* -----------------------------------------------
-   Menus
-------------------------------------------------- */
-// @use "menu/menu" as *;
-
-/* -----------------------------------------------
-   Sections
-------------------------------------------------- */
-@use "sections/Header/header" as *;
-@use "sections/Footer/footer" as *;
-@use "sections/Footer/footer-mobile-fixed" as *;
-@use "sections/Slideshow/slideshow" as *;
-@use "sections/CollectionsGrid/collections-grid" as *;
-@use "sections/ProductsGrid/products-grid" as *;
-@use "sections/DealTimer/deal-timer" as *;
-@use "sections/Instagram/instagram" as *;
-@use "sections/ServicePromotion/service-promotion" as *;
-@use "sections/ShopAccessories/shop-accessories" as *;
-@use "sections/ShopSidebar/shop-sidebar" as *;
-@use "sections/Newsletter/newsletter" as *;
-@use "sections/ProductSingle/product-single" as *;
-@use "sections/ShopCheckout/shop-checkout" as *;
-@use "sections/MyAccount/my-account" as *;
-@use "sections/Blog/blog" as *;
-@use "sections/About/about" as *;
-@use "sections/GoogleMap/google-map" as *;
-@use "sections/ContactUs/contact-us" as *;
-@use "sections/LoginRegister/login-register" as *;
-
-/* -----------------------------------------------
-   Custom files
-------------------------------------------------- */
-@use "./custom.scss" as *;
-@use "./icon.scss" as *;
+@import "sections/Header/header";
+@import "sections/Footer/footer";
+@import "sections/Footer/footer-mobile-fixed";
+@import "sections/Slideshow/slideshow";
+@import "sections/CollectionsGrid/collections-grid";
+@import "sections/ProductsGrid/products-grid";
+@import "sections/DealTimer/deal-timer";
+// @import "sections/ProductsCarousel/products-carousel";
+@import "sections/Instagram/instagram";
+@import "sections/ServicePromotion/service-promotion";
+@import "sections/ShopAccessories/shop-accessories";
+@import "sections/ShopSidebar/shop-sidebar";
+@import "sections/Newsletter/newsletter";
+@import "sections/ProductSingle/product-single";
+@import "sections/ShopCheckout/shop-checkout";
+@import "sections/MyAccount/my-account";
+@import "sections/Blog/blog";
+@import "sections/About/about";
+@import "sections/GoogleMap/google-map";
+@import "sections/ContactUs/contact-us";
+@import "sections/LoginRegister/login-register";
+//  @import "sections/ComingSoon/coming-soon";
+// @import "./font.scss";
+@import "./custom.scss";
+@import "./icon.scss"
