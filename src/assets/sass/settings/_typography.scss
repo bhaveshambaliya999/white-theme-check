@@ -35,12 +35,6 @@
   }
 }
 
-@include media-breakpoint-up(lg) {
-  .text-lg-right {
-    text-align: right !important;
-  }
-}
-
 .fs-12 {
   font-size: 0.75rem !important;
 }

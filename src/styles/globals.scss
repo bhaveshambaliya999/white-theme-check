@@ -98,6 +98,11 @@ h6 {
 .text-list__item {
   line-height: $list-item-line-height;
 }
+@include media-breakpoint-up(lg) {
+  .text-lg-right {
+    text-align: right !important;
+  }
+}
 
 .h5,
 h5 {
