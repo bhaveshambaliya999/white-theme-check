@@ -1,10 +1,7 @@
 /* -----------------------------------------------
    Load Bootstrap core (MUST be first)
 ------------------------------------------------- */
-@use "bootstrap/scss/functions" as *;
-@use "bootstrap/scss/variables" as *;     // <– $h3-font-size exists here
-@use "bootstrap/scss/maps" as *;
-@use "bootstrap/scss/mixins" as *;
+
 @use "bootstrap/scss/bootstrap" as *;
 
 /* -----------------------------------------------

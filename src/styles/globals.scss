@@ -1,5 +1,87 @@
 @use  "../assets/css/plugins/swiper.min.css" as *;
-@use  "../assets/sass/style" as *;
+/* -----------------------------------------------
+   Load Bootstrap core (MUST be first)
+------------------------------------------------- */
+
+@use "bootstrap/scss/bootstrap" as *;
+
+/* -----------------------------------------------
+   Load 3rd-party plugins
+------------------------------------------------- */
+@use "bootstrap-slider/bootstrap-slider" as *;
+
+/* -----------------------------------------------
+   Settings
+------------------------------------------------- */
+@use "settings/variables" as *;
+@use "settings/typography" as *;
+@use "settings/theme" as *;
+@use "settings/helpers" as *;
+
+/* -----------------------------------------------
+   Mixins
+------------------------------------------------- */
+@use "mixins/mixins" as *;
+
+/* -----------------------------------------------
+   Animations + Layout
+------------------------------------------------- */
+@use "settings/animations" as *;
+@use "layout/layout" as *;
+
+/* -----------------------------------------------
+   Components
+------------------------------------------------- */
+@use "components/close" as *;
+@use "components/accordions" as *;
+@use "components/tabs" as *;
+@use "components/checkbox" as *;
+@use "components/tables" as *;
+@use "components/alert" as *;
+@use "components/buttons" as *;
+@use "components/forms" as *;
+@use "components/product-card" as *;
+@use "components/aside-popup" as *;
+@use "components/search-popup" as *;
+@use "components/cart-drawer" as *;
+@use "components/modals" as *;
+@use "components/effects" as *;
+
+/* -----------------------------------------------
+   Menus
+------------------------------------------------- */
+@use "menu/menu" as *;
+
+/* -----------------------------------------------
+   Sections
+------------------------------------------------- */
+@use "sections/Header/header" as *;
+@use "sections/Footer/footer" as *;
+@use "sections/Footer/footer-mobile-fixed" as *;
+@use "sections/Slideshow/slideshow" as *;
+@use "sections/CollectionsGrid/collections-grid" as *;
+@use "sections/ProductsGrid/products-grid" as *;
+@use "sections/DealTimer/deal-timer" as *;
+@use "sections/Instagram/instagram" as *;
+@use "sections/ServicePromotion/service-promotion" as *;
+@use "sections/ShopAccessories/shop-accessories" as *;
+@use "sections/ShopSidebar/shop-sidebar" as *;
+@use "sections/Newsletter/newsletter" as *;
+@use "sections/ProductSingle/product-single" as *;
+@use "sections/ShopCheckout/shop-checkout" as *;
+@use "sections/MyAccount/my-account" as *;
+@use "sections/Blog/blog" as *;
+@use "sections/About/about" as *;
+@use "sections/GoogleMap/google-map" as *;
+@use "sections/ContactUs/contact-us" as *;
+@use "sections/LoginRegister/login-register" as *;
+
+/* -----------------------------------------------
+   Custom files
+------------------------------------------------- */
+@use "./custom.scss" as *;
+@use "./icon.scss" as *;
+
 
 #__next {
   min-height: 100vh;
