@@ -1,7 +1,15 @@
-@use './variables' as vars;
+body {
+  background-color: $body-bg;
+}
+
 .flex-1 {
   flex: 1 !important;
 }
+
+.bg-black {
+  background-color: $primary !important;
+}
+
 .bg-yellow {
   background-color: #f3eddf !important;
 }
@@ -38,12 +46,12 @@
   top: 100%;
   width: 100%;
   min-width: 16rem;
-  transition: vars.$hover-content-appear-animation;
-  background-color: vars.$body-bg;
-  box-shadow: vars.$popover-box-shadow;
+  transition: $hover-content-appear-animation;
+  background-color: $body-bg;
+  box-shadow: $popover-box-shadow;
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
+  z-index: $zindex-dropdown;
 }
 
 .hover-container {
@@ -56,7 +64,7 @@
 
 .content_abs {
   position: absolute;
-  --content-space: #{vars.$content-space};
+  --content-space: #{$content-space};
 }
 
 .content_center {
@@ -87,19 +95,18 @@
 
 
 .content_bottom-lg {
-  @media (min-width: 768px) {
-    --content-space: #{vars.$content-space-md};
+  @include media-breakpoint-up(md) {
+    --content-space: #{$content-space-md};
   }
 }
 
 .content_left-lg {
-  @media (min-width: 768px) {
-    --content-space: #{vars.$content-space-md};
+  @include media-breakpoint-up(md) {
+    --content-space: #{$content-space-md};
   }
 }
-
 .h-md-100 {
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     height: 100% !important;
   }
 }
@@ -163,6 +170,15 @@
   transform: translateX(-50%);
 }
 
+.row-cols-xl-8 {
+  @include media-breakpoint-up(xl) {
+    >* {
+      flex: 0 0 auto;
+      width: 12.5% !important;
+    }
+  }
+}
+
 .minh-100 {
   min-height: 100vh;
 }
@@ -224,11 +240,11 @@
 }
 
 .body-color {
-  color: vars.$body-color !important;
+  color: $body-color !important;
 }
 
 .body-color-secondary {
-  color: vars.$body-color-secondary !important;
+  color: $body-color-secondary !important;
 }
 
 .theme-color {
@@ -255,7 +271,7 @@
   text-shadow: 0 0 0.3rem #fff;
 }
 .h-sm-100 {
-  @media (min-width: 576px) {
+  @include media-breakpoint-up(sm) {
     height: 100% !important;
   }
 }
@@ -263,13 +279,13 @@
 .transparent-bg {
   background-color: transparent !important;
 }
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .order-lg--1 {
     order: -1;
   }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .mt-lg--5 {
     margin-top: -13rem !important;
   }
