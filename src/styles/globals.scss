@@ -4,7 +4,7 @@
 @use "sass:math";
 @use "sass:color";
 @use "../assets/sass/bootstrap/functions";
-@use "../assets/sass/bootstrap/variables";
+@use "../assets/sass/bootstrap/variables" as *;
 @use "../assets/sass/bootstrap/variables-dark";
 @use "../assets/sass/bootstrap/maps";
 @use "../assets/sass/bootstrap/mixins";
