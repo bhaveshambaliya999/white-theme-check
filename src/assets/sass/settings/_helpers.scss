@@ -43,7 +43,7 @@
   box-shadow: vars.$popover-box-shadow;
   opacity: 0;
   visibility: hidden;
-  z-index: vars.$zindex-dropdown;
+  z-index: 1000;
 }
 
 .hover-container {
