@@ -1,61 +1,109 @@
 // -------------------------------------------------------
 // 1. SASS MODULES (must be first)
 // -------------------------------------------------------
-@import '../assets/sass/bootstrap/bootstrap.scss';
+@use "sass:math";
+@use "sass:color";
+@use "../assets/sass/bootstrap/functions";
+@use "../assets/sass/bootstrap/variables";
+@use "../assets/sass/bootstrap/variables-dark";
+@use "../assets/sass/bootstrap/maps";
+@use "../assets/sass/bootstrap/mixins";
+
+// -------------------------------------------------------
+// 2. NORMAL CSS FILES (can only come AFTER @use rules)
+// -------------------------------------------------------
+@use "../assets/css/plugins/swiper.min.css";
+
+// -------------------------------------------------------
+// 3. BOOTSTRAP PARTIALS
+// -------------------------------------------------------
+@use "../assets/sass/bootstrap/root" as *;
+@use "../assets/sass/bootstrap/reboot" as *;
+@use "../assets/sass/bootstrap/type" as *;
+@use "../assets/sass/bootstrap/images" as *;
+@use "../assets/sass/bootstrap/containers" as *;
+@use "../assets/sass/bootstrap/grid" as *;
+@use "../assets/sass/bootstrap/tables" as *;
+@use "../assets/sass/bootstrap/forms" as *;
+@use "../assets/sass/bootstrap/buttons" as *;
+@use "../assets/sass/bootstrap/transitions" as *;
+@use "../assets/sass/bootstrap/dropdown" as *;
+@use "../assets/sass/bootstrap/button-group" as *;
+@use "../assets/sass/bootstrap/nav" as *;
+@use "../assets/sass/bootstrap/navbar" as *;
+@use "../assets/sass/bootstrap/card" as *;
+@use "../assets/sass/bootstrap/accordion" as *;
+@use "../assets/sass/bootstrap/breadcrumb" as *;
+@use "../assets/sass/bootstrap/pagination" as *;
+@use "../assets/sass/bootstrap/badge" as *;
+@use "../assets/sass/bootstrap/alert" as *;
+@use "../assets/sass/bootstrap/progress" as *;
+@use "../assets/sass/bootstrap/list-group" as *;
+@use "../assets/sass/bootstrap/close" as *;
+@use "../assets/sass/bootstrap/toasts" as *;
+@use "../assets/sass/bootstrap/modal" as *;
+@use "../assets/sass/bootstrap/tooltip" as *;
+@use "../assets/sass/bootstrap/popover" as *;
+@use "../assets/sass/bootstrap/carousel" as *;
+@use "../assets/sass/bootstrap/spinners" as *;
+@use "../assets/sass/bootstrap/offcanvas" as *;
+@use "../assets/sass/bootstrap/placeholders" as *;
+@use "../assets/sass/bootstrap/helpers" as *;
+@use "../assets/sass/bootstrap/utilities/api" as *;
 
 // -------------------------------------------------------
 // 4. YOUR CUSTOM STYLES
 // -------------------------------------------------------
-@import "../assets/sass/settings/variables";
-// @import "../assets/sass/settings/helpers";
-// @import "../assets/sass/settings/theme";
-// @import "../assets/sass/settings/typography";
-// @import "../assets/sass/settings/animations";
+@use "../assets/sass/settings/variables" as *;
+@use "../assets/sass/settings/helpers" as *;
+@use "../assets/sass/settings/theme" as *;
+@use "../assets/sass/settings/typography" as *;
+@use "../assets/sass/settings/animations" as *;
 
-@import "../assets/sass/mixins/mixins";
+@use "../assets/sass/mixins/mixins" as *;
 
-@import "../assets/sass/layout/layout";
+@use "../assets/sass/layout/layout" as *;
 
-@import "../assets/sass/components/close";
-@import "../assets/sass/components/accordions";
-@import "../assets/sass/components/tabs";
-@import "../assets/sass/components/checkbox";
-@import "../assets/sass/components/tables";
-@import "../assets/sass/components/alert";
-@import "../assets/sass/components/buttons";
-@import "../assets/sass/components/forms";
-@import "../assets/sass/components/product-card";
-@import "../assets/sass/components/aside-popup";
-@import "../assets/sass/components/search-popup";
-@import "../assets/sass/components/cart-drawer";
-@import "../assets/sass/components/modals";
-@import "../assets/sass/components/effects";
+@use "../assets/sass/components/close" as *;
+@use "../assets/sass/components/accordions" as *;
+@use "../assets/sass/components/tabs" as *;
+@use "../assets/sass/components/checkbox" as *;
+@use "../assets/sass/components/tables" as *;
+@use "../assets/sass/components/alert" as *;
+@use "../assets/sass/components/buttons" as *;
+@use "../assets/sass/components/forms" as *;
+@use "../assets/sass/components/product-card" as *;
+@use "../assets/sass/components/aside-popup" as *;
+@use "../assets/sass/components/search-popup" as *;
+@use "../assets/sass/components/cart-drawer" as *;
+@use "../assets/sass/components/modals" as *;
+@use "../assets/sass/components/effects" as *;
 
-@import "../assets/sass/menu/menu";
+@use "../assets/sass/menu/menu" as *;
 
-@import "../assets/sass/sections/Header/header";
-@import "../assets/sass/sections/Footer/footer";
-@import "../assets/sass/sections/Footer/footer-mobile-fixed";
-@import "../assets/sass/sections/Slideshow/slideshow";
-@import "../assets/sass/sections/CollectionsGrid/collections-grid";
-@import "../assets/sass/sections/ProductsGrid/products-grid";
-@import "../assets/sass/sections/DealTimer/deal-timer";
-@import "../assets/sass/sections/Instagram/instagram";
-@import "../assets/sass/sections/ServicePromotion/service-promotion";
-@import "../assets/sass/sections/ShopAccessories/shop-accessories";
-@import "../assets/sass/sections/ShopSidebar/shop-sidebar";
-@import "../assets/sass/sections/Newsletter/newsletter";
-@import "../assets/sass/sections/ProductSingle/product-single";
-@import "../assets/sass/sections/ShopCheckout/shop-checkout";
-@import "../assets/sass/sections/MyAccount/my-account";
-@import "../assets/sass/sections/Blog/blog";
-@import "../assets/sass/sections/About/about";
-@import "../assets/sass/sections/GoogleMap/google-map";
-@import "../assets/sass/sections/ContactUs/contact-us";
-@import "../assets/sass/sections/LoginRegister/login-register";
+@use "../assets/sass/sections/Header/header" as *;
+@use "../assets/sass/sections/Footer/footer" as *;
+@use "../assets/sass/sections/Footer/footer-mobile-fixed" as *;
+@use "../assets/sass/sections/Slideshow/slideshow" as *;
+@use "../assets/sass/sections/CollectionsGrid/collections-grid" as *;
+@use "../assets/sass/sections/ProductsGrid/products-grid" as *;
+@use "../assets/sass/sections/DealTimer/deal-timer" as *;
+@use "../assets/sass/sections/Instagram/instagram" as *;
+@use "../assets/sass/sections/ServicePromotion/service-promotion" as *;
+@use "../assets/sass/sections/ShopAccessories/shop-accessories" as *;
+@use "../assets/sass/sections/ShopSidebar/shop-sidebar" as *;
+@use "../assets/sass/sections/Newsletter/newsletter" as *;
+@use "../assets/sass/sections/ProductSingle/product-single" as *;
+@use "../assets/sass/sections/ShopCheckout/shop-checkout" as *;
+@use "../assets/sass/sections/MyAccount/my-account" as *;
+@use "../assets/sass/sections/Blog/blog" as *;
+@use "../assets/sass/sections/About/about" as *;
+@use "../assets/sass/sections/GoogleMap/google-map" as *;
+@use "../assets/sass/sections/ContactUs/contact-us" as *;
+@use "../assets/sass/sections/LoginRegister/login-register" as *;
 
-@import "../assets/sass/custom" ;
-@import "../assets/sass/icon" ;
+@use "../assets/sass/custom" as *;
+@use "../assets/sass/icon" as *;
 
 
 
