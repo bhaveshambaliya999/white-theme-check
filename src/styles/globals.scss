@@ -4,12 +4,99 @@
 #__next {
   min-height: 100vh;
 }
+/*============================================*/
+/*================= Headings =================*/
+/*============================================*/
 body {
   color: $color-gray-900;
   font-family: var(--font-family-base);
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+  font-family: var(--fontfamily-poppins);
+  font-weight: $font-weight-heading;
+}
+
+.font-special {
+  font-family: var(--font-special);
+}
+
+.fs-base,
+.form-title {
+  font-size: $font-size-base !important;
+}
+
+.third-color {
+  color: $third !important;
+}
+
+.white-color {
+  color: #fff !important;
+}
+
+.mark-grey-color {
+  -webkit-text-stroke-color: #c2c2c2;
+}
+
+.page-title {
+  font-weight: $page-title-weight;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  // text-transform: uppercase;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $page-title-size;
+    margin-bottom: 3.125rem;
+    // text-transform: uppercase;
+  }
+}
+
+.section-title {
+  font-size: $section-title-mobile-size;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $section-title-size;
+  }
+}
+
+.lh-30 {
+  line-height: 1.875rem !important;
+}
+
+.lh-2rem {
+  line-height: 2rem !important;
+}
+
+.block-title {
+  margin-bottom: 1rem;
+  font-size: $block-title-size;
+}
+
+/*============================================*/
+/*=================== Texts ==================*/
+/*============================================*/
+
+.content {
+  margin-bottom: 1.5rem;
+  font-size: $content-size;
+  line-height: $content-line-height;
+}
+
+.text-list {
+  padding-left: 1.25em;
+}
+
+.text-list__item {
+  line-height: $list-item-line-height;
 }
 
 .h5,
