@@ -1,5 +1,5 @@
-@import "../assets/css/plugins/swiper.min.css";
-@import "../assets/sass/style";
+@use  "../assets/css/plugins/swiper.min.css" as *;
+@use  "../assets/sass/style" as *;
 
 #__next {
   min-height: 100vh;
