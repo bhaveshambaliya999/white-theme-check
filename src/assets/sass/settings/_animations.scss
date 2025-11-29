@@ -1,3 +1,4 @@
+@use './variables' as vars;
 $move-distance: 0.625rem;
 
 @keyframes moveDown {
@@ -96,8 +97,8 @@ $move-distance: 0.625rem;
 }
 
 .anim_appear-fade {
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: vars.$hover-content-appear-animation;
+  font-size: vars.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -110,8 +111,8 @@ $move-distance: 0.625rem;
 
 .anim_appear-bottom {
   bottom: $move-distance * -1;
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: vars.$hover-content-appear-animation;
+  font-size: vars.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -125,8 +126,8 @@ $move-distance: 0.625rem;
 
 .anim_appear-right {
   right: $move-distance * -1;
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: vars.$hover-content-appear-animation;
+  font-size: vars.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -141,7 +142,7 @@ $move-distance: 0.625rem;
 .anim_appear-center {
   top: 50%;
   transform: translateY(-50%);
-  transition: $hover-content-appear-animation;
+  transition: vars.$hover-content-appear-animation;
   font-size: $font-size-base;
   opacity: 0;
   visibility: hidden;
