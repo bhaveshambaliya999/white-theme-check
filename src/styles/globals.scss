@@ -1,7 +1,47 @@
 @import "../assets/css/plugins/swiper.min.css";
 @import "../assets/sass/bootstrap/bootstrap.scss";
 
+$color-steelblue: #4780aa;
+$color-cyan: #cde9f6;
+$color-gray-900: #222222;
+$color-gray-500: #495057;
+$color-gray-300: #e4e4e4;
+$color-gray-200: #eeeeee;
+$color-gray-100: #faf9f8;
+$color-darkgreen: #2fac64;
+$color-green: #ccf5e1;
+$color-red-900: #ab3331;
+$color-red-800: #d6001c;
+$color-red-700: #d01a3b;
+$color-red-200: #ecc8c5;
+$color-white: #ffffff;
+$color-yellow: #f7f3d7;
+$color-olive: #927238;
+$color-brick: #704634;
 $color-beige: #b9a16b;
+$color-dark-purple: #2f2d51;
+
+$primary: $color-gray-900;
+$secondary: $color-gray-500;
+$third: $color-beige;
+$success: $color-green;
+$success-text: $color-darkgreen;
+$info: $color-cyan;
+$info-text: $color-steelblue;
+$warning: $color-yellow;
+$warning-text: $color-olive;
+$danger: $color-red-200;
+$danger-text: $color-red-900;
+$light: $color-gray-200;
+$lighter: $color-gray-100;
+$dark: $color-gray-900;
+
+$heading-color: $primary;
+$body-color: $primary;
+$body-color-secondary: $secondary;
+
+$body-bg: $color-white;
+$color-component-active: $color-white;
 
 #__next {
   min-height: 100vh;
