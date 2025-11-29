@@ -1,5 +1,6 @@
 @use  "../assets/css/plugins/swiper.min.css" as *;
 @use  "../assets/sass/style" as *;
+@use "../assets/sass/settings/variables" as *;
 
 #__next {
   min-height: 100vh;
