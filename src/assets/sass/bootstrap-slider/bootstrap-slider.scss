@@ -1,13 +1,5 @@
 /*! =========================================================
- * bootstrap-slider.js
- *
- * Maintainers:
- *    Kyle Kemp
- *      - Twitter: @seiyria
- *      - Github:  seiyria
- *    Rohit Kalkur
- *      - Twitter: @Rovolutionary
- *      - Github:  rovolution
+ * bootstrap-slider.js   
  *
  * =========================================================
  *
@@ -37,7 +29,7 @@
  *
  * ========================================================= */
 
-@import "variables";
-@import "../settings/variables";
-@import "mixins";
-@import "rules";
+@use "variables" as *;
+@use "../settings/variables" as *;
+@use "mixins" as *;
+@use "rules" as *;
