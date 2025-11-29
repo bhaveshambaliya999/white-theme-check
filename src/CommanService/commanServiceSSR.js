@@ -61,7 +61,7 @@ function getEnv(origin) {
      imageUrl: "https://apiuat-ecom-store.upqor.com",
       laravelBaseUrl: "https://apiuat-ecom-store.upqor.com/api/call",
       nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
-      domain: source,
+      domain: "https://white-theme-check.vercel.app/",
   };
 }
 

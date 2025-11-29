@@ -51,7 +51,7 @@ function getEnv(origin) {
       imageUrl: "https://apiuat-ecom-store.upqor.com",
       baseUrl1: "https://apiuat-ecom-store.upqor.com/api/call",
       baseUrl2: "https://apiuat-ecom.upqor.com/call",
-      domain: source,
+      domain: "https://white-theme-check.vercel.app/",
     };
   }
 
