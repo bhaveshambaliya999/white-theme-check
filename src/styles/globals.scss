@@ -1,16 +1,16 @@
 // -------------------------------------------------------
 // 1. SASS MODULES (must be first)
 // -------------------------------------------------------
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../assets/sass/bootstrap/bootstrap.scss';
 
 // -------------------------------------------------------
 // 4. YOUR CUSTOM STYLES
 // -------------------------------------------------------
 @import "../assets/sass/settings/variables";
-@import "../assets/sass/settings/helpers";
-@import "../assets/sass/settings/theme";
-@import "../assets/sass/settings/typography";
-@import "../assets/sass/settings/animations";
+// @import "../assets/sass/settings/helpers";
+// @import "../assets/sass/settings/theme";
+// @import "../assets/sass/settings/typography";
+// @import "../assets/sass/settings/animations";
 
 @import "../assets/sass/mixins/mixins";
 
