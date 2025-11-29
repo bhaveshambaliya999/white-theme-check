@@ -4,6 +4,13 @@
 #__next {
   min-height: 100vh;
 }
+body {
+  color: $color-gray-900;
+  font-family: var(--font-family-base);
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
 
 .h5,
 h5 {
