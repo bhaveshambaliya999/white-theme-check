@@ -21,6 +21,7 @@ $color-olive: #927238;
 $color-brick: #704634;
 $color-beige: #b9a16b;
 $color-dark-purple: #2f2d51;
+$white: #ffffff;
 
 $primary: $color-gray-900;
 $secondary: $color-gray-500;
@@ -40,14 +41,13 @@ $dark: $color-gray-900;
 $heading-color: $primary;
 $body-color: $primary;
 $body-color-secondary: $secondary;
-
 $body-bg: $color-white;
-$white: #ffffff;
+$body-color:$gray-900;
+
 $color-component-active: $color-white;
 $btn-close-color: #333;
-$gray-600: #6c757d;
 $input-height-border: 0.125rem;
-$zindex-fixed: 1030 !default;
+$zindex-fixed: 1030;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -289,7 +289,7 @@ $input-padding-x-lg: 1.3125rem;
 $input-font-size: $font-size-base;
 $input-line-height: $line-height-base;
 $input-color: $body-color;
-$input-placeholder-color: $gray-600;
+$input-placeholder-color: $color-gray-500;
 
 $input-border-width: .125rem;
 $input-border-color: $border-color;
