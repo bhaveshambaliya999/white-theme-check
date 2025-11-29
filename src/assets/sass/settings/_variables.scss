@@ -155,7 +155,7 @@ $table-striped-bg: $lighter;
 
 $table-variants: (
   "primary": $color-white,
-  "secondary": shift-color($secondary, $table-bg-scale),
+  "secondary": $secondary,
   "success": $success,
   "info": $info,
   "warning": $warning,
