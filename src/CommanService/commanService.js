@@ -8,7 +8,7 @@ function getEnv(origin) {
   // const source = origin || (isBrowser ? window.location.origin : "https://zurahjewellery.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://phpstack-1028231-5794626.cloudwaysapps.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-direct.upqor.com");
-  const source = origin || (isBrowser ? window.location.origin : 'https://white-theme-check.vercel.app');
+  const source = origin || (isBrowser ? window.location.origin : 'https://white-theme-check.vercel.app/');
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-d2c.artisanalparfumhouse.com");
 
   if (source?.includes("localhost")) {
