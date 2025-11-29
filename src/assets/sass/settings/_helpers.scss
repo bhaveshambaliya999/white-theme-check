@@ -98,7 +98,7 @@
   }
 }
 .h-md-100 {
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     height: 100% !important;
   }
 }
@@ -271,13 +271,13 @@
 .transparent-bg {
   background-color: transparent !important;
 }
-@include media-breakpoint-up(lg) {
+@media (min-width: 992px) {
   .order-lg--1 {
     order: -1;
   }
 }
 
-@include media-breakpoint-up(lg) {
+@media (min-width: 992px) {
   .mt-lg--5 {
     margin-top: -13rem !important;
   }

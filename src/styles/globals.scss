@@ -1,5 +1,4 @@
 @use  "../assets/css/plugins/swiper.min.css" as *;
-@use  "../assets/sass/settings/variables" as *;
 @use  "../assets/sass/style" as *;
 
 #__next {
@@ -49,7 +48,7 @@ h6 {
 }
 
 .gap-20 {
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     gap: 20px;
   }
 }
