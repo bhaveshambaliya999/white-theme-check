@@ -1,4 +1,5 @@
 // Base styles
+@use "../bootstrap/buttons";
 
 .btn {
   display: inline-block;
@@ -83,7 +84,6 @@
 }
 
 // Alternate buttons
-@use "../bootstrap/buttons";
 @each $color, $value in $button-colors {
   .btn-#{$color} {
     @include button-variant($value, $value);
