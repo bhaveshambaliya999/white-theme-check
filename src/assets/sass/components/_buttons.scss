@@ -1,6 +1,4 @@
-//
 // Base styles
-//
 
 .btn {
   display: inline-block;
@@ -14,7 +12,7 @@
   vertical-align: middle;
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
-  background-color: $body-bg;
+  background-color: $color-white;
   border: $btn-border-width solid transparent;
   @include button-size(
     $btn-padding-y,
@@ -84,9 +82,7 @@
   }
 }
 
-//
 // Alternate buttons
-//
 
 @each $color, $value in $button-colors {
   .btn-#{$color} {
@@ -105,35 +101,6 @@
   }
 }
 
-.btn-beige {
-  $border: map-get($btn-beige, "border");
-  $background: $border;
-  $color: map-get($btn-beige, "color");
-  $active-color: map-get($btn-beige, "active");
-  @include button-variant(
-    $background,
-    $border,
-    $color,
-    tint-color($background, 10%),
-    tint-color($border, 10%),
-    $active-color
-  );
-}
-
-.btn-outline-beige {
-  $border: map-get($btn-beige, "border");
-  $background: $border;
-  $color: $border;
-  $active-color: map-get($btn-beige, "active");
-  @include button-outline-variant(
-    $color,
-    $active-color,
-    $background,
-    $border,
-    $active-color
-  );
-}
-
 .btn-light {
   $border: map-get($btn-light, "border");
   $background: $border;
@@ -148,25 +115,7 @@
     $active-color
   );
 }
-
-.btn-outline-light {
-  $border: map-get($btn-light, "border");
-  $background: $border;
-  $color: map-get($btn-light, "color");
-  $active-color: map-get($btn-light, "active");
-  @include button-outline-variant(
-    $color,
-    $active-color,
-    $background,
-    $border,
-    $active-color
-  );
-  border-color: $border;
-}
-
-//
 // Link buttons
-//
 
 // Make a button look and behave like a link
 .btn-link {
@@ -247,27 +196,6 @@
   }
 }
 
-.btn-link_md {
-  &:hover,
-  &.btn-link_active {
-    &:after {
-      width: 70%;
-    }
-  }
-
-  &.default-underline {
-    &:after {
-      width: 70%;
-    }
-
-    &:hover {
-      &:after {
-        width: 100%;
-      }
-    }
-  }
-}
-
 .btn-link_sm {
   &:hover,
   &.btn-link_active {
@@ -298,45 +226,6 @@
   }
 }
 
-// Round button
-.btn-round {
-  width: calc($btn-round-width * 3 / 4);
-  height: calc($btn-round-width * 3 / 4);
-  padding: 0;
-  border-radius: 100%;
-
-  @include media-breakpoint-up(md) {
-    width: $btn-round-width;
-    height: $btn-round-width;
-  }
-}
-
-.btn-round-sm {
-  width: $btn-round-sm-width;
-  height: $btn-round-sm-width;
-  padding: 0;
-  border-radius: 100%;
-}
-
-.btn-square {
-  width: 2.8125rem;
-  height: 2.8125rem;
-  padding: 0;
-}
-
-//
-// Button Sizes
-//
-
-.btn-lg {
-  @include button-size(
-    $btn-padding-y-lg,
-    $btn-padding-x-lg,
-    $btn-font-size-lg,
-    $btn-border-radius-lg
-  );
-  line-height: $btn-line-height-lg;
-}
 
 .btn-sm {
   @include button-size(

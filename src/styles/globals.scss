@@ -1,5 +1,10 @@
+@import "../assets/sass/settings/variables";  // your vars FIRST
+@import "../assets/sass/settings/helpers";
+@import "../assets/sass/settings/typography";
+@import "../assets/sass/bootstrap/bootstrap.scss"; // bootstrap NEXT
 @import "../assets/css/plugins/swiper.min.css";
 @import "../assets/sass/style";
+
 
 #__next {
   min-height: 100vh;

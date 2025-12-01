@@ -13,8 +13,8 @@ function getEnv(origin) {
 
   if (source?.includes("localhost")) {
     env = {
-      imageUrl: "http://192.168.84.66:8080",
-      baseUrl1: "http://192.168.84.66:8080/api/call",
+      imageUrl: "http://192.168.84.21:8080",
+      baseUrl1: "http://192.168.84.21:8080/api/call",
       baseUrl2: "http://192.168.84.45/sit-ci-api/call",
       domain: 'https://uat-direct.rpdiamondsandjewellery.com'
     };

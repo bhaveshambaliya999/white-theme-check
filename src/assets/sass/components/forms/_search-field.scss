@@ -28,7 +28,9 @@ $search-icon-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 
   &::after {
     content: '';
     display: block;
-    @include center-inside-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 2px));
     right: 1rem;
     transform: translateY(-50%);
     width: $search-icon-width;

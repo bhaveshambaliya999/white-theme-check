@@ -6,7 +6,7 @@
 .form-select {
   display: block;
   width: 100%;
-  @include text-padding($input-padding-y, $input-padding-x);
+  padding : $input-padding-y $input-padding-x;
   padding-right: $input-padding-y * 2.5;
   font-family: $form-select-font-family;
   @include font-size($form-select-font-size);
@@ -59,7 +59,7 @@
 
 .form-select-sm {
   width: auto;
-  @include text-padding($input-padding-y-sm, $input-padding-x-sm);
+  padding : $input-padding-y-sm, $input-padding-x-sm;
   padding-right: $input-padding-x-sm * 1.8;
   background-position: $form-select-sm-bg-position;
   // padding-top: $input-padding-y-sm;
@@ -69,7 +69,7 @@
 }
 
 .form-select-lg {
-  @include text-padding($input-padding-y-lg, $input-padding-x-lg);
+  padding : $input-padding-y-lg, $input-padding-x-lg;
   // padding-top: $input-padding-y-lg;
   // padding-bottom: $input-padding-y-lg;
   // padding-left: $form-select-padding-x-lg;

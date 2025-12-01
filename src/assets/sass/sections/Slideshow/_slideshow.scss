@@ -3,6 +3,7 @@ $slideshow-lg-height: 47.5rem;
 $nav-icon-desk-size: 25px;
 $nav-mobile-size: 35px;
 
+
 .slideshow {
   height: auto;
   @include media-breakpoint-down(sm) {
@@ -75,14 +76,6 @@ $nav-mobile-size: 35px;
     transform: translateX(-50%);
     display: flex;
     width: auto;
-
-    // @media (min-width: 1600px) {
-    //   left: 2.5rem;
-    //   top: 50%;
-    //   bottom: auto;
-    //   transform: translateY(-50%);
-    //   flex-direction: column;
-    // }
   }
 }
 

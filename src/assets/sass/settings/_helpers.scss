@@ -1,5 +1,6 @@
+@import './variables';
 body {
-  background-color: $body-bg;
+  background-color: $color-white;
 }
 
 .flex-1 {
@@ -47,7 +48,7 @@ body {
   width: 100%;
   min-width: 16rem;
   transition: $hover-content-appear-animation;
-  background-color: $body-bg;
+  background-color: $color-white;
   box-shadow: $popover-box-shadow;
   opacity: 0;
   visibility: hidden;
@@ -95,18 +96,18 @@ body {
 
 
 .content_bottom-lg {
-  @include media-breakpoint-up(md) {
+  @media (min-width: 768px) {
     --content-space: #{$content-space-md};
   }
 }
 
 .content_left-lg {
-  @include media-breakpoint-up(md) {
+  @media (min-width: 768px) {
     --content-space: #{$content-space-md};
   }
 }
 .h-md-100 {
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     height: 100% !important;
   }
 }
@@ -168,15 +169,6 @@ body {
 .left-50 {
   left: 50%;
   transform: translateX(-50%);
-}
-
-.row-cols-xl-8 {
-  @include media-breakpoint-up(xl) {
-    >* {
-      flex: 0 0 auto;
-      width: 12.5% !important;
-    }
-  }
 }
 
 .minh-100 {
@@ -271,7 +263,7 @@ body {
   text-shadow: 0 0 0.3rem #fff;
 }
 .h-sm-100 {
-  @include media-breakpoint-up(sm) {
+  @media (min-width: 576px) {
     height: 100% !important;
   }
 }
@@ -279,18 +271,6 @@ body {
 .transparent-bg {
   background-color: transparent !important;
 }
-@include media-breakpoint-up(lg) {
-  .order-lg--1 {
-    order: -1;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .mt-lg--5 {
-    margin-top: -13rem !important;
-  }
-}
-
 .mt--3 {
   margin-top: -3rem !important;
 }

@@ -70,7 +70,7 @@
 .qty-control__number {
   padding: 0;
   width: 100%;
-  background-color: $body-bg;
+  background-color: $color-white;
   outline: none;
   -moz-appearance: textfield;
 }
@@ -101,7 +101,7 @@
 }
 
 .cart-drawer-actions {
-  background-color: $body-bg;
+  background-color: $color-white;
   padding-right: calc(calc($aside-padding-x / 2));
   padding-bottom: calc(calc($aside-padding-x / 2));
   padding-left: calc(calc($aside-padding-x / 2));

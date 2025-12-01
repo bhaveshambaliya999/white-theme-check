@@ -1,10 +1,3 @@
-@import "bootstrap/bootstrap";
-@import "bootstrap-slider/bootstrap-slider.scss";
-@import "settings/variables";
-@import "settings/helpers";
-@import "settings/theme";
-@import "settings/typography";
-
 @import "mixins/mixins";
 
 @import "settings/animations";
@@ -15,9 +8,9 @@
 @import "components/tabs";
 @import "components/checkbox";  
 @import "components/tables";
-@import "components/alert";
+// @import "components/alert";
 @import "components/buttons";
-@import "components/forms";
+// @import "components/forms";
 @import "components/product-card";
 @import "components/aside-popup";
 @import "components/search-popup";
@@ -34,7 +27,6 @@
 @import "sections/CollectionsGrid/collections-grid";
 @import "sections/ProductsGrid/products-grid";
 @import "sections/DealTimer/deal-timer";
-// @import "sections/ProductsCarousel/products-carousel";
 @import "sections/Instagram/instagram";
 @import "sections/ServicePromotion/service-promotion";
 @import "sections/ShopAccessories/shop-accessories";
@@ -48,7 +40,6 @@
 @import "sections/GoogleMap/google-map";
 @import "sections/ContactUs/contact-us";
 @import "sections/LoginRegister/login-register";
-//  @import "sections/ComingSoon/coming-soon";
-// @import "./font.scss";
+
 @import "./custom.scss";
 @import "./icon.scss"

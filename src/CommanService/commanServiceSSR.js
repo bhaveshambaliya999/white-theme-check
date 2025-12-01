@@ -8,8 +8,8 @@ function getEnv(origin) {
 
   if (source.includes("localhost")) {
     return {
-      imageUrl: "http://192.168.84.66:8080",
-      laravelBaseUrl: "http://192.168.84.66:8080/api/call",
+      imageUrl: "http://192.168.84.21:8080",
+      laravelBaseUrl: "http://192.168.84.21:8080/api/call",
       nodeBaseUrl: "http://192.168.84.45/sit-ci-api/call",
       domain: 'https://uat-direct.rpdiamondsandjewellery.com'
 
@@ -41,8 +41,8 @@ function getEnv(origin) {
       // nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
       // domain: source,
 
-      imageUrl: "http://192.168.84.66:8080",
-      laravelBaseUrl: "http://192.168.84.66:8080/api/call",
+      imageUrl: "http://192.168.84.21:8080",
+      laravelBaseUrl: "http://192.168.84.21:8080/api/call",
       nodeBaseUrl: "http://192.168.84.45/sit-ci-api/call",
       domain: 'https://uat-direct.rpdiamondsandjewellery.com',
 

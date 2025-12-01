@@ -1,16 +1,12 @@
-// transparent background and border properties included for button version.
-// iOS requires the button element instead of an anchor tag.
-// If you want the anchor version, it requires `href="#"`.
-// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
-
+@import './../settings/variables';
 .btn-close,
 .btn-close-lg,
 .btn-close-xs {
   padding: 0;
   border: 0; // for button elements
   box-sizing: content-box;
-  color: $btn-close-color;
-  @include border-radius();
+  color: $color-gray-900;
+  border-radius: 0;
   opacity: $btn-close-opacity;
 
   // Override <a>'s hover style
