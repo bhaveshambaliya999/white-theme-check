@@ -10,7 +10,7 @@
 
 // Layout & components
 
-@include bsBanner("");
+
 
 @use "root";
 @use "reboot";
@@ -50,3 +50,5 @@
 // Utilities
 @use "utilities/api";
 // scss-docs-end import-stack
+
+@include bsBanner("");
