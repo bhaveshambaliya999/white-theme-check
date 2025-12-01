@@ -54,14 +54,14 @@ function getEnv(origin) {
   }
 
   return {
-    // imageUrl: "https://apiuat-ecom-store.upqor.com",
-    // laravelBaseUrl: "https://apiuat-ecom-store.upqor.com/api/call",
-    // nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
-    // domain: source,
-    imageUrl: "https://api-ecom-store.upqor.com",
-    laravelBaseUrl: "https://api-ecom-store.upqor.com/api/call",
-    nodeBaseUrl: "https://api-ecom.upqor.com/call",
-    domain: source
+    imageUrl: "https://apiuat-ecom-store.upqor.com",
+    laravelBaseUrl: "https://apiuat-ecom-store.upqor.com/api/call",
+    nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
+    domain: source,
+    // imageUrl: "https://api-ecom-store.upqor.com",
+    // laravelBaseUrl: "https://api-ecom-store.upqor.com/api/call",
+    // nodeBaseUrl: "https://api-ecom.upqor.com/call",
+    // domain: source
   };
 }
 
