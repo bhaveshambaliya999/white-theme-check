@@ -1,9 +1,9 @@
-@import "../assets/sass/settings/variables";  // your vars FIRST
-@import "../assets/sass/settings/helpers";
-@import "../assets/sass/settings/typography";
-@import "../assets/sass/bootstrap/bootstrap.scss"; // bootstrap NEXT
-@import "../assets/css/plugins/swiper.min.css";
-@import "../assets/sass/style";
+@use "../assets/sass/settings/variables";  // your vars FIRST
+@use "../assets/sass/settings/helpers";
+@use "../assets/sass/settings/typography";
+@use "../assets/sass/bootstrap/bootstrap.scss"; // bootstrap NEXT
+@use "../assets/css/plugins/swiper.min.css";
+@use "../assets/sass/style";
 
 
 #__next {
