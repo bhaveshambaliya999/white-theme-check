@@ -59,9 +59,9 @@ const nextConfig = {
     ];
   },
   turbopack: {},
-  // sassOptions: {
-  //   quietDeps: true,
-  // },
+  sassOptions: {
+    quietDeps: true,
+  },
   allowedDevOrigins: [
     // "https://uat-direct.upqor.com",
     "https://zurahjewellery.com",
