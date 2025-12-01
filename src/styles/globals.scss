@@ -2,7 +2,22 @@
 @import "../assets/sass/bootstrap/bootstrap.scss";
 @import "../assets/sass/settings/variables";
 
+@import "../assets/sass/mixins/mixins";
 
+@import "../assets/sass/components/close";
+@import "../assets/sass/components/accordions";
+@import "../assets/sass/components/tabs";
+@import "../assets/sass/components/checkbox";  
+@import "../assets/sass/components/tables";
+@import "../assets/sass/components/alert";
+@import "../assets/sass/components/buttons";
+@import "../assets/sass/components/forms";
+@import "../assets/sass/components/product-card";
+@import "../assets/sass/components/aside-popup";
+@import "../assets/sass/components/search-popup";
+@import "../assets/sass/components/cart-drawer";
+@import "../assets/sass/components/modals";
+@import "../assets/sass/components/effects";
 @import "../assets/sass/menu/menu";
 
 @import "../assets/sass/sections/Header/header";
@@ -25,8 +40,7 @@
 @import "../assets/sass/sections/GoogleMap/google-map";
 @import "../assets/sass/sections/ContactUs/contact-us";
 @import "../assets/sass/sections/LoginRegister/login-register";
-//  @import "sections/ComingSoon/coming-soon";
-// @import "./font.scss";
+
 @import "../assets/sass/custom.scss";
 @import "../assets/sass/icon.scss";  
 
@@ -78,7 +92,7 @@ h6 {
 }
 
 .gap-20 {
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     gap: 20px;
   }
 }

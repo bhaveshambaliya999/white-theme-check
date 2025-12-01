@@ -49,7 +49,7 @@ h6 {
   margin-bottom: 1.2rem;
   // text-transform: uppercase;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     font-size: $page-title-size;
     margin-bottom: 3.125rem;
     // text-transform: uppercase;
@@ -59,7 +59,7 @@ h6 {
 .section-title {
   font-size: $section-title-mobile-size;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     font-size: $section-title-size;
   }
 }
@@ -130,7 +130,7 @@ h6 {
   }
 }
 
-@include media-breakpoint-up(lg) {
+@media (min-width: 992px) {
   .text-lg-right {
     text-align: right !important;
   }

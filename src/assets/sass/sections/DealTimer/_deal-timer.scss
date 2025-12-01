@@ -37,7 +37,7 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     min-height: 31.25rem;
     padding: 2.5rem 0;
 

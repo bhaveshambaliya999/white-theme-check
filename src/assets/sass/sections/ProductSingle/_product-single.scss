@@ -59,7 +59,7 @@
       flex-direction: column;
       margin-bottom: 3rem;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) {
         flex-direction: row;
         margin-bottom: 0;
       }
@@ -232,7 +232,7 @@
             max-height: 684px;
           }
 
-          @include media-breakpoint-up(lg) {
+          @media (min-width: 992px) {
             flex: 0 0 14.2857%;
             max-width: 14.2857%;
             order: -1;
@@ -331,7 +331,7 @@
       }
 
       &.vertical-dot {
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) {
           padding-left: 5.375rem;
         }
 
@@ -348,7 +348,7 @@
           .swiper-wrapper {
             margin-bottom: 1rem;
 
-            @include media-breakpoint-up(lg) {
+            @media (min-width: 992px) {
               margin-bottom: 0;
             }
           }
@@ -397,7 +397,7 @@
             width: auto;
             bottom: auto;
 
-            @include media-breakpoint-up(lg) {
+            @media (min-width: 992px) {
               position: absolute;
               transform: translateY(-50%);
               flex-direction: column;
@@ -441,7 +441,7 @@
       gap: 1.875rem;
       display: none !important;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) {
         display: flex !important;
       }
 

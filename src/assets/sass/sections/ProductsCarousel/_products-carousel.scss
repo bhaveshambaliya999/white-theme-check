@@ -9,7 +9,7 @@ $nav-mobile-size: 35px;
     width: 33.33333%;
   }
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     width: 25%;
   }
 }

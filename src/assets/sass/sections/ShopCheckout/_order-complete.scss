@@ -119,7 +119,7 @@
       }
     }
   }
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     .order-diy-row{
       flex: 1;
     }

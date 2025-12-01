@@ -41,7 +41,7 @@
           bottom: 1rem;
         }
 
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) {
           position: static;
         }
       }

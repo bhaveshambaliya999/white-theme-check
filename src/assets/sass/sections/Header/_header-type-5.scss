@@ -4,7 +4,7 @@
   .logo {
     margin-right: $header-type-5-logo-space;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       max-width: 140px;
     }
     

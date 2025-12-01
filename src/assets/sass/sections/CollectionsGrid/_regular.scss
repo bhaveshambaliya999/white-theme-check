@@ -1,12 +1,12 @@
 .grid-banner__item_rect {
   min-height: 19.375rem;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     min-height: 28.875rem;
   }
 
   &_2 {
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       min-height: 31.25rem;
 
       .content_abs {
@@ -16,7 +16,7 @@
   }
 
   &_3 {
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       min-height: 28.125rem;
 
       .content_abs {

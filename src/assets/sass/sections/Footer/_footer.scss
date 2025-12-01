@@ -18,7 +18,7 @@
     padding-bottom: $footer-middle-padding-bottom * 0.6;
   }
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     padding-top: $footer-middle-padding-top;
     padding-bottom: $footer-middle-padding-bottom;
   }
@@ -64,7 +64,7 @@
     margin-bottom: 0.875rem;
     color: $footer-menu-title-color;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       margin-bottom: 1.875rem;
     }
   }
@@ -200,7 +200,7 @@
   }
 }
 
-@include media-breakpoint-up(lg) {
+@media (min-width: 992px) {
   .footer-store-info {
     width: 24%;
   }
