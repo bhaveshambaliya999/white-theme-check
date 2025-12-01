@@ -1,7 +1,7 @@
-@use "../assets/sass/settings/variables";  // your vars FIRST
+@use "../assets/sass/settings/variables" as *;  // your vars FIRST
 @use "../assets/sass/settings/helpers" as *;
 @use "../assets/sass/settings/typography" as *;
-@use "../assets/sass/bootstrap/bootstrap.scss"; // bootstrap NEXT
+@use "../assets/sass/bootstrap/bootstrap.scss" as *; // bootstrap NEXT
 @use "../assets/css/plugins/swiper.min.css";
 @use "../assets/sass/style";
 
