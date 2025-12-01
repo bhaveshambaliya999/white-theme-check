@@ -18,7 +18,7 @@
     padding-bottom: $footer-middle-padding-bottom * 0.6;
   }
 
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     padding-top: $footer-middle-padding-top;
     padding-bottom: $footer-middle-padding-bottom;
   }
@@ -64,7 +64,7 @@
     margin-bottom: 0.875rem;
     color: $footer-menu-title-color;
 
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       margin-bottom: 1.875rem;
     }
   }
@@ -95,7 +95,7 @@
       background-image: escape-svg($svg-arrow-up-white-bg);
 
       option {
-        color: $color-gray-900;
+        color: $body-color;
       }
     }
   }
@@ -200,7 +200,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .footer-store-info {
     width: 24%;
   }

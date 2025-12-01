@@ -8,7 +8,7 @@ function getEnv(origin) {
   // const source = origin || (isBrowser ? window.location.origin : "https://zurahjewellery.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://phpstack-1028231-5794626.cloudwaysapps.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-direct.upqor.com");
-  const source = origin || (isBrowser ? window.location.origin : 'https://white-theme-check.vercel.app/');
+  const source = origin || (isBrowser ? window.location.origin : 'https://uat-direct.rpdiamondsandjewellery.com');
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-d2c.artisanalparfumhouse.com");
 
   if (source?.includes("localhost")) {
@@ -48,10 +48,10 @@ function getEnv(origin) {
     };
   } else {
     env = {
-      imageUrl: "https://apiuat-ecom-store.upqor.com",
-      baseUrl1: "https://apiuat-ecom-store.upqor.com/api/call",
-      baseUrl2: "https://apiuat-ecom.upqor.com/call",
-      domain: "https://white-theme-check.vercel.app/",
+      imageUrl: "https://api-ecom-store.upqor.com",
+      baseUrl1: "https://api-ecom-store.upqor.com/api/call",
+      baseUrl2: "https://api-ecom.upqor.com/call",
+      domain: source,
     };
   }
 

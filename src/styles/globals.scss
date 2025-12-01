@@ -1,49 +1,5 @@
 @import "../assets/css/plugins/swiper.min.css";
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
-@import "../assets/sass/settings/variables";
-
-//@import "../assets/sass/mixins/mixins";
-
-// @import "../assets/sass/components/close";
-// @import "../assets/sass/components/accordions";
-// @import "../assets/sass/components/tabs";
-// @import "../assets/sass/components/checkbox";  
-// @import "../assets/sass/components/tables";
-// @import "../assets/sass/components/alert";
-// @import "../assets/sass/components/buttons";
-// @import "../assets/sass/components/forms";
-// @import "../assets/sass/components/product-card";
-// @import "../assets/sass/components/aside-popup";
-// @import "../assets/sass/components/search-popup";
-// @import "../assets/sass/components/cart-drawer";
-// @import "../assets/sass/components/modals";
-// @import "../assets/sass/components/effects";
-@import "../assets/sass/menu/menu";
-
-@import "../assets/sass/sections/Header/header";
-@import "../assets/sass/sections/Footer/footer";
-@import "../assets/sass/sections/Footer/footer-mobile-fixed";
-@import "../assets/sass/sections/Slideshow/slideshow";
-@import "../assets/sass/sections/CollectionsGrid/collections-grid";
-@import "../assets/sass/sections/ProductsGrid/products-grid";
-@import "../assets/sass/sections/DealTimer/deal-timer";
-@import "../assets/sass/sections/Instagram/instagram";
-@import "../assets/sass/sections/ServicePromotion/service-promotion";
-@import "../assets/sass/sections/ShopAccessories/shop-accessories";
-@import "../assets/sass/sections/ShopSidebar/shop-sidebar";
-@import "../assets/sass/sections/Newsletter/newsletter";
-@import "../assets/sass/sections/ProductSingle/product-single";
-@import "../assets/sass/sections/ShopCheckout/shop-checkout";
-@import "../assets/sass/sections/MyAccount/my-account";
-@import "../assets/sass/sections/Blog/blog";
-@import "../assets/sass/sections/About/about";
-@import "../assets/sass/sections/GoogleMap/google-map";
-@import "../assets/sass/sections/ContactUs/contact-us";
-@import "../assets/sass/sections/LoginRegister/login-register";
-
-@import "../assets/sass/custom.scss";
-@import "../assets/sass/icon.scss";  
-
+@import "../assets/sass/style";
 
 #__next {
   min-height: 100vh;
@@ -92,7 +48,7 @@ h6 {
 }
 
 .gap-20 {
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     gap: 20px;
   }
 }

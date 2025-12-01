@@ -3,7 +3,7 @@
 }
 
 .navigation__item {
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     &:hover {
       &::before {
         display: block;
@@ -47,7 +47,7 @@
     }
   }
 
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     padding: $navigation-item-padding-x-sm;
     padding-left: $navigation-item-padding-x-sm;
     font-size: 11px;

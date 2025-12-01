@@ -34,7 +34,7 @@
     cursor: default;
   }
 
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     @include font-size($nav-link-font-size);
   }
 }

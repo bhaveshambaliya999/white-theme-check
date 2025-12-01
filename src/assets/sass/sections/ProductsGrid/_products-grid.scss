@@ -6,7 +6,7 @@
       --bs-gutter-x: #{$grid-tablet-gutter-width};
     }
 
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       --bs-gutter-x: #{$grid-gutter-width};
     }
   }

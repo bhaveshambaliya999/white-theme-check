@@ -1,7 +1,7 @@
 function getEnv(origin) {
   const isBrowser = typeof window !== "undefined";
   // const source = origin || (isBrowser ? window.location.origin : "https://zurahjewellery.com");
-  const source = origin || (isBrowser ? window.location.origin : 'https://white-theme-check.vercel.app/');
+  const source = origin || (isBrowser ? window.location.origin : 'https://uat-direct.rpdiamondsandjewellery.com');
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-direct.upqor.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://phpstack-1028231-5794626.cloudwaysapps.com");
   // const source = origin || (isBrowser ? window.location.origin : "https://uat-d2c.artisanalparfumhouse.com");
@@ -58,10 +58,10 @@ function getEnv(origin) {
     // laravelBaseUrl: "https://apiuat-ecom-store.upqor.com/api/call",
     // nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
     // domain: source,
-     imageUrl: "https://apiuat-ecom-store.upqor.com",
-      laravelBaseUrl: "https://apiuat-ecom-store.upqor.com/api/call",
-      nodeBaseUrl: "https://apiuat-ecom.upqor.com/call",
-      domain: "https://white-theme-check.vercel.app/",
+    imageUrl: "https://api-ecom-store.upqor.com",
+    laravelBaseUrl: "https://api-ecom-store.upqor.com/api/call",
+    nodeBaseUrl: "https://api-ecom.upqor.com/call",
+    domain: source
   };
 }
 
@@ -74,13 +74,13 @@ class CommanServiceSSR {
     // this.domain = env.domain || 'https://phpstack-1028231-5794626.cloudwaysapps.com';
     // this.domain = env.domain || 'https://zurahjewellery.com';
     // this.domain = env.domain || 'https://uat-direct.upqor.com';
-    this.domain = env.domain || 'https://white-theme-check.vercel.app/';
+    this.domain = env.domain || 'https://uat-direct.rpdiamondsandjewellery.com';
     // this.domain = env.domain || 'https://uat-d2c.artisanalparfumhouse.com';
 
     // this.storeDomain = env.domain || 'https://phpstack-1028231-5794626.cloudwaysapps.com';
     // this.storeDomain = env.domain || 'https://zurahjewellery.com';
     // this.storeDomain = env.domain || 'https://uat-direct.upqor.com';
-    this.storeDomain = env.domain || 'https://white-theme-check.vercel.app/';
+    this.storeDomain = env.domain || 'https://uat-direct.rpdiamondsandjewellery.com';
     // this.storeDomain = env.domain || 'https://uat-d2c.artisanalparfumhouse.com';
   }
 

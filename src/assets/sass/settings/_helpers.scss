@@ -30,8 +30,86 @@ body {
   object-fit: cover;
 }
 
+.background-img {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hover__content,
+.js-hidden-content {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  min-width: 16rem;
+  transition: $hover-content-appear-animation;
+  background-color: $body-bg;
+  box-shadow: $popover-box-shadow;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $zindex-dropdown;
+}
+
+.hover-container {
+  &:hover .hover__content,
+  &.js-content_visible .js-hidden-content {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.content_abs {
+  position: absolute;
+  --content-space: #{$content-space};
+}
+
+.content_center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content_top {
+  top: var(--content-space);
+  padding-bottom: var(--content-space);
+}
+
+.content_right {
+  right: var(--content-space);
+  padding-left: var(--content-space);
+}
+
+.content_bottom {
+  bottom: var(--content-space);
+  padding-top: var(--content-space);
+}
+
+.content_left {
+  left: var(--content-space);
+  padding-right: var(--content-space);
+}
 
 
+.content_bottom-lg {
+  @include media-breakpoint-up(md) {
+    --content-space: #{$content-space-md};
+  }
+}
+
+.content_left-lg {
+  @include media-breakpoint-up(md) {
+    --content-space: #{$content-space-md};
+  }
+}
+.h-md-100 {
+  @include media-breakpoint-up(lg) {
+    height: 100% !important;
+  }
+}
 
 .sticky-content {
   position: sticky;
@@ -201,13 +279,13 @@ body {
 .transparent-bg {
   background-color: transparent !important;
 }
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .order-lg--1 {
     order: -1;
   }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .mt-lg--5 {
     margin-top: -13rem !important;
   }

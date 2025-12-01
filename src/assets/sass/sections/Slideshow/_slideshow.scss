@@ -8,7 +8,7 @@ $nav-mobile-size: 35px;
   @include media-breakpoint-down(sm) {
     height: 350px;
   }
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
 
     &.slideshow-lg {
       height: $slideshow-lg-height;

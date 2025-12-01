@@ -195,7 +195,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .modal-lg,
   .modal-xl {
     --#{$prefix}modal-width: #{$modal-lg};

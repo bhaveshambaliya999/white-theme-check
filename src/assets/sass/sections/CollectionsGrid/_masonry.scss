@@ -1,5 +1,5 @@
 .collections-grid_masonry {
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     height: 30rem;
   }
 
@@ -10,7 +10,7 @@
   .collection-grid__item {
     height: 17.8125rem;
 
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       height: auto;
     }
   }
@@ -19,7 +19,7 @@
 .collection-grid__item {
   margin-bottom: $container-padding-x;
 
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 0;
   }
 }
