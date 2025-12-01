@@ -1,20 +1,22 @@
-// scss-docs-start import-stack
-// Configuration
+// 1. Configuration
 @use "functions" as *;
 @use "variables" as *;
 @use "variables-dark" as *;
 @use "maps" as *;
+
+// 2. Mixins — MUST COME BEFORE VARIABLES ARE USED
 @use "mixins" as *;
-@use "utilities" as *;
 @use "mixins/banner" as *;
 
-// Layout & components
+// 3. Utilities needed for functions
+@use "utilities" as *;
 
-
-
+// 4. Bootstrap reset
 @use "root";
 @use "reboot";
 @use "type";
+
+// 5. Layout & components
 @use "images";
 @use "containers";
 @use "grid";
@@ -47,8 +49,8 @@
 // Helpers
 @use "helpers";
 
-// Utilities
+// Utilities API
 @use "utilities/api";
-// scss-docs-end import-stack
 
+// NOW you can run mixins
 @include bsBanner("");
