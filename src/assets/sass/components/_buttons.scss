@@ -83,7 +83,7 @@
 }
 
 // Alternate buttons
-
+@import "../bootstrap/buttons";
 @each $color, $value in $button-colors {
   .btn-#{$color} {
     @include button-variant($value, $value);
