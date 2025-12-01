@@ -7,9 +7,11 @@
 @use "mixins" as *;
 @use "utilities" as *;
 @use "mixins/banner" as *;
-@include bsBanner("");
 
 // Layout & components
+
+@include bsBanner("");
+
 @use "root";
 @use "reboot";
 @use "type";
