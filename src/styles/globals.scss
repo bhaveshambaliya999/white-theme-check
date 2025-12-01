@@ -5,10 +5,10 @@
 // Fixed Bootstrap import
 @use "../assets/sass/bootstrap/bootstrap" as *;
 
+@use "../assets/sass/style" as *;
+
 // CSS files MUST use @import, not @use
 @import "../assets/css/plugins/swiper.min.css";
-
-@use "../assets/sass/style" as *;
 
 #__next {
   min-height: 100vh;
