@@ -1,45 +1,45 @@
-@import "mixins/mixins";
+@use "mixins/mixins";
 
-@import "settings/animations";
-@import "layout/layout";
+@use "settings/animations";
+@use "layout/layout";
 
-@import "components/close";
-@import "components/accordions";
-@import "components/tabs";
-@import "components/checkbox";  
-@import "components/tables";
-// @import "components/alert";
-@import "components/buttons";
-// @import "components/forms";
-@import "components/product-card";
-@import "components/aside-popup";
-@import "components/search-popup";
-@import "components/cart-drawer";
-@import "components/modals";
-@import "components/effects";
+@use "components/close";
+@use "components/accordions";
+@use "components/tabs";
+@use "components/checkbox";  
+@use "components/tables";
+// @use "components/alert";
+@use "components/buttons";
+// @use "components/forms";
+@use "components/product-card";
+@use "components/aside-popup";
+@use "components/search-popup";
+@use "components/cart-drawer";
+@use "components/modals";
+@use "components/effects";
 
-@import "menu/menu";
+@use "menu/menu";
 
-@import "sections/Header/header";
-@import "sections/Footer/footer";
-@import "sections/Footer/footer-mobile-fixed";
-@import "sections/Slideshow/slideshow";
-@import "sections/CollectionsGrid/collections-grid";
-@import "sections/ProductsGrid/products-grid";
-@import "sections/DealTimer/deal-timer";
-@import "sections/Instagram/instagram";
-@import "sections/ServicePromotion/service-promotion";
-@import "sections/ShopAccessories/shop-accessories";
-@import "sections/ShopSidebar/shop-sidebar";
-@import "sections/Newsletter/newsletter";
-@import "sections/ProductSingle/product-single";
-@import "sections/ShopCheckout/shop-checkout";
-@import "sections/MyAccount/my-account";
-@import "sections/Blog/blog";
-@import "sections/About/about";
-@import "sections/GoogleMap/google-map";
-@import "sections/ContactUs/contact-us";
-@import "sections/LoginRegister/login-register";
+@use "sections/Header/header";
+@use "sections/Footer/footer";
+@use "sections/Footer/footer-mobile-fixed";
+@use "sections/Slideshow/slideshow";
+@use "sections/CollectionsGrid/collections-grid";
+@use "sections/ProductsGrid/products-grid";
+@use "sections/DealTimer/deal-timer";
+@use "sections/Instagram/instagram";
+@use "sections/ServicePromotion/service-promotion";
+@use "sections/ShopAccessories/shop-accessories";
+@use "sections/ShopSidebar/shop-sidebar";
+@use "sections/Newsletter/newsletter";
+@use "sections/ProductSingle/product-single";
+@use "sections/ShopCheckout/shop-checkout";
+@use "sections/MyAccount/my-account";
+@use "sections/Blog/blog";
+@use "sections/About/about";
+@use "sections/GoogleMap/google-map";
+@use "sections/ContactUs/contact-us";
+@use "sections/LoginRegister/login-register";
 
-@import "./custom.scss";
-@import "./icon.scss"
+@use "./custom.scss";
+@use "./icon.scss"
