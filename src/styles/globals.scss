@@ -18,31 +18,31 @@
 // @import "../assets/sass/components/cart-drawer";
 // @import "../assets/sass/components/modals";
 // @import "../assets/sass/components/effects";
-@use "../assets/sass/menu/menu";
+@import "../assets/sass/menu/menu";
 
-@use "../assets/sass/sections/Header/header";
-@use "../assets/sass/sections/Footer/footer";
-@use "../assets/sass/sections/Footer/footer-mobile-fixed";
-@use "../assets/sass/sections/Slideshow/slideshow";
-@use "../assets/sass/sections/CollectionsGrid/collections-grid";
-@use "../assets/sass/sections/ProductsGrid/products-grid";
-@use "../assets/sass/sections/DealTimer/deal-timer";
-@use "../assets/sass/sections/Instagram/instagram";
-@use "../assets/sass/sections/ServicePromotion/service-promotion";
-@use "../assets/sass/sections/ShopAccessories/shop-accessories";
-@use "../assets/sass/sections/ShopSidebar/shop-sidebar";
-@use "../assets/sass/sections/Newsletter/newsletter";
-@use "../assets/sass/sections/ProductSingle/product-single";
-@use "../assets/sass/sections/ShopCheckout/shop-checkout";
-@use "../assets/sass/sections/MyAccount/my-account";
-@use "../assets/sass/sections/Blog/blog";
-@use "../assets/sass/sections/About/about";
-@use "../assets/sass/sections/GoogleMap/google-map";
-@use "../assets/sass/sections/ContactUs/contact-us";
-@use "../assets/sass/sections/LoginRegister/login-register";
+@import "../assets/sass/sections/Header/header";
+@import "../assets/sass/sections/Footer/footer";
+@import "../assets/sass/sections/Footer/footer-mobile-fixed";
+@import "../assets/sass/sections/Slideshow/slideshow";
+@import "../assets/sass/sections/CollectionsGrid/collections-grid";
+@import "../assets/sass/sections/ProductsGrid/products-grid";
+@import "../assets/sass/sections/DealTimer/deal-timer";
+@import "../assets/sass/sections/Instagram/instagram";
+@import "../assets/sass/sections/ServicePromotion/service-promotion";
+@import "../assets/sass/sections/ShopAccessories/shop-accessories";
+@import "../assets/sass/sections/ShopSidebar/shop-sidebar";
+@import "../assets/sass/sections/Newsletter/newsletter";
+@import "../assets/sass/sections/ProductSingle/product-single";
+@import "../assets/sass/sections/ShopCheckout/shop-checkout";
+@import "../assets/sass/sections/MyAccount/my-account";
+@import "../assets/sass/sections/Blog/blog";
+@import "../assets/sass/sections/About/about";
+@import "../assets/sass/sections/GoogleMap/google-map";
+@import "../assets/sass/sections/ContactUs/contact-us";
+@import "../assets/sass/sections/LoginRegister/login-register";
 
-@use "../assets/sass/custom.scss";
-@use "../assets/sass/icon.scss";  
+@import "../assets/sass/custom.scss";
+@import "../assets/sass/icon.scss";  
 
 
 #__next {
