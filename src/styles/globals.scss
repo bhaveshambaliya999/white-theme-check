@@ -1,13 +1,19 @@
+/* ---------------------------------------------------
+   1) Bootstrap MUST load first (NO CSS BEFORE THIS)
+--------------------------------------------------- */
+@use "../assets/sass/bootstrap/bootstrap" as *;
+
+/* ---------------------------------------------------
+   2) Sass settings & custom SCSS (safe after Bootstrap)
+--------------------------------------------------- */
 @use "../assets/sass/settings/variables" as *;
 @use "../assets/sass/settings/helpers" as *;
 @use "../assets/sass/settings/typography" as *;
-
-// Fixed Bootstrap import
-@use "../assets/sass/bootstrap/bootstrap" as *;
-
 @use "../assets/sass/style" as *;
 
-// CSS files MUST use @import, not @use
+/* ---------------------------------------------------
+   3) Plain CSS imported at the end
+--------------------------------------------------- */
 @import "../assets/css/plugins/swiper.min.css";
 
 #__next {
