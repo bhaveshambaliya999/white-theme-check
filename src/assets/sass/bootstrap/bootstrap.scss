@@ -1,15 +1,13 @@
-@use "mixins/banner";
-@include bsBanner("");
-
-
 // scss-docs-start import-stack
 // Configuration
-@use "functions";
-@use "variables";
-@use "variables-dark";
-@use "maps";
-@use "mixins";
-@use "utilities";
+@use "functions" as *;
+@use "variables" as *;
+@use "variables-dark" as *;
+@use "maps" as *;
+@use "mixins" as *;
+@use "utilities" as *;
+@use "mixins/banner" as *;
+@include bsBanner("");
 
 // Layout & components
 @use "root";
