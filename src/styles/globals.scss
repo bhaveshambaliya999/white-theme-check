@@ -1,10 +1,14 @@
-@use "../assets/sass/settings/variables" as *;  // your vars FIRST
+@use "../assets/sass/settings/variables" as *;
 @use "../assets/sass/settings/helpers" as *;
 @use "../assets/sass/settings/typography" as *;
-@use "../assets/sass/bootstrap/bootstrap.scss" as *; // bootstrap NEXT
-@use "../assets/css/plugins/swiper.min.css";
-@use "../assets/sass/style";
 
+// Fixed Bootstrap import
+@use "../assets/sass/bootstrap/bootstrap" as *;
+
+// CSS files MUST use @import, not @use
+@import "../assets/css/plugins/swiper.min.css";
+
+@use "../assets/sass/style" as *;
 
 #__next {
   min-height: 100vh;
