@@ -1,13 +1,16 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .products-grid {
   .row {
-    --bs-gutter-x: #{$grid-mobile-gutter-width};
+    --bs-gutter-x: #{custom.$grid-mobile-gutter-width};
 
-    @include media-breakpoint-up(md) {
-      --bs-gutter-x: #{$grid-tablet-gutter-width};
+    @include breakpoints.media-breakpoint-up(md) {
+      --bs-gutter-x: #{custom.$grid-tablet-gutter-width};
     }
 
-    @include media-breakpoint-up(lg) {
-      --bs-gutter-x: #{$grid-gutter-width};
+    @include breakpoints.media-breakpoint-up(lg) {
+      --bs-gutter-x: #{custom.$grid-gutter-width};
     }
   }
 

@@ -1,3 +1,7 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+
 .order-complete {
   width: 65rem;
   max-width: 100%;
@@ -5,7 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  @include media-breakpoint-down(sm) {
+  @include breakpoints.media-breakpoint-down(sm) {
     gap: 15px;
   }
   
@@ -25,7 +29,7 @@
     }
 
     p {
-      color: $secondary;
+      color: custom.$secondary;
       margin-bottom: 0;
       text-align: center;
     }
@@ -33,12 +37,12 @@
 
   .order-info {
     width: 100%;
-    border: 2px dashed $secondary;
+    border: 2px dashed custom.$secondary;
     padding: 1.5rem;
     display: flex;
     gap: 1rem;
 
-    @include media-breakpoint-down(md) {
+    @include breakpoints.media-breakpoint-down(md) {
       flex-direction: column;
     }
 
@@ -51,7 +55,7 @@
       label {
         font-size: 0.875rem;
         font-weight: 400;
-        color: $secondary;
+        color: custom.$secondary;
       }
 
       span {
@@ -63,8 +67,8 @@
 
   .checkout__totals {
     width: 100%;
-    border: 1px solid $color-gray-300;
-    background-color: $white;
+    border: 1px solid custom.$color-gray-300;
+    background-color: custom.$color-white;
 
     .checkout-cart-items thead th:last-child {
       text-align: right;
@@ -114,12 +118,12 @@
     img{
       width: 100px;
       height: auto;
-      @include media-breakpoint-down(xl) {
+      @include breakpoints.media-breakpoint-down(xl) {
         width: 150px;
       }
     }
   }
-  @include media-breakpoint-up(lg) {
+  @include breakpoints.media-breakpoint-up(lg) {
     .order-diy-row{
       flex: 1;
     }
@@ -152,7 +156,7 @@
         margin-right: 12px;
       }
     }
-    @include media-breakpoint-down(md) {
+    @include breakpoints.media-breakpoint-down(md) {
       .order-details-info{
         flex: auto;
         padding-right: 0;
@@ -227,8 +231,8 @@
         }
 
         &.timeline_todo {
-          color: $secondary;
-          border-top: 3px solid $secondary;
+          color: custom.$secondary;
+          border-top: 3px solid custom.$secondary;
           flex: 1;
 
           .icon_tick {
@@ -243,9 +247,9 @@
             left: 50%;
             line-height: 1;
             transform: translate(-50%, -50%);
-            background-color: $white;
-            border: 3px solid $secondary;
-            color: $white;
+            background-color: custom.$color-white;
+            border: 3px solid custom.$secondary;
+            color: custom.$color-white;
 
             &::before {
               opacity: 0;
@@ -253,12 +257,12 @@
           }
 
           &.active {
-            border-color: $black;
+            border-color: variables.$black;
 
             .icon_tick {
-              background-color: $black;
-              color: $white;
-              border-color: $black;
+              background-color: variables.$black;
+              color: custom.$color-white;
+              border-color: variables.$black;
 
               &::before {
                 opacity: 1;
@@ -267,7 +271,7 @@
 
             .timeline__timestamp {
               .timeline_title {
-                color: $black;
+                color: variables.$black;
               }
             }
           }
@@ -282,7 +286,7 @@
           &.timeline_todo {
             width: 100%;
             border-top: unset;
-            border-left: 3px solid $secondary;
+            border-left: 3px solid custom.$secondary;
             padding-bottom: 15px;
             margin: 0;
             text-align: left;

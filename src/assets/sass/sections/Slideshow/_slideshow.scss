@@ -1,15 +1,19 @@
+@use "sass:map";
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+
 $slideshow-md-height: 43.75rem;
 $slideshow-lg-height: 47.5rem;
 $nav-icon-desk-size: 25px;
 $nav-mobile-size: 35px;
 
-
 .slideshow {
   height: auto;
-  @include media-breakpoint-down(sm) {
+  @include breakpoints.media-breakpoint-down(sm) {
     height: 350px;
   }
-  @include media-breakpoint-up(lg) {
+  @include breakpoints.media-breakpoint-up(lg) {
 
     &.slideshow-lg {
       height: $slideshow-lg-height;
@@ -20,19 +24,19 @@ $nav-mobile-size: 35px;
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoints.media-breakpoint-down(sm) {
     &.h-xs-25rem {
       height: 25rem;
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @include breakpoints.media-breakpoint-down(lg) {
     &.minh-100 {
       min-height: calc(100vh - 4rem);
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoints.media-breakpoint-down(md) {
     &.minh-100 {
       min-height: calc(100vh - 7rem);
     }
@@ -76,6 +80,14 @@ $nav-mobile-size: 35px;
     transform: translateX(-50%);
     display: flex;
     width: auto;
+
+    // @media (min-width: 1600px) {
+    //   left: 2.5rem;
+    //   top: 50%;
+    //   bottom: auto;
+    //   transform: translateY(-50%);
+    //   flex-direction: column;
+    // }
   }
 }
 
@@ -88,12 +100,12 @@ $nav-mobile-size: 35px;
   &.active-white {
     .swiper-pagination-bullet {
       &::after {
-        color: $secondary;
+        color: custom.$secondary;
       }
 
       &-active {
         &::after {
-          color: $color-white;
+          color: custom.$color-white;
         }
       }
     }
@@ -102,12 +114,12 @@ $nav-mobile-size: 35px;
   &.color-white {
     .swiper-pagination-bullet {
       &::after {
-        color: $color-white;
+        color: custom.$color-white;
       }
 
       &-active {
         &::after {
-          color: $color-white;
+          color: custom.$color-white;
         }
       }
     }
@@ -119,12 +131,12 @@ $nav-mobile-size: 35px;
   height: $nav-mobile-size;
   margin-top: -2.2rem;
   transform: translateY(-50%);
-  border: 1px solid $border-color;
+  border: 1px solid custom.$border-color;
   border-radius: 100%;
   z-index: 1;
   outline: none;
 
-  @media (min-width: #{map-get($grid-breakpoints, xxl) + 30px}) {
+  @media (min-width: #{map.get(variables.$grid-breakpoints, xxl) + 30px}) {
     width: $nav-icon-desk-size;
     height: $nav-icon-desk-size;
     margin-top: -0.875rem;
@@ -141,7 +153,7 @@ $nav-mobile-size: 35px;
 .slideshow__prev {
   left: 1rem;
 
-  @media (min-width: #{map-get($grid-breakpoints, xxl) + 30px}) {
+  @media (min-width: #{map.get(variables.$grid-breakpoints, xxl) + 30px}) {
     left: 3.5rem;
   }
 }
@@ -149,7 +161,7 @@ $nav-mobile-size: 35px;
 .slideshow__next {
   right: 1rem;
 
-  @media (min-width: #{map-get($grid-breakpoints, xxl) + 30px}) {
+  @media (min-width: #{map.get(variables.$grid-breakpoints, xxl) + 30px}) {
     right: 3.5rem;
   }
 }

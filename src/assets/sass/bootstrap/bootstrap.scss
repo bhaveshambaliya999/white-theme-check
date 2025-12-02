@@ -1,56 +1,33 @@
-// 1. Configuration
-@use "functions" as *;
-@use "variables" as *;
-@use "variables-dark" as *;
-@use "maps" as *;
+// @use "functions" as *;             // Load once only
+// @use "variables" as *;         // Now variables can use functions
+// @use "../settings/variables" as *;
 
-// 2. Mixins — MUST COME BEFORE VARIABLES ARE USED
 @use "mixins" as *;
-@use "mixins/banner" as *;
-
-// 3. Utilities needed for functions
 @use "utilities" as *;
 
-// 4. Bootstrap reset
-@use "root";
-@use "reboot";
-@use "type";
+// Components
+@use "root" as *;
+@use "reboot" as *;
+@use "type" as *;
+@use "images" as *;
+@use "containers" as *;
+@use "transitions" as *;
+@use "dropdown" as *;
+@use "button-group" as *;
+@use "navbar" as *;
+@use "card" as *;
+@use "accordion" as *;
+@use "breadcrumb" as *;
+@use "pagination" as *;
+@use "badge" as *;
+@use "progress" as *;
+@use "list-group" as *;
+@use "toasts" as *;
+@use "modal" as *;
+@use "tooltip" as *;
+@use "popover" as *;
+@use "carousel" as *;
+@use "spinners" as *;
 
-// 5. Layout & components
-@use "images";
-@use "containers";
-@use "grid";
-@use "tables";
-@use "forms";
-@use "buttons";
-@use "transitions";
-@use "dropdown";
-@use "button-group";
-@use "nav";
-@use "navbar";
-@use "card";
-@use "accordion";
-@use "breadcrumb";
-@use "pagination";
-@use "badge";
-@use "alert";
-@use "progress";
-@use "list-group";
-@use "close";
-@use "toasts";
-@use "modal";
-@use "tooltip";
-@use "popover";
-@use "carousel";
-@use "spinners";
-@use "offcanvas";
-@use "placeholders";
-
-// Helpers
-@use "helpers";
-
-// Utilities API
-@use "utilities/api";
-
-// NOW you can run mixins
-@include bsBanner("");
+@use "helpers" as *;
+@use "utilities/api" as *;

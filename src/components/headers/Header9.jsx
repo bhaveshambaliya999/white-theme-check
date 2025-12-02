@@ -466,7 +466,7 @@ export default function Header1({ storeData }) {
               }
             }
           }
-          router.push(`${pathname}${search ? `?${search}` : ""}`);
+          // router.push(`${pathname}${search ? `?${search}` : ""}`);
           setLoader(false);
         } else {
           setLoader(false);

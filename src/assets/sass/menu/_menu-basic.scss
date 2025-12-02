@@ -1,0 +1,115 @@
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
+.navigation__list {
+  margin-bottom: 0;
+}
+
+.navigation__item {
+  @include breakpoints.media-breakpoint-up(lg) {
+    &:hover {
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 7.5rem;
+        height: 100%;
+        background-color: transparent;
+        content: '';
+      }
+    }
+  }
+}
+
+.navigation__link {
+  display: inline-block;
+  position: relative;
+  padding-top: custom.$navigation-item-padding-y;
+  padding-bottom: custom.$navigation-item-padding-y;
+  color: custom.$nav-link-color;
+  font-weight: custom.$nav-link-font-weight;
+  line-height: custom.$navigation-item-line-height;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: custom.$navigation-item-padding-x-sm;
+    width: 0;
+    height: 2px;
+    transition: custom.$nav-link-underline-transition-s;
+    background-color: currentColor;
+  }
+
+  &:hover {
+    &:after {
+      width: custom.$nav-link-active-bottom-width;
+    }
+  }
+
+  @include breakpoints.media-breakpoint-up(lg) {
+    padding: custom.$navigation-item-padding-x-sm;
+    padding-left: custom.$navigation-item-padding-x-sm;
+    font-size: 11px;
+  }
+  @include breakpoints.media-breakpoint-up(xl) {
+    font-size: 11px;  
+  }
+  @include breakpoints.media-breakpoint-up(xxl) {
+    padding: custom.$navigation-item-padding-x-xxl;
+    //padding-left: $navigation-item-padding-x-xxl;
+    font-size: 14px;
+
+    &:after {
+      left: 0.6rem;
+    }
+  }
+}
+
+.sub-menu__title {
+  display: block;
+  margin-bottom: .5rem;
+  color: custom.$sub-menu-title-color;
+  font-weight: custom.$font-weight-heading;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #767676;
+    cursor: default;
+  }
+}
+
+.menu-link {
+  display: inline-block;
+  position: relative;
+  padding: custom.$menu-link-padding-y custom.$menu-link-padding-x;
+  color: custom.$sub-menu-link-color;
+  line-height: custom.$menu-link-line-height;
+  text-transform: capitalize;
+}
+
+// Menu link underlined small
+.menu-link_us-s {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: custom.$menu-link-line-height + custom.$menu-link-padding-y;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: custom.$nav-link-underline-transition-s;
+    background-color: currentColor;
+  }
+
+  &:hover,
+  &.menu-link_active {
+    &:after {
+      width: custom.$nav-link-active-bottom-width;
+    }
+  }
+}

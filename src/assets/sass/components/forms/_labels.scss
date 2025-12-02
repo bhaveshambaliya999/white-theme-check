@@ -1,13 +1,16 @@
+@use "../../bootstrap/variables";
+@use "../../bootstrap/vendor/rfs";
+
 //
 // Labels
 //
 
 .form-label {
-  margin-bottom: $form-label-margin-bottom;
-  @include font-size($form-label-font-size);
-  font-style: $form-label-font-style;
-  font-weight: $form-label-font-weight;
-  color: $form-label-color;
+  margin-bottom: variables.$form-label-margin-bottom;
+  @include rfs.font-size(variables.$form-label-font-size);
+  font-style: variables.$form-label-font-style;
+  font-weight: variables.$form-label-font-weight;
+  color: variables.$form-label-color;
 }
 
 // For use with horizontal and inline forms, when you need the label (or legend)

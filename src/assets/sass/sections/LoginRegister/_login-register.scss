@@ -1,9 +1,12 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .login-register {
   width: 40.625rem;
   max-width: 100%;
   padding: 0 4.6875rem;
   
-  @include media-breakpoint-down(md) {
+  @include breakpoints.media-breakpoint-down(md) {
     padding: 0 1rem;
   }
 
@@ -19,6 +22,6 @@
   }
 
   p {
-    color: $secondary;
+    color: custom.$secondary;
   }
 }

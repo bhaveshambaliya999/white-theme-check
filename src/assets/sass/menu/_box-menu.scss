@@ -1,0 +1,8 @@
+@use "../mixins/create-menu";
+@use "../settings/variables" as custom;
+
+.box-menu {
+  display: flex;
+  display: -ms-flexbox;
+  @include create-menu.create-menu(custom.$box-menu-padding, custom.$box-menu-width);
+}

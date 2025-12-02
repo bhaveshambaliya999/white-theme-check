@@ -1,3 +1,8 @@
+@use "../../bootstrap/functions";
+@use "../../bootstrap/variables" as variables;
+@use "../../mixins/center-inside-box";
+@use "../../settings/variables" as custom;
+
 $search-icon-width: 1rem;
 $search-icon-height: 1rem;
 $search-icon-color: #767676;
@@ -5,7 +10,7 @@ $search-icon-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 
 
 .search-field {
   .search-field__actor {
-    background-color: $input-bg;
+    background-color: variables.$input-bg;
   }
 }
 
@@ -28,14 +33,12 @@ $search-icon-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 
   &::after {
     content: '';
     display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(calc(-50% + 2px));
+    @include center-inside-box.center-inside-box;
     right: 1rem;
     transform: translateY(-50%);
     width: $search-icon-width;
     height: $search-icon-height;
-    background: transparent escape-svg($search-icon-bg) center / $search-icon-width auto no-repeat;
+    background: transparent functions.escape-svg($search-icon-bg) center / $search-icon-width auto no-repeat;
   }
 
 }
@@ -51,13 +54,13 @@ $search-icon-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 
 }
 
 .search-suggestion {
-  margin: $search-suggestion-margin-y 0;
+  margin: custom.$search-suggestion-margin-y 0;
 }
 
 .search-suggestion__item {
   width: 100%;
-  padding: $search-suggestion-item-padding-y 0;
-  color: $body-color-secondary;
+  padding: custom.$search-suggestion-item-padding-y 0;
+  color: custom.$body-color-secondary;
   cursor: pointer;
  
   input[type="checkbox"] {
@@ -66,6 +69,6 @@ $search-icon-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 
   
 
   &:hover {
-    color: shift-color($body-color-secondary, 50%);
+    color: functions.shift-color(custom.$body-color-secondary, 50%);
   }
 }

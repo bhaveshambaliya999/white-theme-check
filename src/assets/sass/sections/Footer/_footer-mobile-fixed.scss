@@ -1,8 +1,11 @@
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+
 .footer-mobile {
   max-width: 100%;
   padding-top: 0.625rem;
   padding-bottom: 0.225rem;
-  z-index: $zindex-dropdown;
+  z-index: variables.$zindex-dropdown;
   opacity: 0;
   bottom: -6.25rem;
   transition: all .32s;
@@ -12,13 +15,13 @@
   .wishlist-amount {
     top: -5px;
     left: calc(100% - 5px);
-    width: $header-cart-amount-width;
-    height: $header-cart-amount-width;
+    width: custom.$header-cart-amount-width;
+    height: custom.$header-cart-amount-width;
     border-radius: 100%;
-    background: $header-cart-amount-bg;
-    color: $header-cart-amount-color;
-    font-size: $header-cart-amount-font-size;
-    line-height: $header-cart-amount-width;
+    background: custom.$header-cart-amount-bg;
+    color: custom.$header-cart-amount-color;
+    font-size: custom.$header-cart-amount-font-size;
+    line-height: custom.$header-cart-amount-width;
     text-align: center;
   }
 

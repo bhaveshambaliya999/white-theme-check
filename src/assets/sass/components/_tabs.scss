@@ -1,3 +1,12 @@
+@use "../bootstrap/functions";
+@use "../bootstrap/mixins/border-radius";
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/mixins/gradients";
+@use "../bootstrap/mixins/transition";
+@use "../bootstrap/variables" as variables;
+@use "../bootstrap/vendor/rfs";
+@use "../settings/variables" as custom;
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -13,47 +22,47 @@
 
 .nav-link {
   display: block;
-  padding: $nav-link-padding-top $nav-link-padding-x $nav-link-padding-bottom;
-  color: $nav-link-color;
-  font-weight: $nav-link-font-weight;
-  line-height: $nav-link-line-height;
-  text-decoration: if($link-decoration ==none, null, none);
+  padding: custom.$nav-link-padding-top custom.$nav-link-padding-x custom.$nav-link-padding-bottom;
+  color: custom.$nav-link-color;
+  font-weight: custom.$nav-link-font-weight;
+  line-height: custom.$nav-link-line-height;
+  text-decoration: if(custom.$link-decoration ==none, null, none);
   outline: none;
-  @include transition($nav-link-transition);
+  @include transition.transition(variables.$nav-link-transition);
 
   &:hover,
   &:focus {
-    color: $nav-link-hover-color;
-    text-decoration: if($link-hover-decoration ==underline, none, null);
+    color: variables.$nav-link-hover-color;
+    text-decoration: if(variables.$link-hover-decoration ==underline, none, null);
   }
 
   // Disabled state lightens text
   &.disabled {
-    color: $nav-link-disabled-color;
+    color: variables.$nav-link-disabled-color;
     pointer-events: none;
     cursor: default;
   }
 
-  @include media-breakpoint-up(lg) {
-    @include font-size($nav-link-font-size);
+  @include breakpoints.media-breakpoint-up(lg) {
+    @include rfs.font-size(custom.$nav-link-font-size);
   }
 }
 
 .nav-link_underscore {
   position: relative;
-  padding: $nav-link-padding-top $nav-tabs-link-padding-x $nav-link-padding-bottom;
-  color: $nav-tabs-link-color;
+  padding: custom.$nav-link-padding-top custom.$nav-tabs-link-padding-x custom.$nav-link-padding-bottom;
+  color: custom.$nav-tabs-link-color;
 
   &:after {
     content: "";
     display: block;
     position: absolute;
     bottom: 0;
-    left: $nav-tabs-link-padding-x;
+    left: custom.$nav-tabs-link-padding-x;
     width: 0;
-    height: $nav-tabs-border-width;
-    background-color: $nav-tabs-link-active-border;
-    @include transition($nav-link-underline-transition-l);
+    height: custom.$nav-tabs-border-width;
+    background-color: custom.$nav-tabs-link-active-border;
+    @include transition.transition(custom.$nav-link-underline-transition-l);
   }
 
   &.theme-color {
@@ -66,10 +75,10 @@
   &:focus,
   &.active,
   .nav-item.show & {
-    color: $nav-tabs-link-active-color;
+    color: variables.$nav-tabs-link-active-color;
 
     &:after {
-      width: subtract(100%, $nav-tabs-link-padding-x * 2);
+      width: functions.subtract(100%, custom.$nav-tabs-link-padding-x * 2);
     }
   }
 
@@ -92,66 +101,29 @@
     &.active,
     .nav-item.show & {
       &:after {
-        width: calc((100% - #{$nav-tabs-link-padding-x} * 2) * 0.7);
+        width: calc((100% - #{custom.$nav-tabs-link-padding-x} * 2) * 0.7);
       }
     }
   }
 
   &.disabled {
-    color: $nav-link-disabled-color;
+    color: variables.$nav-link-disabled-color;
     background-color: transparent;
     border-color: transparent;
   }
 }
 
-// Right lined links
-// .nav-link_rline {
-//   &:before {
-//     content: "";
-//     position: absolute;
-//     top: 49%;
-//     left: 0;
-//     width: 0px;
-//     height: 2px;
-//     background-color: $body-color;
-//     @include transition($nav-link-underline-transition-l);
-//   }
-
-//   &.active {
-//     &:before {
-//       width: 100%;
-//     }
-//   }
-// }
-
-// .rline-content {
-//   display: inline-block;
-//   position: relative;
-//   padding-right: 1.5em;
-//   background-color: $menu-bg;
-
-//   @include media-breakpoint-up(md) {
-//     padding-right: 2.5em;
-//   }
-
-//   @include media-breakpoint-up(xl) {
-//     padding-right: 3.5em;
-//   }
-// }
-
-//
 // Pills
-//
 
 .nav-pills {
   .nav-link {
-    @include border-radius($nav-pills-border-radius);
+    @include border-radius.border-radius(custom.$nav-pills-border-radius);
   }
 
   .nav-link.active,
   .show>.nav-link {
-    color: $nav-pills-link-active-color;
-    @include gradient-bg($nav-pills-link-active-bg);
+    color: custom.$nav-pills-link-active-color;
+    @include gradients.gradient-bg(custom.$nav-pills-link-active-bg);
   }
 }
 

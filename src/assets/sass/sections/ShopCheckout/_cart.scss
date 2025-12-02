@@ -1,9 +1,12 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .shopping-cart {
   display: flex;
   flex-direction: column;
   gap: 1.10rem;
 
-  @include media-breakpoint-up(xl) {
+  @include breakpoints.media-breakpoint-up(xl) {
     flex-direction: row;
     gap: 1.625rem;
   }
@@ -11,7 +14,7 @@
   .cart-table__wrapper {
     padding-top: 3.125rem;
     flex-grow: 1;
-    @include media-breakpoint-down(sm) {
+    @include breakpoints.media-breakpoint-down(sm) {
       padding-top: 1.25rem;
     }
   }
@@ -19,7 +22,7 @@
   &__totals-wrapper {
     .sticky-content {
       padding-top: 3.125rem;
-      @include media-breakpoint-down(lg) {
+      @include breakpoints.media-breakpoint-down(lg) {
         padding-top: 0rem;
       }
     }
@@ -37,11 +40,11 @@
         bottom: 4rem;
         width: auto;
 
-        @include media-breakpoint-up(md) {
+        @include breakpoints.media-breakpoint-up(md) {
           bottom: 1rem;
         }
 
-        @include media-breakpoint-up(lg) {
+        @include breakpoints.media-breakpoint-up(lg) {
           position: static;
         }
       }
@@ -56,12 +59,12 @@
   }
 
   &__totals {
-    border: 1px solid $secondary;
+    border: 1px solid custom.$secondary;
     margin-bottom: 1.25rem;
     padding: 1.5rem 15px 15px;
     max-width: 100%;
 
-    @include media-breakpoint-up(xl) {
+    @include breakpoints.media-breakpoint-up(xl) {
       width: 28.25rem;
       padding: 1.5rem 1.5rem 0.5rem;
     }
@@ -77,7 +80,7 @@
 
       th,
       td {
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid custom.$border-color;
         padding: 0.875rem 0;
         font-size: 0.875rem;
         font-weight: 500;
@@ -112,7 +115,7 @@
     .shopping-cart-row, .shopping-diy-row{
       display: flex ;
       flex-wrap: wrap;
-      border: 1px solid #e4e4e4;
+      border: 1px solid custom.$color-gray-300;
       padding: 15px;
       margin-bottom: 15px;
       position: relative;
@@ -174,7 +177,7 @@
       .diy-product{
         flex: 1;
         &>div{
-          border-bottom: 1px solid #e4e4e4;
+          border-bottom: 1px solid custom.$color-gray-300;
           padding: 12px 0;
           width: 100%;
           &:last-child{
@@ -232,7 +235,7 @@
     .qty-control {
       margin: 0.5rem 0;
 
-      @include media-breakpoint-up(md) {
+      @include breakpoints.media-breakpoint-up(md) {
         width: 7.25rem;
         margin: 0;
       }
@@ -240,8 +243,8 @@
       &__number {
         border: 0;
 
-        @include media-breakpoint-up(md) {
-          border: 1px solid $border-color;
+        @include breakpoints.media-breakpoint-up(md) {
+          border: 1px solid custom.$border-color;
           height: 3.125rem;
           padding: 0 2rem;
           min-width: 6.875rem;
@@ -259,7 +262,7 @@
       &__reduce {
         left: 0;
 
-        @include media-breakpoint-up(md) {
+        @include breakpoints.media-breakpoint-up(md) {
           left: 1.25rem;
         }
       }
@@ -267,7 +270,7 @@
       &__increase {
         right: 0;
 
-        @include media-breakpoint-up(md) {
+        @include breakpoints.media-breakpoint-up(md) {
           right: 1.25rem;
         }
       }
@@ -327,14 +330,14 @@
   
           li {
             font-size: 0.875rem;
-            color: $secondary;
+            color: custom.$secondary;
           }
         }
       }
   
       &-price {
         font-size: 1rem;
-        color: $secondary;
+        color: custom.$secondary;
       }
     }
   

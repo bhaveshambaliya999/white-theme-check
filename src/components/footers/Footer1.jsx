@@ -783,7 +783,7 @@ export default function Footer1({ storeData }) {
     <Loader />
   ) : (
     <>
-      <footer className="footer footer_type_1 pb-5 pb-sm-0">
+      <footer className="footer footer_type_1 pb-2 pb-sm-0">
         <Svgs />
         {footerService?.length > 0 && (
           <div className="footer-top container">

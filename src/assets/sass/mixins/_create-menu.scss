@@ -1,0 +1,24 @@
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
+@mixin create-menu($padding, $width: 100%) {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  width: $width;
+  padding: $padding;
+  background-color: custom.$menu-bg;
+  box-shadow: custom.$menu-box-shadow;
+  z-index: variables.$zindex-dropdown;
+  transition: custom.$menu-appear-animation;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  .navigation__item:hover & {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

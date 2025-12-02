@@ -1,98 +1,103 @@
-@include keyframes(bounceIn) {
+@use "../bootstrap/mixins/transition";
+@use "../mixins/animation";
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
+@include animation.keyframes(bounceIn) {
   from,20%,40%,60%,80%,to {
-        @include css3-prefix(animation-timing-function, cubic-bezier(.215,.61,.355,1));
+        @include animation.css3-prefix(animation-timing-function, cubic-bezier(.215,.61,.355,1));
     }
 
     0% {
         opacity: 0;
-        @include transform(scale3d(.3,.3,.3));
+        @include animation.transform(scale3d(.3,.3,.3));
     }
 
     20% {
-        @include transform(scale3d(1.1,1.1,1.1));
+        @include animation.transform(scale3d(1.1,1.1,1.1));
     }
 
     40% {
-        @include transform(scale3d(.9,.9,.9));
+        @include animation.transform(scale3d(.9,.9,.9));
     }
 
     60% {
         opacity: 1;
-        @include transform(scale3d(1.03,1.03,1.03));
+        @include animation.transform(scale3d(1.03,1.03,1.03));
     }
 
     80% {
-        @include transform(scale3d(.97,.97,.97));
+        @include animation.transform(scale3d(.97,.97,.97));
     }
 
     to {
         opacity: 1;
-        @include transform(scale3d(1,1,1));
+        @include animation.transform(scale3d(1,1,1));
     }
 }
 
-@include keyframes(spin) {
+@include animation.keyframes(spin) {
   0%   { 
-    @include transform(rotate(0deg));
+    @include animation.transform(rotate(0deg));
   }
   100% {
-    @include transform(rotate(360deg));
+    @include animation.transform(rotate(360deg));
   }
 }
 
-@include keyframes(marquee) {
+@include animation.keyframes(marquee) {
   0% {
-    @include transform(translateX(0) translateZ(0));
+    @include animation.transform(translateX(0) translateZ(0));
   }
 
   100% {
-    @include transform(translateX(-100%) translateZ(0));
+    @include animation.transform(translateX(-100%) translateZ(0));
   }
 }
 
-@include keyframes(marquee-right) {
+@include animation.keyframes(marquee-right) {
   0% {
-    @include transform(translateX(-100%) translateZ(0));
+    @include animation.transform(translateX(-100%) translateZ(0));
   }
 
   100% {
-    @include transform(translateX(0) translateZ(0));
+    @include animation.transform(translateX(0) translateZ(0));
   }
 }
 
-@include keyframes(mouseoverLineContainer) {
+@include animation.keyframes(mouseoverLineContainer) {
   0% {
-    @include transform(translateX(0%));
+    @include animation.transform(translateX(0%));
   }
 
   20% {
-    @include transform(translateX(100%));
+    @include animation.transform(translateX(100%));
   }
 
   21% {
-    @include transform(translateX(-110%));
+    @include animation.transform(translateX(-110%));
   }
 
   100% {
-    @include transform(translateX(0%));
+    @include animation.transform(translateX(0%));
   }
 }
 
-@include keyframes(snt_shake) {
+@include animation.keyframes(snt_shake) {
   from, to {
-    @include transform(translate3d(0,0,0));
+    @include animation.transform(translate3d(0,0,0));
   }
 
   17%, 50%, 83% {
-    @include transform(translate3d(-5px,0,0));
+    @include animation.transform(translate3d(-5px,0,0));
   }
 
   33%, 67% {
-    @include transform(translate3d(5px,0,0));
+    @include animation.transform(translate3d(5px,0,0));
   }
 }
 
-@include keyframes(snt_pulse) {
+@include animation.keyframes(snt_pulse) {
   0% {
     transform: scale(1);
   }
@@ -105,7 +110,7 @@
   }
 }
 
-@include keyframes(snt_pulse_no_scale) {
+@include animation.keyframes(snt_pulse_no_scale) {
   0% {
     transform: scale(1);
   }
@@ -134,7 +139,7 @@
         width: 100%;
         height: 100%;
         margin: auto;
-        @include transition(all .5s ease);
+        @include transition.transition(all .5s ease);
         z-index: 2;
         background-color: rgba(255,255,255,.15);
     }
@@ -231,7 +236,7 @@
         width: 100%;
         height: 100%;
         margin: auto;
-        @include transition(all .5s ease);
+        @include transition.transition(all .5s ease);
         z-index: 2;
         background-color: rgba(255,255,255,.3);
     }
@@ -258,7 +263,7 @@
           width: 100%;
           height: 100%;
           margin: auto;
-          @include transition(all .5s ease);
+          @include transition.transition(all .5s ease);
           z-index: 2;
           background-color: rgba(255,255,255,.3);
       }
@@ -415,13 +420,13 @@
         bottom: 0;
         left: 0;
         right: 0;
-        @include transition(all .5s ease);
+        @include transition.transition(all .5s ease);
         z-index: 2;
         opacity: 0;
     }
 
     &::before {
-        background-color: #000;
+        background-color: variables.$black;
     }
 
     &::after {
@@ -429,7 +434,7 @@
         bottom: -15px;
         left: -15px;
         right: -15px;
-        border: 2px solid #fff;
+        border: 2px solid custom.$color-white;
     }
 
     &:hover {
@@ -448,10 +453,10 @@
   }
 
   &-plus, &-scale {
-      background-color: #000;
+      background-color: variables.$black;
 
     .image-effect, img {
-        @include transition(all .3s ease);
+        @include transition.transition(all .3s ease);
     }
 
     &:hover {
@@ -464,13 +469,13 @@
         content: '';
         position: absolute;
         z-index: 2;
-        border: solid #fff;
+        border: solid custom.$color-white;
         top: 15px;
         bottom: 15px;
         left: 15px;
         right: 15px;
         margin: auto;
-        @include transition(all .5s ease);
+        @include transition.transition(all .5s ease);
     }
 
     &::before {
@@ -524,7 +529,7 @@
 
 .faded-in {
   .image-effect, img {
-      @include transition(opacity .2s ease);
+      @include transition.transition(opacity .2s ease);
   }
 
   &:not(:hover) {
@@ -539,18 +544,18 @@
       overflow: hidden;
 
     .image-effect, img {
-        @include transition(all .5s ease);
+        @include transition.transition(all .5s ease);
     }
 
     &.slow {
       .image-effect, img {
-        @include transition(all 10s ease);
+        @include transition.transition(all 10s ease);
       }
     }
 
     &:hover {
       .image-effect, img {
-          @include css3-prefix('transform', scale(1.1));
+          @include animation.css3-prefix('transform', scale(1.1));
       }
     }
   }
@@ -563,8 +568,8 @@
         width: calc(100% + 60px);
         max-width: calc(100% + 60px);
         left: 50%;
-        @include css3-prefix('transform', translateX(-50%));
-        @include transition(all .4s ease);
+        @include animation.css3-prefix('transform', translateX(-50%));
+        @include transition.transition(all .4s ease);
     }
 
     &:hover {
@@ -579,30 +584,30 @@
     overflow: hidden;
 
   .image-effect, img {
-    @include css3-prefix('filter', grayscale(100%));
-      @include transition(all .5s ease);
+    @include animation.css3-prefix('filter', grayscale(100%));
+      @include transition.transition(all .5s ease);
   }
 
   &.slow {
     .image-effect, img {
-      @include transition(all 10s ease);
+      @include transition.transition(all 10s ease);
     }
   }
 
   &:hover {
     .image-effect, img {
-        @include css3-prefix('filter', grayscale(0));
+        @include animation.css3-prefix('filter', grayscale(0));
     }
   }
 
   &.revert {
     .image-effect, img {
-      @include css3-prefix('filter', grayscale(0));
+      @include animation.css3-prefix('filter', grayscale(0));
     }
 
     &:hover {
       .image-effect, img {
-          @include css3-prefix('filter', grayscale(100%));
+          @include animation.css3-prefix('filter', grayscale(100%));
       }
     }
   }
@@ -613,14 +618,14 @@
       overflow: hidden;
 
     .image-effect, img {
-        @include transition(all .7s ease);
+        @include transition.transition(all .7s ease);
     }
   }
 
   &-left {
     &:hover {
       .image-effect, img {
-          @include css3-prefix('transform', scale(1.2) rotate(-5deg));
+          @include animation.css3-prefix('transform', scale(1.2) rotate(-5deg));
         }
       }
   }
@@ -628,7 +633,7 @@
   &-right {
     &:hover {
       .image-effect, img {
-          @include css3-prefix('transform', scale(1.2) rotate(5deg));
+          @include animation.css3-prefix('transform', scale(1.2) rotate(5deg));
         }
       }
   }

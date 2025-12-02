@@ -1,18 +1,35 @@
-@include deprecate("`alert-variant()`", "v5.3.0", "v6.0.0");
+@use "sass:color";
+@use "sass:meta";
+@use "../functions" as functions;
+@use "gradients";
 
-// scss-docs-start alert-variant-mixin
-@mixin alert-variant($background, $border, $color) {
-  --#{$prefix}alert-color: #{$color};
-  --#{$prefix}alert-bg: #{$background};
-  --#{$prefix}alert-border-color: #{$border};
-  --#{$prefix}alert-link-color: #{shade-color($color, 20%)};
-
-  @if $enable-gradients {
-    background-image: var(--#{$prefix}gradient);
+// Safe shade wrapper
+@function safe-shade($c, $amount) {
+  @if meta.type-of($c) != "color" {
+    @return $c; // fallback
   }
+  @return functions.shade-color($c, $amount);
+}
+
+// Safe color fallback
+@function safe-color($value, $fallback) {
+  @return if(meta.type-of($value) == "color", $value, $fallback);
+}
+
+@mixin alert-variant($background, $border, $color) {
+  // Normalized safe values
+  $bg: safe-color($background, #fff);
+  $bd: safe-color($border, $bg);
+  $fg: safe-color($color, #000);
+
+  color: $fg;
+
+  // Protect gradient mixin — pass valid color only
+  @include gradients.gradient-bg($bg);
+
+  border-color: $bd;
 
   .alert-link {
-    color: var(--#{$prefix}alert-link-color);
+    color: safe-shade($fg, 20%);
   }
 }
-// scss-docs-end alert-variant-mixin

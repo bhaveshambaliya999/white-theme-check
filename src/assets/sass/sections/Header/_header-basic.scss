@@ -1,7 +1,12 @@
+@use "../../bootstrap/functions";
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
+
 .header {
   display: none;
   position: relative;
-  background-color: $header-background;
+  background-color: custom.$color-white;
   z-index: 2;
   border-bottom: 1px solid #e4e4e4;
 
@@ -10,18 +15,18 @@
     box-shadow: none;
     height: 2.5rem;
     padding: 0.375rem 2.025rem 0.3rem 1.125rem;
-    background-image: escape-svg($svg-arrow-down-bg);
+    background-image: functions.escape-svg(custom.$svg-arrow-down-bg);
 
     &.color-white {
-      background-image: escape-svg($svg-arrow-down-white-bg);
+      background-image: functions.escape-svg(custom.$svg-arrow-down-white-bg);
     }
 
     option {
-      color: $primary;
+      color: custom.$primary;
     }
   }
 
-  @include media-breakpoint-up(xl) {
+  @include breakpoints.media-breakpoint-up(xl) {
     display: block;
   }
 
@@ -30,14 +35,14 @@
   }
 
   &.header_dark {
-    background-color: $primary;
+    background-color: custom.$primary;
 
     .navigation__link {
-      color: #fff;
+      color: custom.$color-white;
     }
 
     .header-tools__item {
-      color: #fff;
+      color: custom.$color-white;
     }
   }
 }
@@ -59,12 +64,12 @@
   width: 100%;
 
   .header-top {
-    margin: $header-top-margin;
-    padding: $header-fullwidth-padding;
+    margin: custom.$header-top-margin;
+    padding: custom.$header-fullwidth-padding;
 
-    @include media-breakpoint-up(xxl) {
-      margin: $header-top-margin-xxl;
-      padding: $header-fullwidth-padding-xxl;
+    @include breakpoints.media-breakpoint-up(xxl) {
+      margin: custom.$header-top-margin-xxl;
+      padding: custom.$header-fullwidth-padding-xxl;
     }
   }
 }
@@ -76,9 +81,9 @@
 .header-tools__item {
   display: flex;
   align-items: center;
-  padding: $header-tools-item-padding-y $header-tools-item-padding-x;
+  padding: custom.$header-tools-item-padding-y custom.$header-tools-item-padding-x;
   text-decoration: none;
-  color: $nav-link-color;
+  color: custom.$nav-link-color;
   width: 36px;
   height: 36px;
 
@@ -86,8 +91,8 @@
     margin-right: 0;
   }
 
-  @include media-breakpoint-up(xl) {
-    margin-right: $header-tools-item-space;
+  @include breakpoints.media-breakpoint-up(xl) {
+    margin-right: custom.$header-tools-item-space;
   }
 }
 
@@ -96,15 +101,15 @@
   position: relative;
 
   .cart-amount {
-    top: calc(#{$header-tools-item-padding-y} + 1em);
-    left: calc(#{$header-tools-item-padding-x} + 1em);
-    width: $header-cart-amount-width;
-    height: $header-cart-amount-width;
+    top: calc(#{custom.$header-tools-item-padding-y} + 1em);
+    left: calc(#{custom.$header-tools-item-padding-x} + 1em);
+    width: custom.$header-cart-amount-width;
+    height: custom.$header-cart-amount-width;
     border-radius: 100%;
-    background: $header-cart-amount-bg;
-    color: $header-cart-amount-color;
-    font-size: $header-cart-amount-font-size;
-    line-height: $header-cart-amount-width;
+    background: custom.$header-cart-amount-bg;
+    color: custom.$header-cart-amount-color;
+    font-size: custom.$header-cart-amount-font-size;
+    line-height: custom.$header-cart-amount-width;
     text-align: center;
   }
 }
@@ -112,33 +117,33 @@
 .header-search {
   display: flex;
   align-items: center;
-  padding: $header-search-box-padding;
+  padding: custom.$header-search-box-padding;
   // border: $header-search-box-border;
-  border-radius: $header-search-box-border-radius;
-  background-color: $header-search-box-bg;
+  border-radius: custom.$header-search-box-border-radius;
+  background-color: custom.$header-search-box-bg;
 
   > :first-child {
     padding-left: 0;
   }
 
   > :last-child {
-    margin-left: $header-search-box-padding-r;
+    margin-left: custom.$header-search-box-padding-r;
   }
 
   .hover-container {
     display: none;
 
-    @include media-breakpoint-up(xl) {
+    @include breakpoints.media-breakpoint-up(xl) {
       display: block;
     }
   }
 }
 
 .header-search__input {
-  padding: 0 0 0 $header-search-box-padding-r;
+  padding: 0 0 0 custom.$header-search-box-padding-r;
   border: 0;
   background-color: transparent;
-  color: $header-search-color;
+  color: custom.$header-search-color;
   outline: none;
 }
 
@@ -149,29 +154,29 @@
 }
 
 .header-search__category {
-  padding-right: $header-search-bg-size;
-  background-image: escape-svg($header-search-indicator);
+  padding-right: custom.$header-search-bg-size;
+  background-image: functions.escape-svg(custom.$header-search-indicator);
   background-repeat: no-repeat;
-  background-position: $header-search-bg-position;
-  background-size: $header-search-bg-size;
-  color: $header-search-color;
+  background-position: custom.$header-search-bg-position;
+  background-size: custom.$header-search-bg-size;
+  color: custom.$header-search-color;
   outline: none;
 
   &::placeholder {
-    color: $header-search-placeholder;
+    color: custom.$header-search-placeholder;
   }
 }
 
 .header-search__category-list {
-  right: calc(-#{$header-search-box-padding-r} - 1px);
-  width: calc(100% + #{$header-search-box-padding-r * 1.5} + 1px);
-  padding: 0 calc($header-search-box-padding-r / 2);
-  border: $header-search-box-border;
+  right: calc(-#{custom.$header-search-box-padding-r} - 1px);
+  width: calc(100% + #{custom.$header-search-box-padding-r * 1.5} + 1px);
+  padding: 0 calc(custom.$header-search-box-padding-r / 2);
+  border: custom.$header-search-box-border;
 }
 
 .header_sticky-bg_dark {
   a {
-    color: #fff;
+    color: custom.$color-white;
   }
 
   svg {
@@ -179,21 +184,21 @@
   }
 
   .btn-close-lg {
-    background-image: escape-svg($btn-close-lg-white-bg);
+    background-image: functions.escape-svg(custom.$btn-close-lg-white-bg);
   }
 
   .mega-menu,
   .box-menu,
   .default-menu {
     a {
-      color: $primary;
+      color: custom.$primary;
     }
   }
 }
 
 .header-top {
   &.bordered {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid custom.$border-color;
   }
 
   &.bordered-20per {
@@ -212,8 +217,8 @@
       width: 1rem;
       height: 1rem;
       border-radius: 100%;
-      background: $color-red-700;
-      color: #ffffff;
+      background: custom.$color-red-700;
+      color: custom.$color-white;;
       font-size: 0.625rem;
       line-height: 1rem;
       text-align: center;

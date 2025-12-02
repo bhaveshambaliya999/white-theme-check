@@ -1,6 +1,9 @@
-@use './variables' as *;
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/variables" as variables;
+@use "variables" as custom;
+
 body {
-  background-color: $color-white;
+  background-color: variables.$body-bg;
 }
 
 .flex-1 {
@@ -8,7 +11,7 @@ body {
 }
 
 .bg-black {
-  background-color: $primary !important;
+  background-color: custom.$primary !important;
 }
 
 .bg-yellow {
@@ -47,12 +50,12 @@ body {
   top: 100%;
   width: 100%;
   min-width: 16rem;
-  transition: $hover-content-appear-animation;
-  background-color: $color-white;
-  box-shadow: $popover-box-shadow;
+  transition: custom.$hover-content-appear-animation;
+  background-color: variables.$body-bg;
+  box-shadow: custom.$popover-box-shadow;
   opacity: 0;
   visibility: hidden;
-  z-index: $zindex-dropdown;
+  z-index: variables.$zindex-dropdown;
 }
 
 .hover-container {
@@ -65,7 +68,7 @@ body {
 
 .content_abs {
   position: absolute;
-  --content-space: #{$content-space};
+  --content-space: #{custom.$content-space};
 }
 
 .content_center {
@@ -96,18 +99,18 @@ body {
 
 
 .content_bottom-lg {
-  @media (min-width: 768px) {
-    --content-space: #{$content-space-md};
+  @include breakpoints.media-breakpoint-up(md) {
+    --content-space: #{custom.$content-space-md};
   }
 }
 
 .content_left-lg {
-  @media (min-width: 768px) {
-    --content-space: #{$content-space-md};
+  @include breakpoints.media-breakpoint-up(md) {
+    --content-space: #{custom.$content-space-md};
   }
 }
 .h-md-100 {
-  @media (min-width: 992px) {
+  @include breakpoints.media-breakpoint-up(lg) {
     height: 100% !important;
   }
 }
@@ -171,6 +174,15 @@ body {
   transform: translateX(-50%);
 }
 
+.row-cols-xl-8 {
+  @include breakpoints.media-breakpoint-up(xl) {
+    >* {
+      flex: 0 0 auto;
+      width: 12.5% !important;
+    }
+  }
+}
+
 .minh-100 {
   min-height: 100vh;
 }
@@ -232,11 +244,11 @@ body {
 }
 
 .body-color {
-  color: $body-color !important;
+  color: variables.$body-color !important;
 }
 
 .body-color-secondary {
-  color: $body-color-secondary !important;
+  color: custom.$body-color-secondary !important;
 }
 
 .theme-color {
@@ -263,7 +275,7 @@ body {
   text-shadow: 0 0 0.3rem #fff;
 }
 .h-sm-100 {
-  @media (min-width: 576px) {
+  @include breakpoints.media-breakpoint-up(sm) {
     height: 100% !important;
   }
 }
@@ -271,6 +283,18 @@ body {
 .transparent-bg {
   background-color: transparent !important;
 }
+@include breakpoints.media-breakpoint-up(lg) {
+  .order-lg--1 {
+    order: -1;
+  }
+}
+
+@include breakpoints.media-breakpoint-up(lg) {
+  .mt-lg--5 {
+    margin-top: -13rem !important;
+  }
+}
+
 .mt--3 {
   margin-top: -3rem !important;
 }

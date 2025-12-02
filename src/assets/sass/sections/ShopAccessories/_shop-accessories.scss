@@ -1,7 +1,9 @@
+@use "../../settings/variables" as custom;
+
 .shop-acs__select {
-  padding-right: $input-padding-y;
+  padding-right: custom.$input-padding-y;
   background-position: right center;
-  padding-left: $input-padding-x;
+  padding-left: custom.$input-padding-x;
   cursor: pointer;
   box-shadow: none !important;
   text-transform: uppercase;

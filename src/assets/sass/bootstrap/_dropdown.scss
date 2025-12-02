@@ -1,10 +1,17 @@
+@use "sass:map";
+@use "mixins/border-radius";
+@use "mixins/box-shadow";
+@use "mixins/breakpoints";
+@use "mixins/caret";
+@use "mixins/gradients";
+@use "variables";
+@use "vendor/rfs";
+
 // The dropdown wrapper (`<div>`)
 .dropup,
 .dropend,
 .dropdown,
-.dropstart,
-.dropup-center,
-.dropdown-center {
+.dropstart {
   position: relative;
 }
 
@@ -12,72 +19,31 @@
   white-space: nowrap;
 
   // Generate the caret automatically
-  @include caret();
+  @include caret.caret();
 }
 
 // The dropdown menu
 .dropdown-menu {
-  // scss-docs-start dropdown-css-vars
-  --#{$prefix}dropdown-zindex: #{$zindex-dropdown};
-  --#{$prefix}dropdown-min-width: #{$dropdown-min-width};
-  --#{$prefix}dropdown-padding-x: #{$dropdown-padding-x};
-  --#{$prefix}dropdown-padding-y: #{$dropdown-padding-y};
-  --#{$prefix}dropdown-spacer: #{$dropdown-spacer};
-  @include rfs($dropdown-font-size, --#{$prefix}dropdown-font-size);
-  --#{$prefix}dropdown-color: #{$dropdown-color};
-  --#{$prefix}dropdown-bg: #{$dropdown-bg};
-  --#{$prefix}dropdown-border-color: #{$dropdown-border-color};
-  --#{$prefix}dropdown-border-radius: #{$dropdown-border-radius};
-  --#{$prefix}dropdown-border-width: #{$dropdown-border-width};
-  --#{$prefix}dropdown-inner-border-radius: #{$dropdown-inner-border-radius};
-  --#{$prefix}dropdown-divider-bg: #{$dropdown-divider-bg};
-  --#{$prefix}dropdown-divider-margin-y: #{$dropdown-divider-margin-y};
-  --#{$prefix}dropdown-box-shadow: #{$dropdown-box-shadow};
-  --#{$prefix}dropdown-link-color: #{$dropdown-link-color};
-  --#{$prefix}dropdown-link-hover-color: #{$dropdown-link-hover-color};
-  --#{$prefix}dropdown-link-hover-bg: #{$dropdown-link-hover-bg};
-  --#{$prefix}dropdown-link-active-color: #{$dropdown-link-active-color};
-  --#{$prefix}dropdown-link-active-bg: #{$dropdown-link-active-bg};
-  --#{$prefix}dropdown-link-disabled-color: #{$dropdown-link-disabled-color};
-  --#{$prefix}dropdown-item-padding-x: #{$dropdown-item-padding-x};
-  --#{$prefix}dropdown-item-padding-y: #{$dropdown-item-padding-y};
-  --#{$prefix}dropdown-header-color: #{$dropdown-header-color};
-  --#{$prefix}dropdown-header-padding-x: #{$dropdown-header-padding-x};
-  --#{$prefix}dropdown-header-padding-y: #{$dropdown-header-padding-y};
-  // scss-docs-end dropdown-css-vars
-
   position: absolute;
-  z-index: var(--#{$prefix}dropdown-zindex);
+  z-index: variables.$zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  min-width: var(--#{$prefix}dropdown-min-width);
-  padding: var(--#{$prefix}dropdown-padding-y) var(--#{$prefix}dropdown-padding-x);
+  min-width: variables.$dropdown-min-width;
+  padding: variables.$dropdown-padding-y variables.$dropdown-padding-x;
   margin: 0; // Override default margin of ul
-  @include font-size(var(--#{$prefix}dropdown-font-size));
-  color: var(--#{$prefix}dropdown-color);
+  @include rfs.font-size(variables.$dropdown-font-size);
+  color: variables.$dropdown-color;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   list-style: none;
-  background-color: var(--#{$prefix}dropdown-bg);
+  background-color: variables.$dropdown-bg;
   background-clip: padding-box;
-  border: var(--#{$prefix}dropdown-border-width) solid var(--#{$prefix}dropdown-border-color);
-  @include border-radius(var(--#{$prefix}dropdown-border-radius));
-  @include box-shadow(var(--#{$prefix}dropdown-box-shadow));
+  border: variables.$dropdown-border-width solid variables.$dropdown-border-color;
+  @include border-radius.border-radius(variables.$dropdown-border-radius);
+  @include box-shadow.box-shadow(variables.$dropdown-box-shadow);
 
   &[data-bs-popper] {
     top: 100%;
     left: 0;
-    margin-top: var(--#{$prefix}dropdown-spacer);
-  }
-
-  @if $dropdown-padding-y == 0 {
-    > .dropdown-item:first-child,
-    > li:first-child .dropdown-item {
-      @include border-top-radius(var(--#{$prefix}dropdown-inner-border-radius));
-    }
-    > .dropdown-item:last-child,
-    > li:last-child .dropdown-item {
-      @include border-bottom-radius(var(--#{$prefix}dropdown-inner-border-radius));
-    }
-
+    margin-top: variables.$dropdown-spacer;
   }
 }
 
@@ -85,9 +51,9 @@
 // We deliberately hardcode the `bs-` prefix because we check
 // this custom property in JS to determine Popper's positioning
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+@each $breakpoint in map.keys(variables.$grid-breakpoints) {
+  @include breakpoints.media-breakpoint-up($breakpoint) {
+    $infix: breakpoints.breakpoint-infix($breakpoint, variables.$grid-breakpoints);
 
     .dropdown-menu#{$infix}-start {
       --bs-position: start;
@@ -117,11 +83,11 @@
     top: auto;
     bottom: 100%;
     margin-top: 0;
-    margin-bottom: var(--#{$prefix}dropdown-spacer);
+    margin-bottom: variables.$dropdown-spacer;
   }
 
   .dropdown-toggle {
-    @include caret(up);
+    @include caret.caret(up);
   }
 }
 
@@ -131,11 +97,11 @@
     right: auto;
     left: 100%;
     margin-top: 0;
-    margin-left: var(--#{$prefix}dropdown-spacer);
+    margin-left: variables.$dropdown-spacer;
   }
 
   .dropdown-toggle {
-    @include caret(end);
+    @include caret.caret(end);
     &::after {
       vertical-align: 0;
     }
@@ -148,11 +114,11 @@
     right: 100%;
     left: auto;
     margin-top: 0;
-    margin-right: var(--#{$prefix}dropdown-spacer);
+    margin-right: variables.$dropdown-spacer;
   }
 
   .dropdown-toggle {
-    @include caret(start);
+    @include caret.caret(start);
     &::before {
       vertical-align: 0;
     }
@@ -163,10 +129,9 @@
 // Dividers (basically an `<hr>`) within the dropdown
 .dropdown-divider {
   height: 0;
-  margin: var(--#{$prefix}dropdown-divider-margin-y) 0;
+  margin: variables.$dropdown-divider-margin-y 0;
   overflow: hidden;
-  border-top: 1px solid var(--#{$prefix}dropdown-divider-bg);
-  opacity: 1; // Revisit in v6 to de-dupe styles that conflict with <hr> element
+  border-top: 1px solid variables.$dropdown-divider-bg;
 }
 
 // Links, buttons, and more within the dropdown menu
@@ -175,38 +140,49 @@
 .dropdown-item {
   display: block;
   width: 100%; // For `<button>`s
-  padding: var(--#{$prefix}dropdown-item-padding-y) var(--#{$prefix}dropdown-item-padding-x);
+  padding: variables.$dropdown-item-padding-y variables.$dropdown-item-padding-x;
   clear: both;
-  font-weight: $font-weight-normal;
-  color: var(--#{$prefix}dropdown-link-color);
+  font-weight: variables.$font-weight-normal;
+  color: variables.$dropdown-link-color;
   text-align: inherit; // For `<button>`s
-  text-decoration: if($link-decoration == none, null, none);
+  text-decoration: if(variables.$link-decoration == none, null, none);
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
   border: 0; // For `<button>`s
-  @include border-radius(var(--#{$prefix}dropdown-item-border-radius, 0));
+
+  // Prevent dropdown overflow if there's no padding
+  // See https://github.com/twbs/bootstrap/pull/27703
+  @if variables.$dropdown-padding-y == 0 {
+    &:first-child {
+      @include border-radius.border-top-radius(variables.$dropdown-inner-border-radius);
+    }
+
+    &:last-child {
+      @include border-radius.border-bottom-radius(variables.$dropdown-inner-border-radius);
+    }
+  }
 
   &:hover,
   &:focus {
-    color: var(--#{$prefix}dropdown-link-hover-color);
-    text-decoration: if($link-hover-decoration == underline, none, null);
-    @include gradient-bg(var(--#{$prefix}dropdown-link-hover-bg));
+    color: variables.$dropdown-link-hover-color;
+    text-decoration: if(variables.$link-hover-decoration == underline, none, null);
+    @include gradients.gradient-bg(variables.$dropdown-link-hover-bg);
   }
 
   &.active,
   &:active {
-    color: var(--#{$prefix}dropdown-link-active-color);
+    color: variables.$dropdown-link-active-color;
     text-decoration: none;
-    @include gradient-bg(var(--#{$prefix}dropdown-link-active-bg));
+    @include gradients.gradient-bg(variables.$dropdown-link-active-bg);
   }
 
   &.disabled,
   &:disabled {
-    color: var(--#{$prefix}dropdown-link-disabled-color);
+    color: variables.$dropdown-link-disabled-color;
     pointer-events: none;
     background-color: transparent;
     // Remove CSS gradients if they're enabled
-    background-image: if($enable-gradients, none, null);
+    background-image: if(variables.$enable-gradients, none, null);
   }
 }
 
@@ -217,34 +193,57 @@
 // Dropdown section headers
 .dropdown-header {
   display: block;
-  padding: var(--#{$prefix}dropdown-header-padding-y) var(--#{$prefix}dropdown-header-padding-x);
+  padding: variables.$dropdown-header-padding;
   margin-bottom: 0; // for use with heading elements
-  @include font-size($font-size-sm);
-  color: var(--#{$prefix}dropdown-header-color);
+  @include rfs.font-size(variables.$font-size-sm);
+  color: variables.$dropdown-header-color;
   white-space: nowrap; // as with > li > a
 }
 
 // Dropdown text
 .dropdown-item-text {
   display: block;
-  padding: var(--#{$prefix}dropdown-item-padding-y) var(--#{$prefix}dropdown-item-padding-x);
-  color: var(--#{$prefix}dropdown-link-color);
+  padding: variables.$dropdown-item-padding-y variables.$dropdown-item-padding-x;
+  color: variables.$dropdown-link-color;
 }
 
 // Dark dropdowns
 .dropdown-menu-dark {
-  // scss-docs-start dropdown-dark-css-vars
-  --#{$prefix}dropdown-color: #{$dropdown-dark-color};
-  --#{$prefix}dropdown-bg: #{$dropdown-dark-bg};
-  --#{$prefix}dropdown-border-color: #{$dropdown-dark-border-color};
-  --#{$prefix}dropdown-box-shadow: #{$dropdown-dark-box-shadow};
-  --#{$prefix}dropdown-link-color: #{$dropdown-dark-link-color};
-  --#{$prefix}dropdown-link-hover-color: #{$dropdown-dark-link-hover-color};
-  --#{$prefix}dropdown-divider-bg: #{$dropdown-dark-divider-bg};
-  --#{$prefix}dropdown-link-hover-bg: #{$dropdown-dark-link-hover-bg};
-  --#{$prefix}dropdown-link-active-color: #{$dropdown-dark-link-active-color};
-  --#{$prefix}dropdown-link-active-bg: #{$dropdown-dark-link-active-bg};
-  --#{$prefix}dropdown-link-disabled-color: #{$dropdown-dark-link-disabled-color};
-  --#{$prefix}dropdown-header-color: #{$dropdown-dark-header-color};
-  // scss-docs-end dropdown-dark-css-vars
+  color: variables.$dropdown-dark-color;
+  background-color: variables.$dropdown-dark-bg;
+  border-color: variables.$dropdown-dark-border-color;
+  @include box-shadow.box-shadow(variables.$dropdown-dark-box-shadow);
+
+  .dropdown-item {
+    color: variables.$dropdown-dark-link-color;
+
+    &:hover,
+    &:focus {
+      color: variables.$dropdown-dark-link-hover-color;
+      @include gradients.gradient-bg(variables.$dropdown-dark-link-hover-bg);
+    }
+
+    &.active,
+    &:active {
+      color: variables.$dropdown-dark-link-active-color;
+      @include gradients.gradient-bg(variables.$dropdown-dark-link-active-bg);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: variables.$dropdown-dark-link-disabled-color;
+    }
+  }
+
+  .dropdown-divider {
+    border-color: variables.$dropdown-dark-divider-bg;
+  }
+
+  .dropdown-item-text {
+    color: variables.$dropdown-dark-link-color;
+  }
+
+  .dropdown-header {
+    color: variables.$dropdown-dark-header-color;
+  }
 }

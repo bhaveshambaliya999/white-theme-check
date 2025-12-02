@@ -88,10 +88,10 @@ export default function Products4({ useSliderState }) {
                       style={{ backgroundImage: `url(${c.banner_image})` }}
                     ></div>
                     <div className="content_abs content_bottom content_left content_bottom-lg content_left-lg">
-                      <p className="text-uppercase fw-medium mb-3">
+                      <p className="text-uppercase fw-medium mb-2">
                         {c.offer_detail?.name}
                       </p>
-                      <h3 className="mb-3">{c.display_name}</h3>
+                      <h3 className="mb-2">{c.display_name}</h3>
                       <div
                         // href={
                         //   c.section_type === "OFFER"

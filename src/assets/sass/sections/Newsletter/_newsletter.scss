@@ -1,5 +1,8 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .block-newsletter {
-  @include media-breakpoint-up(sm) {
+  @include breakpoints.media-breakpoint-up(sm) {
     padding: 0 1rem;
   }
 
@@ -14,28 +17,28 @@
 
   .form-control {
     border-width: .125rem;
-    border-color: $newsletter-form-input-border;
+    border-color: custom.$newsletter-form-input-border;
   }
 
   .btn {
-    font-size: $newsletter-form-input-font-size;
+    font-size: custom.$newsletter-form-input-font-size;
   }
 
   &.dark {
     .form-control {
-      border-color: $newsletter-dark-form-input-border;
-      background-color: $newsletter-dark-form-input-bg;
-      color: $newsletter-dark-form-input-color;
+      border-color: custom.$newsletter-dark-form-input-border;
+      background-color: custom.$newsletter-dark-form-input-bg;
+      color: custom.$newsletter-dark-form-input-color;
 
       &::placeholder {
-        color: $newsletter-dark-form-input-placeholder-color;
+        color: custom.$newsletter-dark-form-input-placeholder-color;
       }
     }
 
     .btn {
-      border-color: $newsletter-dark-form-button-border;
-      background-color: $newsletter-dark-form-button-bg;
-      color: $newsletter-dark-form-button-color;
+      border-color: custom.$newsletter-dark-form-button-border;
+      background-color: custom.$newsletter-dark-form-button-bg;
+      color: custom.$newsletter-dark-form-button-color;
     }
   }
 }

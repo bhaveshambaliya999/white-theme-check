@@ -1,8 +1,11 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .shop-checkout {
 
   .checkout-steps {
     display: flex;
-    border-bottom: 2px solid $border-color;
+    border-bottom: 2px solid custom.$border-color;
 
     &__item {
       flex-grow: 1;
@@ -35,12 +38,12 @@
           font-size: 0.875rem;
           font-weight: 400;
           font-style: normal;
-          color: $secondary;
+          color: custom.$secondary;
         }
       }
 
       &.active {
-        border-color: $primary;
+        border-color: custom.$primary;
       }
     }
     .steps-img{
@@ -49,9 +52,9 @@
       }
     }
 
-    @include media-breakpoint-down(lg) {
+    @include breakpoints.media-breakpoint-down(lg) {
       border-bottom: 0;
-      border-left: 2px solid $border-color;
+      border-left: 2px solid custom.$border-color;
       flex-direction: column;
 
       &__item {

@@ -37,7 +37,7 @@
  *
  * ========================================================= */
 
-@import "variables";
-@import "../settings/variables";
-@import "mixins";
-@import "rules";
+@use "variables";
+@use "../settings/variables" as variables2;
+@use "mixins";
+@use "rules";

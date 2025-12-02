@@ -1,11 +1,11 @@
+@use "sass:list";
 @mixin box-shadow($shadow...) {
   $result: ();
 
   @each $value in $shadow {
     @if $value != null {
-      $result: list.append($result, $value, comma);
+      $result: list.append($result, $value, "comma");
     }
-
     @if $value == none and list.length($shadow) > 1 {
       $result: none;
     }

@@ -1,20 +1,23 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .deal-timer {
   --countdown-space: 1.125rem;
 
   min-height: 19.375rem;
-  margin: 0 $container-padding-x;
+  margin: 0 custom.$container-padding-x;
   padding: 2rem 1rem;
 
   .countdown-unit {
     position: relative;
     min-width: 4.375rem;
     padding-right: calc(var(--countdown-space) * 2);
-    font-size: $h5-font-size;
+    font-size: custom.$h5-font-size;
     line-height: 1;
   }
 
   .countdown-word {
-    font-size: $font-size-base;
+    font-size: custom.$font-size-base;
   }
 
   .day,
@@ -29,7 +32,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include breakpoints.media-breakpoint-up(md) {
     min-height: 25rem;
 
     .countdown-unit {
@@ -37,7 +40,7 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include breakpoints.media-breakpoint-up(lg) {
     min-height: 31.25rem;
     padding: 2.5rem 0;
 
@@ -47,14 +50,14 @@
     }
 
     .countdown-word {
-      font-size: $h6-font-size;
+      font-size: custom.$h6-font-size;
     }
   }
 
-  @include media-breakpoint-up(xxl) {
+  @include breakpoints.media-breakpoint-up(xxl) {
     --countdown-space: 1.375rem;
 
     min-height: 37.5rem;
-    margin: 0 $full-section-padding-x;
+    margin: 0 custom.$full-section-padding-x;
   }
 }

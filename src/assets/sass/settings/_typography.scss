@@ -1,12 +1,16 @@
-@use './variables' as *;
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/variables" as variables;
+@use "../bootstrap/vendor/rfs";
+@use "variables" as custom;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-  color: $body-color;
+  color: variables.$body-color;
   font-family: var(--font-family-base);
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
+  font-size: custom.$font-size-base;
+  font-weight: custom.$font-weight-base;
+  line-height: custom.$line-height-base;
 }
 
 /*============================================*/
@@ -18,9 +22,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: $heading-color;
+  color: custom.$heading-color;
   font-family: var(--fontfamily-poppins);
-  font-weight: $font-weight-heading;
+  font-weight: custom.$font-weight-heading;
 }
 
 .font-special {
@@ -29,11 +33,11 @@ h6 {
 
 .fs-base,
 .form-title {
-  font-size: $font-size-base !important;
+  font-size: custom.$font-size-base !important;
 }
 
 .third-color {
-  color: $third !important;
+  color: custom.$third !important;
 }
 
 .white-color {
@@ -45,21 +49,23 @@ h6 {
 }
 
 .page-title {
-  font-weight: $page-title-weight;
+  font-weight: custom.$page-title-weight;
   font-size: 1.4rem;
   margin-bottom: 1.2rem;
+  // text-transform: uppercase;
 
-  @media (min-width: 992px) {
-    font-size: $page-title-size;
+  @include breakpoints.media-breakpoint-up(lg) {
+    font-size: custom.$page-title-size;
     margin-bottom: 3.125rem;
+    // text-transform: uppercase;
   }
 }
 
 .section-title {
-  font-size: $section-title-mobile-size;
+  font-size: custom.$section-title-mobile-size;
 
-  @media (min-width: 992px) {
-    font-size: $section-title-size;
+  @include breakpoints.media-breakpoint-up(lg) {
+    font-size: custom.$section-title-size;
   }
 }
 
@@ -73,7 +79,7 @@ h6 {
 
 .block-title {
   margin-bottom: 1rem;
-  font-size: $block-title-size;
+  font-size: custom.$block-title-size;
 }
 
 /*============================================*/
@@ -82,8 +88,8 @@ h6 {
 
 .content {
   margin-bottom: 1.5rem;
-  font-size: $content-size;
-  line-height: $content-line-height;
+  font-size: custom.$content-size;
+  line-height: custom.$content-line-height;
 }
 
 .text-list {
@@ -91,7 +97,7 @@ h6 {
 }
 
 .text-list__item {
-  line-height: $list-item-line-height;
+  line-height: custom.$list-item-line-height;
 }
 
 
@@ -129,7 +135,7 @@ h6 {
   }
 }
 
-@media (min-width: 992px) {
+@include breakpoints.media-breakpoint-up(lg) {
   .text-lg-right {
     text-align: right !important;
   }
@@ -152,51 +158,51 @@ h6 {
 }
 
 .fs-18 {
-  font-size: 1.125rem !important;
+  @include rfs.font-size(1.125rem !important);
 }
 
 .fs-20 {
- font-size: 1.25rem;
+  @include rfs.font-size(1.25rem);
 }
 
 .fs-22 {
-   font-size: 1.375rem;
+  @include rfs.font-size(1.375rem);
 }
 
 .fs-25 {
-  font-size: 1.5625rem;
+  @include rfs.font-size(1.5625rem);
 }
 
 .fs-30 {
-  font-size: 1.875rem;
+  @include rfs.font-size(1.875rem);
 }
 
 .fs-35 {
-  font-size: 2.1875rem;
+  @include rfs.font-size(2.1875rem);
 }
 
 .fs-40 {
-  font-size: 2.5rem;
+  @include rfs.font-size(2.5rem);
 }
 
 .fs-45 {
-  font-size: 2.8125rem;
+  @include rfs.font-size(2.8125rem);
 }
 
 .fs-50 {
- font-size: 3.125rem;
+  @include rfs.font-size(3.125rem);
 }
 
 .fs-70 {
-  font-size: 4.375rem;
+  @include rfs.font-size(4.375rem);
 }
 
 .fs-80 {
-  font-size: 5rem;
+  @include rfs.font-size(5rem);
 }
 
 .fs-100 {
-  font-size: 6.25rem;
+  @include rfs.font-size(6.25rem);
 }
 
 .fw-semi-bold {

@@ -1,7 +1,10 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../settings/variables" as custom;
+
 .checkout-form {
   display: flex;
   gap:2.625rem;
-  @include media-breakpoint-down(xl) {
+  @include breakpoints.media-breakpoint-down(xl) {
     flex-direction: column;
     gap:1rem;
   }
@@ -11,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    border: 2px dashed $secondary;
+    border: 2px dashed custom.$secondary;
     padding: 1.3rem;
     margin-bottom: 1rem;
   }
@@ -22,7 +25,7 @@
 
     .form-floating>label,
     .form-label-fixed>.form-label {
-      color: $secondary;
+      color: custom.$secondary;
     }
 
     .custom-react-select-container.address .css-hlgwow,
@@ -34,7 +37,7 @@
   .checkout__totals-wrapper {
     .sticky-content {
       padding-top: 3.125rem;
-      @include media-breakpoint-down(lg) {
+      @include breakpoints.media-breakpoint-down(lg) {
         padding-top: 0rem;
       }
     }
@@ -48,12 +51,12 @@
   }
 
   .checkout__payment-methods {
-    border: 1px solid $dark;
+    border: 1px solid custom.$dark;
     //margin-bottom: 1.25rem;
     padding: 1.5rem 1.5rem 1.5rem;
     width: 28.25rem;
 
-    @include media-breakpoint-down(xl) {
+    @include breakpoints.media-breakpoint-down(xl) {
       width: 100%;
     }
 
@@ -77,19 +80,19 @@
       line-height: 1.5rem;
 
       >a {
-        color: $color-red-800;
+        color: custom.$color-red-800;
       }
     }
   }
 }
 
 .checkout__totals {
-  border: 1px solid $secondary;
+  border: 1px solid custom.$secondary;
   margin-bottom: 1.25rem;
   padding: 1.5rem 1.5rem 0.5rem;
   width: 28.25rem;
 
-  @include media-breakpoint-down(xl) {
+  @include breakpoints.media-breakpoint-down(xl) {
     width: 100%;
     padding: 15px;
   }
@@ -107,7 +110,7 @@
   .checkout-cart-items {
     thead {
       th {
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid custom.$border-color;
         padding: 0.875rem 0.125rem;
         font-size: 0.875rem;
         font-weight: 500;
@@ -117,7 +120,7 @@
     tbody {
       td {
         padding: 0.40625rem 0.125rem;
-        color: $secondary;
+        color: custom.$secondary;
       }
 
       tr:first-child {
@@ -129,7 +132,7 @@
       tr:last-child {
         td {
           padding-bottom: 0.8125rem;
-          border-bottom: 1px solid $border-color;
+          border-bottom: 1px solid custom.$border-color;
         }
       }
     }
@@ -149,7 +152,7 @@
     }
     th,
     td {
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid custom.$border-color;
       padding: 0.875rem 0.125rem;
       font-size: 0.875rem;
       font-weight: 500;

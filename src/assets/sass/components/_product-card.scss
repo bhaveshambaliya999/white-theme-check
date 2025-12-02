@@ -1,3 +1,7 @@
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
 $card-image-height: 100%;
 
 .product-card {
@@ -12,7 +16,7 @@ $card-image-height: 100%;
     left: 0;
     width: 100%;
     height: 100%;
-    transition: $hover-content-appear-animation;
+    transition: custom.$hover-content-appear-animation;
     background-color: rgba($color: #eaeaea, $alpha: 0.9);
     opacity: 0;
     visibility: hidden;
@@ -43,7 +47,7 @@ $card-image-height: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        background-color: #fff;
+        background-color: custom.$color-white;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
@@ -99,7 +103,7 @@ $card-image-height: 100%;
       line-height: 1;
     }
 
-    @include media-breakpoint-up(md) {
+    @include breakpoints.media-breakpoint-up(md) {
       top: 1.25rem;
       right: 1.25rem;
       width: 2.5rem;
@@ -131,7 +135,7 @@ $card-image-height: 100%;
   position: absolute;
   top: 50%;
   margin-top: -0.5rem;
-  color: $body-color-secondary;
+  color: custom.$body-color-secondary;
   font-size: 1rem;
   opacity: 0;
   z-index: 1;
@@ -185,7 +189,7 @@ $card-image-height: 100%;
   gap: 0.3125rem;
   padding: 0.1875rem 0.625rem;
   line-height: 1.5rem;
-  font-size: $font-size-base;
+  font-size: custom.$font-size-base;
 }
 
 // Product card category
@@ -193,16 +197,16 @@ $card-image-height: 100%;
   margin: 0;
   // margin-bottom: 0.25rem;
   margin-bottom: 0.5rem;
-  color: $body-color-secondary;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
+  color: custom.$body-color-secondary;
+  font-weight: custom.$font-weight-base;
+  line-height: custom.$line-height-base;
 }
 
 // Product card title
 .pc__title {
   margin: 0;
-  font-size: $h6-font-size;
-  font-weight: $font-weight-base;
+  font-size: custom.$h6-font-size;
+  font-weight: custom.$font-weight-base;
   padding-right: 1.6rem;
   &:hover {
     color: #656565;
@@ -219,19 +223,19 @@ $card-image-height: 100%;
 }
 
 .price-sale {
-  color: $color-red-700;
+  color: custom.$color-red-700;
 }
 
 .price-old {
   margin-right: 0.625rem;
-  color: $body-color-secondary;
+  color: custom.$body-color-secondary;
   text-decoration: line-through;
 }
 
 // Product card wishlist button
 .pc__btn-wl {
   display: flex;
-  color: $body-color-secondary;
+  color: custom.$body-color-secondary;
   width: 30px;
   height: 30px;
   justify-content: center;
@@ -247,7 +251,7 @@ $card-image-height: 100%;
 
   &.btn-hover-primary {
     color: #fff !important;
-    background-color: $primary !important;
+    background-color: variables.$primary !important;
   }
 
   &.theme-bg-color.text-white {
@@ -273,15 +277,15 @@ $card-image-height: 100%;
   padding-right: 0.625rem;
   padding-left: 0.625rem;
   white-space: nowrap;
-  background-color: $dark;
-  color: $color-white;
+  background-color: custom.$dark;
+  color: custom.$color-white;
 
   &:hover {
-    color: #fff;
-    background-color: #222;
+    color: custom.$color-white;
+    background-color: custom.$dark;
   }
 
-  @include media-breakpoint-down(md) {
+  @include breakpoints.media-breakpoint-down(md) {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
     font-size: 0.75rem;
@@ -296,20 +300,20 @@ $card-image-height: 100%;
   padding: 0.25rem 0.625rem 0.125rem;
   font-size: 0.75rem;
 
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-base;
+  @include breakpoints.media-breakpoint-up(md) {
+    font-size: custom.$font-size-base;
   }
 }
 
 .pc-label_sale {
-  background-color: $color-red-700;
+  background-color: custom.$color-red-700;
 }
 .dia-measure-process {
   position: sticky;
   top: 20px;
   background-color: #f9f9f9 !important;
   .dia-measure {
-    color: $black;
+    color: variables.$black;
     text-transform: uppercase;
   }
 }

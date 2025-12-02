@@ -1,24 +1,54 @@
+@use "../functions" as functions;
+@use "../variables" as variables;
+@use "sass:color";
+@use "sass:math";
+@use "sass:meta";
+
+// Safe wrapper for shift-color
+@function safe-shift($c, $amount) {
+  @if meta.type-of($c) != "color" {
+    @return $c; // fallback
+  }
+  @return functions.shift-color($c, $amount);
+}
+
+// Safe wrapper for opaque()
+@function safe-opaque($background, $foreground) {
+  @if meta.type-of($foreground) != "color" {
+    @return $background;
+  }
+  @return functions.opaque($background, $foreground);
+}
+
 // scss-docs-start table-variant
 @mixin table-variant($state, $background) {
+
+  // Protect against non-color background
+  @if meta.type-of($background) != "color" {
+    $background: variables.$body-bg;
+  }
+
   .table-#{$state} {
-    $color: color-contrast(opaque($body-bg, $background));
-    $hover-bg: mix($color, $background, percentage($table-hover-bg-factor));
-    $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
-    $active-bg: mix($color, $background, percentage($table-active-bg-factor));
-    $table-border-color: mix($color, $background, percentage($table-border-factor));
+    // Compute readable text
+    $color: functions.color-contrast(safe-opaque(variables.$body-bg, $background));
 
-    --#{$prefix}table-color: #{$color};
-    --#{$prefix}table-bg: #{$background};
-    --#{$prefix}table-border-color: #{$table-border-color};
-    --#{$prefix}table-striped-bg: #{$striped-bg};
-    --#{$prefix}table-striped-color: #{color-contrast($striped-bg)};
-    --#{$prefix}table-active-bg: #{$active-bg};
-    --#{$prefix}table-active-color: #{color-contrast($active-bg)};
-    --#{$prefix}table-hover-bg: #{$hover-bg};
-    --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
+    // Safe hover/striped/active shades
+    $hover-bg: safe-shift($background, -10%);
+    $striped-bg: safe-shift($background, -5%);
+    $active-bg: safe-shift($background, -15%);
 
-    color: var(--#{$prefix}table-color);
-    border-color: var(--#{$prefix}table-border-color);
+    // CSS variable output
+    --#{variables.$variable-prefix}table-bg: #{$background};
+    --#{variables.$variable-prefix}table-striped-bg: #{$striped-bg};
+    --#{variables.$variable-prefix}table-striped-color: #{functions.color-contrast($striped-bg)};
+    --#{variables.$variable-prefix}table-active-bg: #{$active-bg};
+    --#{variables.$variable-prefix}table-active-color: #{functions.color-contrast($active-bg)};
+    --#{variables.$variable-prefix}table-hover-bg: #{$hover-bg};
+    --#{variables.$variable-prefix}table-hover-color: #{functions.color-contrast($hover-bg)};
+
+    // Base table styles
+    color: $color;
+    border-color: safe-shift($background, -20%);
   }
 }
 // scss-docs-end table-variant

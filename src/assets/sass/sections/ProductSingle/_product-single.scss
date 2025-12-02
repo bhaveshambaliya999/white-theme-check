@@ -1,9 +1,15 @@
+@use "sass:map";
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+@use "../Slideshow/slideshow";
+
 .product-single {
   .product-diamond__thumbnail {
     display: grid;
     gap: 15px;
      grid-template-columns: repeat(2, 1fr);
-     @include media-breakpoint-down(sm) {
+     @include breakpoints.media-breakpoint-down(sm) {
        grid-template-columns: repeat(1, 1fr);
      }
    
@@ -47,7 +53,7 @@
   }
   & {
     >.row {
-      @include media-breakpoint-up(xl) {
+      @include breakpoints.media-breakpoint-up(xl) {
         --bs-gutter-x: 2.75rem;
       }
     }
@@ -59,7 +65,7 @@
       flex-direction: column;
       margin-bottom: 3rem;
 
-      @include media-breakpoint-up(lg) {
+      @include breakpoints.media-breakpoint-up(lg) {
         flex-direction: row;
         margin-bottom: 0;
       }
@@ -92,20 +98,20 @@
       .swiper-button-next {
         width: 2.1875rem;
         height: 2.1875rem;
-        background-color: #fff;
+        background-color: custom.$color-white;
         border-radius: 2rem;
         font-size: 0.875rem;
-        color: $primary;
+        color: custom.$primary;
 
         &:hover {
-          background-color: #e4e4e4;
+          background-color: custom.$color-gray-300;
         }
 
         &:after {
           display: none;
         }
 
-        @include media-breakpoint-up(sm) {
+        @include breakpoints.media-breakpoint-up(sm) {
           width: 2.8125rem;
           height: 2.8125rem;
         }
@@ -115,7 +121,7 @@
         left: 1rem;
         z-index: 1;
 
-        @include media-breakpoint-up(sm) {
+        @include breakpoints.media-breakpoint-up(sm) {
           left: 2rem;
         }
       }
@@ -124,7 +130,7 @@
         right: 1rem;
         z-index: 1;
 
-        @include media-breakpoint-up(sm) {
+        @include breakpoints.media-breakpoint-up(sm) {
           right: 2rem;
         }
       }
@@ -132,7 +138,7 @@
       &.vertical-thumbnail {
         padding-bottom: 70px;
 
-        @include media-breakpoint-down(lg) {
+        @include breakpoints.media-breakpoint-down(lg) {
           padding-bottom: 10px;
           margin-bottom: 1rem;
         }
@@ -142,7 +148,7 @@
           max-width: 85.7142%;
           text-align: center;
 
-          @include media-breakpoint-down(lg) {
+          @include breakpoints.media-breakpoint-down(lg) {
             flex: 0 0 100%;
             max-width: 100%;
           }
@@ -151,7 +157,7 @@
             position: relative;
             display: block !important;
             padding: 0.3125rem;
-            @include media-breakpoint-down(lg) {
+            @include breakpoints.media-breakpoint-down(lg) {
               
             }
 
@@ -166,18 +172,18 @@
               right: 1.875rem;
               bottom: 1.875rem;
               border-radius: 2rem;
-              background-color: #fff;
+              background-color: custom.$color-white;
               transition: all 0.3s ease;
 
               &:hover {
-                background-color: #e4e4e4;
+                background-color:  custom.$color-gray-300;
               }
 
               svg {
                 pointer-events: none;
               }
 
-              @include media-breakpoint-down(sm) {
+              @include breakpoints.media-breakpoint-down(sm) {
                 width: 2.1875rem;
                 height: 2.1875rem;
                 right: 1rem;
@@ -192,7 +198,7 @@
               &.view-video {
                 bottom: 6rem;
                 border: 0;
-                @include media-breakpoint-down(sm) {
+                @include breakpoints.media-breakpoint-down(sm) {
                   bottom: 4rem;
                 }
               }
@@ -208,7 +214,7 @@
                 padding-top: 0.5rem;
                 padding-right: 0.5rem;
 
-                @include media-breakpoint-down(sm) {
+                @include breakpoints.media-breakpoint-down(sm) {
                   left: 1rem;
                   top: 1rem;
                   right: auto;
@@ -232,7 +238,7 @@
             max-height: 684px;
           }
 
-          @include media-breakpoint-up(lg) {
+          @include breakpoints.media-breakpoint-up(lg) {
             flex: 0 0 14.2857%;
             max-width: 14.2857%;
             order: -1;
@@ -275,11 +281,11 @@
               right: 1.875rem;
               bottom: 1.875rem;
               border-radius: 2rem;
-              background-color: #fff;
+              background-color: custom.$color-white;
               transition: all 0.3s ease;
 
               &:hover {
-                background-color: #e4e4e4;
+                background-color: custom.$color-gray-300;
               }
 
               svg {
@@ -289,7 +295,7 @@
             .dia-lw {
               height: auto;
               margin: 0 auto;
-              @include media-breakpoint-down(md) {
+              @include breakpoints.media-breakpoint-down(md) {
                 height: auto;
               }
             }
@@ -322,7 +328,7 @@
               width: 104px;
               height: 104px;
               object-fit: cover;
-              @include media-breakpoint-down(md) {
+              @include breakpoints.media-breakpoint-down(md) {
                 height: auto;
               }
             }
@@ -331,7 +337,7 @@
       }
 
       &.vertical-dot {
-        @include media-breakpoint-up(lg) {
+        @include breakpoints.media-breakpoint-up(lg) {
           padding-left: 5.375rem;
         }
 
@@ -348,7 +354,7 @@
           .swiper-wrapper {
             margin-bottom: 1rem;
 
-            @include media-breakpoint-up(lg) {
+            @include breakpoints.media-breakpoint-up(lg) {
               margin-bottom: 0;
             }
           }
@@ -358,7 +364,7 @@
             display: block !important;
             padding: 1rem;
 
-            @include media-breakpoint-up(sm) {
+            @include breakpoints.media-breakpoint-up(sm) {
               padding: 10%;
             }
 
@@ -372,11 +378,11 @@
               right: 1.875rem;
               bottom: 1.875rem;
               border-radius: 2rem;
-              background-color: #fff;
+              background-color: custom.$color-white;
               transition: all 0.3s ease;
 
               &:hover {
-                background-color: #e4e4e4;
+                background-color: custom.$color-gray-300;
               }
             }
           }
@@ -397,7 +403,7 @@
             width: auto;
             bottom: auto;
 
-            @include media-breakpoint-up(lg) {
+            @include breakpoints.media-breakpoint-up(lg) {
               position: absolute;
               transform: translateY(-50%);
               flex-direction: column;
@@ -418,8 +424,8 @@
         width: 4.5625rem;
         height: 4.5625rem;
         border-radius: 3rem;
-        background-color: #d6001c;
-        color: #fff;
+        background-color: custom.$color-red-800;
+        color: custom.$color-white;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -430,7 +436,7 @@
         line-height: 1.4;
         z-index: 1;
 
-        @include media-breakpoint-up(md) {
+        @include breakpoints.media-breakpoint-up(md) {
           right: -1.125rem;
           top: 1.875rem;
         }
@@ -441,7 +447,7 @@
       gap: 1.875rem;
       display: none !important;
 
-      @include media-breakpoint-up(lg) {
+      @include breakpoints.media-breakpoint-up(lg) {
         display: flex !important;
       }
 
@@ -460,7 +466,7 @@
     &__name {
       font-size: 1.625rem;
       line-height: normal;
-      @include media-breakpoint-down(xl) {
+      @include breakpoints.media-breakpoint-down(xl) {
         font-size: 1.3rem;
       }
       &.title {
@@ -479,7 +485,7 @@
           // width: 0;
           width: calc(100% - 3.125rem);
           height: 2px;
-          background-color: #222;
+          background-color: custom.$dark;
           transition: width .36s cubic-bezier(.175, .885, .32, 1.275);
         }
       }
@@ -499,13 +505,13 @@
 
       span.old-price {
         font-size: 1rem;
-        color: $secondary;
+        color: custom.$secondary;
         font-weight: 400;
         text-decoration: line-through;
       }
 
       .special-price {
-        color: #d6001c;
+        color: custom.$color-red-800;
         // margin-left: 0.5rem;
       }
     }
@@ -525,7 +531,7 @@
         min-width: 7.25rem;
 
         &__number {
-          border: 2px solid #e4e4e4;
+          border: 2px solid custom.$color-gray-300;
           height: 3.25rem;
           padding: 0 2rem;
           min-width: 6.5rem;
@@ -561,9 +567,9 @@
         white-space: nowrap;
 
         &.btn-outofstock {
-          border: 2px solid #d6001c;
-          color: #d6001c;
-          background-color: #fff;
+          border: 2px solid custom.$color-red-800;
+          color: custom.$color-red-800;
+          background-color: custom.$color-white;
           cursor: default;
           pointer-events: none;
         }
@@ -578,7 +584,7 @@
           display: flex;
           align-items: center;
           gap: 1.5rem;
-          border-top: 1px solid $border-color;
+          border-top: 1px solid custom.$border-color;
           padding: 1.25rem 0;
 
           &:first-child {
@@ -645,7 +651,7 @@
       margin-bottom: 1.875rem;
 
       label {
-        color: $secondary;
+        color: custom.$secondary;
         text-transform: uppercase;
       }
     }
@@ -654,7 +660,7 @@
       margin: 6.25rem auto 2.375rem;
       max-width: 58.125rem;
 
-      @include media-breakpoint-down(lg) {
+      @include breakpoints.media-breakpoint-down(lg) {
         margin: 3.125rem auto 2.375rem;
       }
 
@@ -662,7 +668,7 @@
         justify-content: center;
         text-transform: uppercase;
 
-        @include media-breakpoint-down(sm) {
+        @include breakpoints.media-breakpoint-down(sm) {
           // flex-direction: column;
           flex-wrap: wrap;
 
@@ -676,7 +682,7 @@
         // padding: 3.125rem 0;
         padding: 3.125rem 0 0;
 
-        @include media-breakpoint-down(sm) {
+        @include breakpoints.media-breakpoint-down(sm) {
           .gap-5 {
             gap: 1.5rem !important;
           }
@@ -723,7 +729,7 @@
           line-height: 1.875rem;
           position: relative;
 
-          @include media-breakpoint-down(xxl) {
+          @include breakpoints.media-breakpoint-down(xxl) {
             margin-left: 0;
           }
 
@@ -753,16 +759,16 @@
             align-items: center;
             justify-content: center;
             height: auto;
-            border: 1px solid $border-color;
+            border: 1px solid custom.$border-color;
             padding: 8px 12px;
             text-transform: capitalize;
             &:hover {
-              border-color: $dark;
-              color: $dark;
+              border-color: custom.$dark;
+              color: custom.$dark;
             }
             &.swatch_active {
-              border-color: $color-red-700;
-              color: $color-red-700;
+              border-color: custom.$color-red-700;
+              color: custom.$color-red-700;
             }
 
             &.filter-disable {
@@ -774,7 +780,7 @@
 
           input[type="radio"] {
             &:checked+label {
-              border-color: $primary;
+              border-color: custom.$primary;
             }
           }
         }
@@ -786,14 +792,14 @@
 
             &.swatch_active,
             &:hover {
-              border-color: $primary;
+              border-color: custom.$primary;
             }
             
           }
 
           input[type="radio"] {
             &:checked+label.swatch-color {
-              border-color: $primary;
+              border-color: custom.$primary;
             }
           }
 
@@ -804,7 +810,7 @@
 
             &.swatch_active,
             &:hover {
-              border-color: $border-color;
+              border-color: custom.$border-color;
             }
 
             img {
@@ -814,7 +820,7 @@
 
           input[type="radio"] {
             &:checked+label.swatch-image {
-              border-color: $border-color;
+              border-color: custom.$border-color;
             }
           }
         }
@@ -832,8 +838,8 @@
       .AppliedSuccessfully {
         margin-bottom: 10px;
         padding: 8px;
-        background-color: $color-gray-100;
-        border: 1px dashed $color-gray-300;
+        background-color: custom.$color-gray-100;
+        border: 1px dashed custom.$color-gray-300;
         &:last-child{
           margin-bottom: 0;
         }
@@ -841,7 +847,7 @@
           .links-btn {
             text-decoration: underline;
             font-size: 15px;
-            @include media-breakpoint-down(sm) {
+            @include breakpoints.media-breakpoint-down(sm) {
               font-size: 12px;
             }
           }
@@ -856,7 +862,7 @@
           margin-right: 5px;
         }
 
-        @include media-breakpoint-down(sm) {
+        @include breakpoints.media-breakpoint-down(sm) {
           font-size: 12px;
         }
       }
@@ -890,7 +896,7 @@
     margin-bottom: 3.25rem;
     padding-left: 0rem;
 
-    @include media-breakpoint-up(xl) {
+    @include breakpoints.media-breakpoint-up(xl) {
       padding-left: 2.1875rem;
     }
   }
@@ -904,14 +910,14 @@ $nav-mobile-size: 35px;
   height: $nav-mobile-size;
   margin-top: -2.2rem;
   transform: translateY(-50%);
-  border: 1px solid $border-color;
+  border: 1px solid custom.$border-color;
   border-radius: 100%;
-  background-color: $color-white;
+  background-color: variables.$body-bg;
   z-index: 1;
   outline: none;
 
   svg {
-    color: $body-color-secondary;
+    color: custom.$body-color-secondary;
     width: $nav-icon-mobile-size;
     height: auto;
   }
@@ -925,7 +931,7 @@ $nav-mobile-size: 35px;
   }
 
   &:not(.navigation-sm) {
-    @media (min-width: calc(#{map-get($grid-breakpoints, xxl)} + 30px)) {
+    @media (min-width: calc(#{map.get(variables.$grid-breakpoints, xxl)} + 30px)) {
       width: $nav-icon-desk-size;
       height: $nav-icon-desk-size;
       margin-top: -0.875rem;
@@ -952,7 +958,7 @@ $nav-mobile-size: 35px;
 .products-carousel__prev {
   left: -0.625rem;
 
-  @media (min-width: calc(#{map-get($grid-breakpoints, xxl)} + 30px)) {
+  @media (min-width: calc(#{map.get(variables.$grid-breakpoints, xxl)} + 30px)) {
     left: -1rem;
 
     &.type2 {
@@ -964,7 +970,7 @@ $nav-mobile-size: 35px;
 .products-carousel__next {
   right: -0.625rem;
 
-  @media (min-width: calc(#{map-get($grid-breakpoints, xxl)} + 30px)) {
+  @media (min-width: calc(#{map.get(variables.$grid-breakpoints, xxl)} + 30px)) {
     right: -1rem;
 
     &.type2 {
@@ -983,7 +989,7 @@ button.js-add-wishlist,
 a.add-to-wishlist {
   &.active {
     .flaticon.flaticon-heart {
-      color: $color-red-700;
+      color: custom.$color-red-700;
     }
   }
 }
@@ -1006,9 +1012,9 @@ a.add-to-wishlist {
       margin-right: 8px;
 
       &.active, &:hover {
-        background-color: $color-beige;
-        color: $white;
-        border-color: $color-beige;
+        background-color: custom.$color-beige;
+        color: custom.$color-white;
+        border-color: custom.$color-beige;
       }
     }
   }

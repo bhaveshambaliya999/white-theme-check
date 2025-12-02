@@ -1,13 +1,15 @@
+@use "../../settings/variables" as custom;
+
 .header-desk_type_1 {
-  padding: $header-type-1-padding;
+  padding: custom.$header-type-1-padding;
 
   .logo {
-    margin-right: $header-type-1-logo-space;
+    margin-right: custom.$header-type-1-logo-space;
   }
 
   .header-tools {
     margin-left: auto;
-    margin-right: -($header-tools-item-padding-x);
+    margin-right: -(custom.$header-tools-item-padding-x);
   }
 }
 
@@ -32,12 +34,12 @@
 
       &__btn, &__input {
         background-color: transparent;
-        color: $color-white;
+        color: custom.$color-white;
         margin: 0;
       }
 
       &__input::placeholder {
-        color: $color-white;
+        color: custom.$color-white;
         font-weight: 700;
       }
     }

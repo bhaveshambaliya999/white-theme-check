@@ -1,8 +1,12 @@
+@use "../../bootstrap/mixins/breakpoints";
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+
 .header-mobile {
-  height: $mobile-header-height;
-  min-height: $mobile-header-height;
-  background-color: $mobile-header-background;
-  z-index: $mobile-header-z-index;
+  height: custom.$mobile-header-height;
+  min-height: custom.$mobile-header-height;
+  background-color: custom.$mobile-header-background;
+  z-index: custom.$mobile-header-z-index;
 
   .logo {
     margin: 0 auto;
@@ -10,7 +14,7 @@
   }
 
   .logo__image {
-    max-height: $mobile-header-height - .75rem;
+    max-height: custom.$mobile-header-height - .75rem;
   }
   .header-tools__item{
     i{
@@ -18,7 +22,7 @@
     }
   }
 
-  @include media-breakpoint-up(xl) {
+  @include breakpoints.media-breakpoint-up(xl) {
     display: none;
   }
 }
@@ -28,7 +32,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: $header-sticky-box-shadow;
+  box-shadow: custom.$header-sticky-box-shadow;
 }
 
 .header-mobile__navigation {
@@ -37,7 +41,7 @@
   height: 0;
   max-height: 0;
   transition: max-height .35s, height .35s;
-  z-index: $mobile-header-z-index;
+  z-index: custom.$mobile-header-z-index;
 
   .search-field__input {
     padding: 0.625rem 0.875rem 0.375rem;
@@ -46,7 +50,7 @@
   .search-result {
     max-height: 30rem;
     overflow: auto;
-    background-color: $color-white;
+    background-color: variables.$body-bg;
     z-index: 1;
 
     .product-card {
@@ -63,7 +67,7 @@
   .navigation__link {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
-    font-size: $h6-font-size;
+    font-size: custom.$h6-font-size;
 
     &:after {
       top: auto;
@@ -102,14 +106,14 @@
   overflow: hidden;
 
   .header-mobile {
-    z-index: $zindex-modal;
+    z-index: variables.$zindex-modal;
   }
 
   .header-mobile__navigation {
     height: calc(100vh - 100%);
     max-height: calc(100vh - 100%);
     transition: max-height .35s, height .35s;
-    border-top: 1px solid $light;
+    border-top: 1px solid custom.$light;
   }
 
   .navigation__list {

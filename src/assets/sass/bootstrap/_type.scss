@@ -1,75 +1,88 @@
-//
+@use "mixins/lists";
+@use "variables" as vars;
+@use "vendor/rfs";
+
+
 // Headings
-//
 .h1 {
-  @extend h1;
+  font-size: vars.$h1-font-size;
+  font-weight: vars.$h1-font-weight;
+  line-height: vars.$h1-line-height;
 }
 
 .h2 {
-  @extend h2;
+  font-size: vars.$h2-font-size;
+  font-weight: vars.$h2-font-weight;
+  line-height: vars.$h2-line-height;
 }
 
 .h3 {
-  @extend h3;
+  font-size: vars.$h3-font-size;
+  font-weight: vars.$h3-font-weight;
+  line-height: vars.$h3-line-height;
 }
 
 .h4 {
-  @extend h4;
+  font-size: vars.$h4-font-size;
+  font-weight: vars.$h4-font-weight;
+  line-height: vars.$h4-line-height;
 }
 
 .h5 {
-  @extend h5;
+  font-size: vars.$h5-font-size;
+  font-weight: vars.$h5-font-weight;
+  line-height: vars.$h5-line-height;
 }
 
 .h6 {
-  @extend h6;
+  font-size: vars.$h6-font-size;
+  font-weight: vars.$h6-font-weight;
+  line-height: vars.$h6-line-height;
 }
 
-
+// Lead text
 .lead {
-  @include font-size($lead-font-size);
-  font-weight: $lead-font-weight;
+  @include rfs.font-size(vars.$lead-font-size);
+  font-weight: vars.$lead-font-weight;
 }
 
-// Type display classes
-@each $display, $font-size in $display-font-sizes {
+// Display classes
+@each $display, $font-size in vars.$display-font-sizes {
   .display-#{$display} {
-    font-family: $display-font-family;
-    font-style: $display-font-style;
-    font-weight: $display-font-weight;
-    line-height: $display-line-height;
-    @include font-size($font-size);
+    @include rfs.font-size($font-size);
+    font-weight: vars.$display-font-weight;
+    line-height: vars.$display-line-height;
   }
 }
 
-//
-// Emphasis
-//
+// Small / Mark
 .small {
-  @extend small;
+  font-size: vars.$small-font-size;
 }
 
 .mark {
-  @extend mark;
+  background-color: vars.$mark-bg;
+  color: vars.$mark-color;
 }
+
 
 //
 // Lists
 //
 
 .list-unstyled {
-  @include list-unstyled();
+  @include lists.list-unstyled();
 }
 
 // Inline turns list items into inline-block
 .list-inline {
-  @include list-unstyled();
+  @include lists.list-unstyled();
 }
 .list-inline-item {
   display: inline-block;
 
   &:not(:last-child) {
-    margin-right: $list-inline-padding;
+    margin-right: vars.$list-inline-padding;
   }
 }
 
@@ -80,14 +93,14 @@
 
 // Builds on `abbr`
 .initialism {
-  @include font-size($initialism-font-size);
+  @include rfs.font-size(vars.$initialism-font-size);
   text-transform: uppercase;
 }
 
 // Blockquotes
 .blockquote {
-  margin-bottom: $blockquote-margin-y;
-  @include font-size($blockquote-font-size);
+  margin-bottom: vars.$blockquote-margin-y;
+  @include rfs.font-size(vars.$blockquote-font-size);
 
   > :last-child {
     margin-bottom: 0;
@@ -95,10 +108,10 @@
 }
 
 .blockquote-footer {
-  margin-top: -$blockquote-margin-y;
-  margin-bottom: $blockquote-margin-y;
-  @include font-size($blockquote-footer-font-size);
-  color: $blockquote-footer-color;
+  margin-top: -(vars.$blockquote-margin-y);
+  margin-bottom: vars.$blockquote-margin-y;
+  @include rfs.font-size(vars.$blockquote-footer-font-size);
+  color: vars.$blockquote-footer-color;
 
   &::before {
     content: "\2014\00A0"; // em dash, nbsp

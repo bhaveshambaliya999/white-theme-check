@@ -1,37 +1,51 @@
+@use "sass:map";
+@use "../bootstrap/functions";
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/mixins/buttons";
+@use "../bootstrap/mixins/transition";
+@use "../bootstrap/variables" as variables;
+@use "../mixins/box-shadow";
+@use "../settings/variables" as custom;
+
+//
 // Base styles
+//
 
 .btn {
   display: inline-block;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
-  color: $body-color;
+  font-family: variables.$btn-font-family;
+  font-weight: variables.$btn-font-weight;
+  line-height: variables.$btn-line-height;
+  color: variables.$body-color;
   text-align: center;
-  text-decoration: if($link-decoration == none, null, none);
-  white-space: $btn-white-space;
+  text-decoration: if(variables.$link-decoration == none, null, none);
+  white-space: variables.$btn-white-space;
   vertical-align: middle;
-  cursor: if($enable-button-pointers, pointer, null);
+  cursor: if(variables.$enable-button-pointers, pointer, null);
   user-select: none;
-  background-color: $color-white;
-  border: $btn-border-width solid transparent;
-  @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
-    $btn-font-size * 0.875,
-    $btn-border-radius
+  background-color: variables.$body-bg;
+  border: variables.$btn-border-width solid transparent;
+  @include buttons.button-size(
+    variables.$btn-padding-y,
+    custom.$btn-padding-x,
+    custom.$btn-font-size * 0.875,
+    custom.$btn-border-radius
   );
-  @include transition($btn-transition);
-  font-size: $btn-font-size * 0.875;
-  @include media-breakpoint-down(sm) {
+  @include transition.transition(custom.$btn-transition);
+  font-size: custom.$btn-font-size * 0.875;
+  @include breakpoints.media-breakpoint-down(sm) {
     padding-left: 1.125rem;
     padding-right: 1.125rem;
   }
-  padding-top: $btn-padding-top * 0.75;
-  padding-bottom: $btn-padding-bottom * 0.75;
+  padding-top: custom.$btn-padding-top * 0.75;
+  padding-bottom: custom.$btn-padding-bottom * 0.75;
 
   &:hover {
-    color: $body-color;
-    text-decoration: if($link-hover-decoration == underline, none, null);
+    color: variables.$body-color;
+    text-decoration: if(variables.$link-hover-decoration == underline, none, null);
+  }
+  &:focus:not(:focus-visible){
+    box-shadow: none;
   }
 
   &-55 {
@@ -53,17 +67,17 @@
   .btn-check:focus + &,
   &:focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    box-shadow: custom.$btn-focus-box-shadow;
   }
 
   .btn-check:checked + &,
   .btn-check:active + &,
   &:active,
   &.active {
-    @include box-shadow($btn-active-box-shadow);
+    @include box-shadow.box-shadow(custom.$btn-active-box-shadow);
 
     &:focus {
-      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      @include box-shadow.box-shadow(custom.$btn-focus-box-shadow, custom.$btn-active-box-shadow);
     }
   }
 
@@ -71,50 +85,100 @@
   &.disabled,
   fieldset:disabled & {
     pointer-events: none;
-    opacity: $btn-disabled-opacity;
-    @include box-shadow(none);
+    opacity: variables.$btn-disabled-opacity;
+    @include box-shadow.box-shadow(none);
   }
 
-  @include media-breakpoint-up(xxl) {
-    font-size: $btn-font-size;
-    padding-top: $btn-padding-top;
-    padding-bottom: $btn-padding-bottom;
+  @include breakpoints.media-breakpoint-up(xxl) {
+    font-size: custom.$btn-font-size;
+    padding-top: custom.$btn-padding-top;
+    padding-bottom: custom.$btn-padding-bottom;
   }
 }
 
+//
 // Alternate buttons
-@each $color, $value in $button-colors {
+//
+
+@each $color, $value in custom.$button-colors {
   .btn-#{$color} {
-    @include button-variant($value, $value);
+    @include buttons.button-variant($value, $value);
   }
 
   .btn-outline-#{$color} {
-    @include button-outline-variant($value);
+    @include buttons.button-outline-variant($value);
   }
 
   .btn-hover-#{$color} {
     &:hover {
       background-color: $value;
-      color: $white;
+      color: custom.$color-white;
     }
   }
 }
 
-.btn-light {
-  $border: map-get($btn-light, "border");
+.btn-beige {
+  $border: map.get(custom.$btn-beige, "border");
   $background: $border;
-  $color: map-get($btn-light, "color");
-  $active-color: map-get($btn-light, "active");
-  @include button-variant(
+  $color: map.get(custom.$btn-beige, "color");
+  $active-color: map.get(custom.$btn-beige, "active");
+  @include buttons.button-variant(
     $background,
     $border,
     $color,
-    tint-color($background, 10%),
-    tint-color($border, 10%),
+    functions.tint-color($background, 10%),
+    functions.tint-color($border, 10%),
     $active-color
   );
 }
+
+.btn-outline-beige {
+  $border: map.get(custom.$btn-beige, "border");
+  $background: $border;
+  $color: $border;
+  $active-color: map.get(custom.$btn-beige, "active");
+  @include buttons.button-outline-variant(
+    $color,
+    $active-color,
+    $background,
+    $border,
+    $active-color
+  );
+}
+
+.btn-light {
+  $border: map.get(custom.$btn-light, "border");
+  $background: $border;
+  $color: map.get(custom.$btn-light, "color");
+  $active-color: map.get(custom.$btn-light, "active");
+  @include buttons.button-variant(
+    $background,
+    $border,
+    $color,
+    functions.tint-color($background, 10%),
+    functions.tint-color($border, 10%),
+    $active-color
+  );
+}
+
+.btn-outline-light {
+  $border: map.get(custom.$btn-light, "border");
+  $background: $border;
+  $color: map.get(custom.$btn-light, "color");
+  $active-color: map.get(custom.$btn-light, "active");
+  @include buttons.button-outline-variant(
+    $color,
+    $active-color,
+    $background,
+    $border,
+    $active-color
+  );
+  border-color: $border;
+}
+
+//
 // Link buttons
+//
 
 // Make a button look and behave like a link
 .btn-link {
@@ -123,22 +187,22 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $btn-link-color;
-  font-weight: $font-weight-normal;
-  text-decoration: $link-decoration;
+  color: variables.$btn-link-color;
+  font-weight: variables.$font-weight-normal;
+  text-decoration: custom.$link-decoration;
 
   &:hover {
-    color: $btn-link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: variables.$btn-link-hover-color;
+    text-decoration: variables.$link-hover-decoration;
   }
 
   &:focus {
-    text-decoration: $link-hover-decoration;
+    text-decoration: variables.$link-hover-decoration;
   }
 
   &:disabled,
   &.disabled {
-    color: $btn-link-disabled-color;
+    color: variables.$btn-link-disabled-color;
   }
 
   &:after {
@@ -150,20 +214,20 @@
     width: 0;
     max-width: 100%;
     height: 2px;
-    transition: $nav-link-underline-transition-s;
+    transition: custom.$nav-link-underline-transition-s;
     background-color: currentColor;
   }
 
   &:hover,
   &.btn-link_active {
     &:after {
-      width: $btn-link-active-bottom-width;
+      width: custom.$btn-link-active-bottom-width;
     }
   }
 
   &.default-underline {
     &:after {
-      width: $btn-link-active-bottom-width;
+      width: custom.$btn-link-active-bottom-width;
     }
 
     &:hover {
@@ -185,6 +249,27 @@
   &.default-underline {
     &:after {
       width: 86%;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn-link_md {
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: 70%;
+    }
+  }
+
+  &.default-underline {
+    &:after {
+      width: 70%;
     }
 
     &:hover {
@@ -225,13 +310,52 @@
   }
 }
 
+// Round button
+.btn-round {
+  width: calc(custom.$btn-round-width * 3 / 4);
+  height: calc(custom.$btn-round-width * 3 / 4);
+  padding: 0;
+  border-radius: 100%;
+
+  @include breakpoints.media-breakpoint-up(md) {
+    width: custom.$btn-round-width;
+    height: custom.$btn-round-width;
+  }
+}
+
+.btn-round-sm {
+  width: custom.$btn-round-sm-width;
+  height: custom.$btn-round-sm-width;
+  padding: 0;
+  border-radius: 100%;
+}
+
+.btn-square {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  padding: 0;
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include buttons.button-size(
+    custom.$btn-padding-y-lg,
+    custom.$btn-padding-x-lg,
+    custom.$btn-font-size-lg,
+    custom.$btn-border-radius-lg
+  );
+  line-height: custom.$btn-line-height-lg;
+}
 
 .btn-sm {
-  @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-x-sm,
-    $btn-font-size-sm,
-    $btn-border-radius-sm
+  @include buttons.button-size(
+    custom.$btn-padding-y-sm,
+    custom.$btn-padding-x-sm,
+    variables.$btn-font-size-sm,
+    custom.$btn-border-radius-sm
   );
 }
 
@@ -258,8 +382,8 @@
 // Carousel Dots
 .swiper-pagination-bullet {
   position: relative;
-  width: $swiper-pagination-width;
-  height: $swiper-pagination-width;
+  width: custom.$swiper-pagination-width;
+  height: custom.$swiper-pagination-width;
   margin: 0 4px;
   border: 2px solid transparent;
   background-color: transparent;
@@ -272,13 +396,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: $swiper-pagination-dot-width;
-    height: $swiper-pagination-dot-width;
-    margin-top: -(calc($swiper-pagination-dot-width / 2));
-    margin-left: -(calc($swiper-pagination-dot-width / 2));
+    width: custom.$swiper-pagination-dot-width;
+    height: custom.$swiper-pagination-dot-width;
+    margin-top: -(calc(custom.$swiper-pagination-dot-width / 2));
+    margin-left: -(calc(custom.$swiper-pagination-dot-width / 2));
     border-radius: 100%;
     background-color: currentColor;
-    color: $swiper-pagination-color;
+    color: custom.$swiper-pagination-color;
     content: "";
   }
 
@@ -293,8 +417,8 @@
 }
 
 .swiper-pagination-bullet-active {
-  color: $swiper-pagination-active-color;
-  border-color: $swiper-pagination-active-color;
+  color: custom.$swiper-pagination-active-color;
+  border-color: custom.$swiper-pagination-active-color;
 
   &:after {
     color: inherit;
@@ -302,7 +426,7 @@
 }
 
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  color: #fff;
+  color: custom.$color-white;
 }
 
 .swiper-pagination-bullets.theme-color {
@@ -316,8 +440,8 @@
 .swatch-color {
   display: block;
   position: relative;
-  width: $swatch-color-width;
-  height: $swatch-color-height;
+  width: custom.$swatch-color-width;
+  height: custom.$swatch-color-height;
   margin-right: 0.75rem;
   margin-bottom: 0.75rem;
   border-radius: 50%;
@@ -338,7 +462,7 @@
   }
 
   &.swatch_active {
-    border: 2px solid $primary;
+    border: 2px solid variables.$primary;
   }
 
   .hover-container & {
@@ -349,7 +473,7 @@
 // Size swatches
 .swatch-size {
   &.swatch_active {
-    background-color: $light;
+    background-color: custom.$light;
   }
 }
 
@@ -357,7 +481,7 @@
 .filter-tag {
   padding: 0 1rem;
   border: 0;
-  background-color: $light;
+  background-color: custom.$light;
   font-size: 11px;
   line-height: 1.875rem;
 

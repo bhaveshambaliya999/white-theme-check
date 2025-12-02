@@ -1,20 +1,8 @@
-/* ---------------------------------------------------
-   1) Bootstrap MUST load first (NO CSS BEFORE THIS)
---------------------------------------------------- */
-@use "../assets/sass/bootstrap/bootstrap" as *;
-
-/* ---------------------------------------------------
-   2) Sass settings & custom SCSS (safe after Bootstrap)
---------------------------------------------------- */
-@use "../assets/sass/settings/variables" as *;
-@use "../assets/sass/settings/helpers" as *;
-@use "../assets/sass/settings/typography" as *;
 @use "../assets/sass/style" as *;
-
-/* ---------------------------------------------------
-   3) Plain CSS imported at the end
---------------------------------------------------- */
+@use "../assets/sass/settings/variables" as custom;
+@use "../assets/sass/mixins/mixins" as *;
 @import "../assets/css/plugins/swiper.min.css";
+
 
 #__next {
   min-height: 100vh;
@@ -22,12 +10,12 @@
 
 .h5,
 h5 {
-  font-size: $h5-font-size;
+  font-size: custom.$h5-font-size;
 }
 
 .h6,
 h6 {
-  font-size: $h6-font-size;
+  font-size: custom.$h6-font-size;
 }
 
 .fw-500 {
@@ -63,7 +51,7 @@ h6 {
 }
 
 .gap-20 {
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     gap: 20px;
   }
 }
@@ -101,7 +89,7 @@ h6 {
 .section-gap {
   margin-bottom: 55px;
 
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991.98px) {
     margin-bottom: 30px;
   }
 }
@@ -113,7 +101,7 @@ h6 {
 //! selection
 ::selection {
   background: #b9a16b;
-  color: #ffffff;
+  color: custom.$color-white;
 }
 
 .wh-auto {
@@ -210,7 +198,7 @@ h6 {
   .Engravingtitle {
     .btnLink {
       padding: 0;
-      color: $dark;
+      color: custom.$dark;
       font-weight: 500;
       font-size: 14px;
       //margin-bottom: 5px;
@@ -226,7 +214,7 @@ h6 {
   }
 
   .EngravingPopup {
-    background-color: $white;
+    background-color: custom.$color-white;
     border-radius: 4px;
     box-shadow: 0 3px 6px 1px #00000036;
     box-sizing: border-box;
@@ -250,7 +238,7 @@ h6 {
       transform: rotate(90deg);
 
       &::after {
-        background-color: $white;
+        background-color: custom.$color-white;
         box-shadow: 0 3px 6px 1px #0000001a;
         content: "";
         height: 12px;
@@ -277,7 +265,7 @@ h6 {
 
     .EngravingPopupTitle {
       margin-bottom: 5px;
-      color: $black;
+      color: custom.$color-gray-900;
       font-size: 13px;
       font-weight: 500;
     }
@@ -302,6 +290,7 @@ h6 {
   max-height: calc(100vh - 196px);
   overflow-y: auto;
   margin: 0;
+  padding: 0;
 }
 
 #EngravinCartPopup {
@@ -309,7 +298,7 @@ h6 {
     border-radius: 3px;
     max-width: 290px;
     margin: 15px auto 0;
-    border: 1px solid $black;
+    border: 1px solid custom.$border-color;
 
     .drawer-engraving-container {
       .drawer-engraving-img {
@@ -348,7 +337,7 @@ h6 {
     }
 
     .EngravingPopupTitle {
-      color: $black;
+      color: custom.$color-gray-900;
       font-size: 14px;
       font-weight: 500;
       line-height: 1.2;
@@ -367,7 +356,7 @@ h6 {
 }
 
 .borderdark {
-  border: 1px solid $black !important;
+  border: 1px solid custom.$color-gray-900 !important;
 }
 
 .EmbossingModal {
@@ -391,12 +380,12 @@ h6 {
 
       i {
         font-size: 30px;
-        color: $white;
+        color: custom.$color-white;
       }
 
       &:hover {
         i {
-          color: $white;
+          color: custom.$color-white;
         }
       }
     }
@@ -418,7 +407,7 @@ h6 {
   .custom-react-select__control,
   .css-13cymwt-control,
   .css-t3ipsp-control {
-    border-color: $border-color;
+    border-color: custom.$border-color;
     border-style: solid;
     border-width: 0.125rem;
     border-radius: 0;
@@ -426,7 +415,7 @@ h6 {
     box-shadow: none;
 
     &:hover {
-      border-color: $border-color;
+      border-color: custom.$border-color;
     }
 
     &:focus {
@@ -442,7 +431,7 @@ h6 {
 
       &:hover,
       &:focus {
-        border-color: $border-color !important;
+        border-color: custom.$border-color !important;
       }
     }
   }
@@ -474,17 +463,17 @@ h6 {
   font-size: 12px;
 
   &.active {
-    background-color: $color-beige;
-    color: $color-white;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
     opacity: 1 !important;
-    border-color: $color-beige;
+    border-color: custom.$color-beige;
   }
 
   &:hover,
   &.active {
-    background-color: $color-beige;
-    color: $color-white;
-    border-color: $color-beige;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
+    border-color: custom.$color-beige;
   }
 }
 
@@ -506,13 +495,13 @@ h6 {
   justify-content: center;
 
   &:hover {
-    background-color: $color-beige;
-    color: $color-white;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
   }
 
   &.active {
-    background-color: $color-beige !important;
-    color: $white;
+    background-color: custom.$color-beige !important;
+    color: custom.$color-white;
   }
 }
 
@@ -528,8 +517,8 @@ h6 {
 
     thead {
       th {
-        background-color: $color-gray-200;
-        color: $color-gray-900;
+        background-color: custom.$color-gray-200;
+        color: custom.$color-gray-900;
         padding: 8px;
         text-transform: uppercase;
         font-size: 0.875rem;
@@ -539,7 +528,7 @@ h6 {
 
     tbody {
       td {
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid custom.$border-color;
         padding: 8px;
         font-size: 13px;
         white-space: nowrap;
@@ -591,13 +580,13 @@ h6 {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 1px solid $border-color;
-  color: $dark;
+  border: 1px solid custom.$border-color;
+  color: custom.$dark;
 
   &:hover,
   &.active {
-    background-color: $dark;
-    color: $white;
+    background-color: custom.$dark;
+    color: custom.$color-white;
   }
 
   i {
@@ -609,11 +598,11 @@ h6 {
   border: 1px solid transparent;
 
   &:hover {
-    border-color: $color-gray-500;
+    border-color: custom.$color-gray-500;
   }
 
   &.activeCard {
-    border-color: $color-beige !important;
+    border-color: custom.$color-beige !important;
   }
 
   .pc__info {
@@ -629,11 +618,11 @@ h6 {
   td {
     font-size: 16px;
     border-bottom: 0;
-    color: $black;
+    color: custom.$color-gray-900;
     padding-bottom: 15px;
 
     &.diamon-title {
-      color: $black;
+      color: custom.$color-gray-900;
       font-weight: 500;
     }
   }
@@ -649,11 +638,11 @@ h6 {
 // ! btn
 .btn-normal {
   height: auto;
-  color: $white;
-  background-color: $color-gray-900;
+  color: custom.$color-white;
+  background-color: custom.$color-gray-900;
 
   &:hover {
-    color: $white;
+    color: custom.$color-white;
   }
 }
 
@@ -661,10 +650,10 @@ h6 {
   height: auto;
   font-size: 14px;
   padding: 6px 16px;
-  border: 1px solid $border-color;
+  border: 1px solid custom.$border-color;
 
   &:hover {
-    background-color: $border-color;
+    background-color: custom.$border-color;
   }
 }
 
@@ -675,15 +664,15 @@ h6 {
 .btn-certi {
   height: auto;
   font-size: 12px;
-  color: $color-gray-900;
+  color: custom.$color-gray-900;
   padding: 7px 14px;
-  border: 1px solid $border-color;
+  border: 1px solid custom.$border-color;
   background-color: transparent;
 
   &:hover,
   &.active {
-    background-color: $color-beige;
-    color: $color-white;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
   }
 }
 
@@ -795,7 +784,7 @@ h6 {
 
 .checkout-steps {
   display: flex;
-  border-bottom: 2px solid $border-color;
+  border-bottom: 2px solid custom.$border-color;
 
   &__item {
     flex-grow: 1;
@@ -834,16 +823,16 @@ h6 {
         font-size: 0.875rem;
         font-weight: 400;
         font-style: normal;
-        color: $secondary;
+        color: custom.$secondary;
       }
     }
 
     &.active {
-      border-color: $primary;
+      border-color: custom.$primary;
     }
   }
 
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991.98px) {
     flex-wrap: wrap;
 
     &__item {
@@ -857,10 +846,10 @@ h6 {
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @media (max-width: 575.98px) {
 
     border-bottom: 0;
-    border-left: 2px solid $border-color;
+    border-left: 2px solid custom.$border-color;
     flex-direction: column;
 
     &__item {
@@ -939,7 +928,7 @@ h6 {
 //storyListing
 .product-story {
   h3 {
-    color: $dark;
+    color: custom.$dark;
   }
 
   .story-css {
@@ -996,9 +985,9 @@ h6 {
 
   &:hover,
   &.active {
-    background-color: $color-beige;
-    color: $white;
-    border-color: $color-beige;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
+    border-color: custom.$color-beige;
   }
 }
 
@@ -1169,7 +1158,7 @@ h6 {
 
       p {
         font-size: 14px;
-        color: $color-gray-500;
+        color: custom.$color-gray-500;
       }
 
       .profile_img {
@@ -1177,8 +1166,8 @@ h6 {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: $black;
-        color: white;
+        background-color: custom.$color-gray-900;
+        color: custom.$color-white;
         margin-right: 15px;
         display: flex;
         align-items: center;
@@ -1222,16 +1211,16 @@ h6 {
 
   .heading-title {
     font-size: 24px;
-    color: $dark;
+    color: custom.$dark;
     font-weight: 500;
   }
 
   .customer-review-info {
-    background-color: $white;
+    background-color: custom.$color-white;
 
     .review-data {
       padding: 20px 0;
-      border-top: 1px solid $border-color;
+      border-top: 1px solid custom.$border-color;
 
       .review-datails {
         margin-top: 10px;
@@ -1276,7 +1265,7 @@ h6 {
             }
 
             .profile-heading {
-              color: $dark;
+              color: custom.$dark;
               text-transform: capitalize;
             }
 
@@ -1299,8 +1288,8 @@ h6 {
                 span {
                   font-size: 12px;
                   border-radius: 4px;
-                  color: $color-darkgreen;
-                  background-color: $color-green;
+                  color: custom.$color-darkgreen;
+                  background-color: custom.$color-green;
                   padding: 4px;
                 }
               }
@@ -1308,7 +1297,7 @@ h6 {
 
             .rating-date {
               margin-bottom: 20px;
-              color: $color-gray-500;
+              color: custom.$color-gray-500;
             }
           }
         }
@@ -1320,7 +1309,7 @@ h6 {
             .review-heading {
               font-size: 15px;
               font-weight: 500;
-              color: $dark;
+              color: custom.$dark;
             }
 
             .review-text {
@@ -1330,7 +1319,7 @@ h6 {
               -webkit-box-orient: vertical;
               overflow: hidden;
               line-height: 1.5;
-              color: $color-gray-500;
+              color: custom.$color-gray-500;
 
               &.active {
                 max-height: 100%;
@@ -1339,7 +1328,7 @@ h6 {
             }
 
             .show_more {
-              color: $dark;
+              color: custom.$dark;
               cursor: pointer;
               display: inline-block;
               margin-top: 5px;
@@ -1359,7 +1348,7 @@ h6 {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid $color-gray-300;
+            border: 1px solid custom.$color-gray-300;
             cursor: pointer;
             overflow: hidden;
 
@@ -1396,7 +1385,7 @@ h6 {
 
           &>div {
             flex: 1;
-            border-right: 1px solid $border-color;
+            border-right: 1px solid custom.$border-color;
             padding-left: 3%;
             padding-right: 3%;
 
@@ -1441,7 +1430,7 @@ h6 {
         .review-head-title {
           font-size: 18px;
           font-weight: 500;
-          color: $dark;
+          color: custom.$dark;
         }
 
         .review-detail {
@@ -1455,7 +1444,7 @@ h6 {
           .review-mark {
             font-size: 18px;
             font-weight: 500;
-            color: $color-gray-500;
+            color: custom.$color-gray-500;
             margin-bottom: 0;
           }
         }
@@ -1467,7 +1456,7 @@ h6 {
           .total-mark {
             font-size: 18px;
             font-weight: 500;
-            color: $color-gray-500;
+            color: custom.$color-gray-500;
           }
 
           .review-per {
@@ -1477,8 +1466,8 @@ h6 {
             font-weight: 500;
             margin-left: 10px;
             border-radius: 4px;
-            color: $color-darkgreen;
-            background-color: $color-green;
+            color: custom.$color-darkgreen;
+            background-color: custom.$color-green;
           }
         }
 
@@ -1524,7 +1513,7 @@ h6 {
           .global-ratings-right {
             font-size: 13px;
             line-height: 13px;
-            color: $color-gray-500;
+            color: custom.$color-gray-500;
           }
         }
       }
@@ -1559,7 +1548,7 @@ h6 {
       max-width: 300px;
 
       &:hover {
-        background-color: $dark;
+        background-color: custom.$dark;
       }
     }
 
@@ -1571,7 +1560,7 @@ h6 {
       }
     }
 
-    @include media-breakpoint-down(md) {
+    @media (max-width: 991px) {
       position: relative;
       max-width: 100%;
 
@@ -1587,7 +1576,7 @@ h6 {
     max-height: 600px;
     object-fit: cover;
 
-    @include media-breakpoint-down(sm) {
+    @media (max-width: 767.98px) {
       width: 100%;
       height: 370px;
       object-position: 100% center;
@@ -1611,7 +1600,7 @@ h6 {
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @media (max-width: 767.98px) {
     min-height: 20rem;
      .offer-content{
       left: 0;
@@ -1639,14 +1628,14 @@ h6 {
 
       &:hover {
         .item-text {
-          border: 1px solid $dark;
+          border: 1px solid custom.$dark;
         }
       }
 
       &.swatch_active {
         .item-text {
-          border-color: $color-red-700;
-          color: $color-red-700;
+          border-color: custom.$color-red-700;
+          color: custom.$color-red-700;
         }
       }
     }
@@ -1692,7 +1681,7 @@ h6 {
   .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 14px;
-    color: $dark;
+    color: custom.$dark;
   }
 }
 
@@ -1726,11 +1715,11 @@ h6 {
     font-weight: 500;
     padding: 0.5em 0;
 
-    @include media-breakpoint-up(xl) {
+    @media (min-width: 1200px) {
       font-size: 12px;
     }
 
-    @include media-breakpoint-up(xxl) {
+    @media (min-width: 1400px) {
       font-size: 14px;
     }
   }
@@ -1765,7 +1754,7 @@ h6 {
         min-width: 60px;
         text-align: center;
         word-break: break-word;
-        color: $dark;
+        color: custom.$dark;
         line-height: 1.1;
         font-size: calc(5px + 0.50vw);
         transform: translate(-50%, -50%);
@@ -1801,8 +1790,8 @@ h6 {
           right: 0;
           width: 10px;
           height: 10px;
-          background: #000;
-          color: #fff;
+          background: custom.$color-gray-900;
+          color: custom.$color-white;
           font-size: 14px;
           text-align: center;
           cursor: nwse-resize;
@@ -1855,8 +1844,8 @@ h6 {
 .dragarea {
   border: 2px dashed #dfdfdf;
   padding: 16px;
-  background-color: $white;
-  color: $dark;
+  background-color: custom.$color-white;
+  color: custom.$dark;
   border-radius: 0px;
   cursor: pointer;
   margin-bottom: 15px;
@@ -1965,7 +1954,7 @@ h6 {
   .engravingimage {
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid $dark;
+    border: 1px solid custom.$dark;
   }
 
   img {
@@ -2000,7 +1989,7 @@ h6 {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 12px 0;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid custom.$border-color;
 
   .diy-steper-product {
     flex: 1;
@@ -2025,7 +2014,7 @@ h6 {
       .diy-steper-price {
         .old-price {
           margin-left: 0.5rem;
-          color: $secondary;
+          color: custom.$secondary;
           text-decoration: line-through;
           font-weight: normal;
         }
@@ -2061,14 +2050,14 @@ h6 {
   }
 
   .specification-details-list {
-    border-top: 1px solid $color-gray-300;
+    border-top: 1px solid custom.$color-gray-300;
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
 
     .specification-title {
       padding: 6px 15px;
-      background-color: $color-gray-100;
+      background-color: custom.$color-gray-100;
       display: flex;
       align-items: center;
       width: 60%;
@@ -2134,7 +2123,7 @@ h6 {
   top: 50%;
   left: 50%;
   z-index: 10;
-  color: #fff;
+  color: custom.$color-white;
   transform: translate(-50%, -50%);
   font-size: 18px;
 }
@@ -2231,8 +2220,8 @@ h6 {
 
 .shop-main {
   .my-custom-tooltip {
-    background-color: $color-beige;
-    color: $color-white;
+    background-color: custom.$color-beige;
+    color: custom.$color-white;
     opacity: 1;
   }
 }
@@ -2301,17 +2290,17 @@ svg.icon_edit {
     content: '';
     display: block;
     position: absolute;
-    top: $menu-link-line-height + $menu-link-padding-y;
+    top: custom.$menu-link-line-height + custom.$menu-link-padding-y;
     left: 0;
     width: 0;
     height: 2px;
-    transition: $nav-link-underline-transition-s;
+    transition: custom.$nav-link-underline-transition-s;
     background-color: currentColor;
   }
 
   &:hover {
     &:after {
-      width: $nav-link-active-bottom-width;
+      width: custom.$nav-link-active-bottom-width;
     }
   }
 }
@@ -2324,7 +2313,7 @@ svg.icon_edit {
   font-weight: 500;
 
   &.back {
-    color: $black;
+    color: custom.$color-gray-900;
   }
 
   svg {

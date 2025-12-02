@@ -1,0 +1,7 @@
+@use "../mixins/create-menu";
+@use "../settings/variables" as custom;
+
+.default-menu {
+  @include create-menu.create-menu(custom.$default-menu-padding, custom.$default-menu-width);
+  left: unset !important;
+}

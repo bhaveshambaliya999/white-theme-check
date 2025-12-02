@@ -1,3 +1,7 @@
+@use "../bootstrap/variables" as variables;
+@use "../mixins/animation";
+@use "variables" as custom;
+
 $move-distance: 0.625rem;
 
 @keyframes moveDown {
@@ -39,7 +43,7 @@ $move-distance: 0.625rem;
 
 @for $i from 1 through 10 {
   .animate_delay-#{$i} {
-    @include animation-delay($i);
+    @include animation.animation-delay($i);
   }
 }
 
@@ -62,8 +66,8 @@ $move-distance: 0.625rem;
 }
 
 .anim_appear-fade {
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: custom.$hover-content-appear-animation;
+  font-size: custom.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -76,8 +80,8 @@ $move-distance: 0.625rem;
 
 .anim_appear-bottom {
   bottom: $move-distance * -1;
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: custom.$hover-content-appear-animation;
+  font-size: custom.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -91,8 +95,8 @@ $move-distance: 0.625rem;
 
 .anim_appear-right {
   right: $move-distance * -1;
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: custom.$hover-content-appear-animation;
+  font-size: custom.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -107,8 +111,8 @@ $move-distance: 0.625rem;
 .anim_appear-center {
   top: 50%;
   transform: translateY(-50%);
-  transition: $hover-content-appear-animation;
-  font-size: $font-size-base;
+  transition: custom.$hover-content-appear-animation;
+  font-size: custom.$font-size-base;
   opacity: 0;
   visibility: hidden;
   z-index: 1;

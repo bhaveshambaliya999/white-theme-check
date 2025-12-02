@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 3005",
+    "dev": "next dev -p 3003",
     "lint": "next lint",
     "start": "next start -p 3001"
   },
@@ -15,7 +15,7 @@
     "@react-google-maps/api": "^2.20.7",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.11.0",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.7",
     "html-react-parser": "^5.2.6",
     "next": "^16.0.2",
     "next-redux-wrapper": "^8.1.0",
@@ -38,6 +38,7 @@
     "react-tooltip": "^5.29.1",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
+    "sass-migrator": "^2.4.2",
     "sharp": "^0.34.3",
     "sweetalert2": "^11.26.3",
     "swiper": "^11.2.10",
@@ -49,6 +50,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9.34.0",
     "eslint-config-next": "^15.5.2",
     "postcss": "^8.5.6",

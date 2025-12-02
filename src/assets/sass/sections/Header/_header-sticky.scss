@@ -1,3 +1,6 @@
+@use "../../bootstrap/variables" as variables;
+@use "../../settings/variables" as custom;
+
 .header_sticky {
   top: 0;
   left: 0;
@@ -11,12 +14,12 @@
 .header_sticky-active {
   position: fixed;
   animation: moveDown .5s;
-  background-color: $header-background;
+  background-color: custom.$header-background;
   // box-shadow: $header-sticky-box-shadow;
-  z-index: $zindex-sticky;
+  z-index: variables.$zindex-sticky;
 
   &.header_sticky-bg_dark {
-    background-color: $primary;
+    background-color: custom.$primary;
   }
 
   .header-desk_type_3 {

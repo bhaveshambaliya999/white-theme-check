@@ -1,3 +1,5 @@
+@use "settings/variables" as custom;
+
 .product-single__thumbnail .swiper-slide {
   opacity: 0.5;
   cursor: pointer;
@@ -18,7 +20,7 @@
   right: 1.875rem;
   bottom: 1.875rem;
   border-radius: 2rem;
-  background-color: #fff;
+  background-color: custom.$color-white;
   transition: all 0.3s ease;
 }
 
@@ -40,10 +42,10 @@
 a, 
 .btn-link {
   cursor: pointer;
-  color: #222;
+  color: custom.$dark;
   text-decoration: none;
   &:hover {
-    color: $dark
+    color: custom.$dark
   }
 }
 .page-wrapper {

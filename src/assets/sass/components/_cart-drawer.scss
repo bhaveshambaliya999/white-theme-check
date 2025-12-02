@@ -1,3 +1,7 @@
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
 .cart-drawer {
   padding-bottom: 22.5rem;
 
@@ -55,7 +59,7 @@
 }
 
 .cart-drawer-item__price {
-  font-size: $h5-font-size;
+  font-size: custom.$h5-font-size;
 }
 
 .qty-control {
@@ -70,7 +74,7 @@
 .qty-control__number {
   padding: 0;
   width: 100%;
-  background-color: $color-white;
+  background-color: variables.$body-bg;
   outline: none;
   -moz-appearance: textfield;
 }
@@ -96,17 +100,17 @@
 
 .cart-drawer-divider {
   margin: 1.25rem 0;
-  color: $border-color;
+  color: custom.$border-color;
   opacity: 1;
 }
 
 .cart-drawer-actions {
-  background-color: $color-white;
-  padding-right: calc(calc($aside-padding-x / 2));
-  padding-bottom: calc(calc($aside-padding-x / 2));
-  padding-left: calc(calc($aside-padding-x / 2));
+  background-color: variables.$body-bg;
+  padding-right: calc(calc(custom.$aside-padding-x / 2));
+  padding-bottom: calc(calc(custom.$aside-padding-x / 2));
+  padding-left: calc(calc(custom.$aside-padding-x / 2));
 
-  @include media-breakpoint-up(sm) {
+  @include breakpoints.media-breakpoint-up(sm) {
     // padding-right: $aside-padding-x;
     // padding-bottom: $aside-padding-x;
     // padding-left: $aside-padding-x;

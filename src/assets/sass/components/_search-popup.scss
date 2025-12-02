@@ -1,6 +1,11 @@
+@use "../bootstrap/mixins/breakpoints";
+@use "../bootstrap/mixins/transition";
+@use "../bootstrap/variables" as variables;
+@use "../settings/variables" as custom;
+
 .search-field__actor {
   svg {
-    @include transition($transition-fade);
+    @include transition.transition(variables.$transition-fade);
   }
 
   .btn-close-lg {
@@ -8,7 +13,7 @@
     top: 3px;
     left: 3px;
     padding: 0;
-    @include transition($transition-fade);
+    @include transition.transition(variables.$transition-fade);
     opacity: 0;
     visibility: hidden;
   }
@@ -29,19 +34,19 @@
 .search-popup {
   top: 100%;
   left: 0;
-  padding-top: $search-popup-padding-top * 0.7;
-  padding-bottom: $search-popup-padding-bottom * 0.7;;
-  border-top: $mega-menu-border;
-  background-color: $header-background;
-  box-shadow: $box-shadow;
+  padding-top: custom.$search-popup-padding-top * 0.7;
+  padding-bottom: custom.$search-popup-padding-bottom * 0.7;;
+  border-top: custom.$mega-menu-border;
+  background-color: custom.$header-background;
+  box-shadow: variables.$box-shadow;
 
-  @include media-breakpoint-up(xl) {
-    padding-top: $search-popup-padding-top;
-    padding-bottom: $search-popup-padding-bottom;
+  @include breakpoints.media-breakpoint-up(xl) {
+    padding-top: custom.$search-popup-padding-top;
+    padding-bottom: custom.$search-popup-padding-bottom;
   }
 
   .search-suggestion {
-    transition: $menu-appear-animation;
+    transition: custom.$menu-appear-animation;
   }
 }
 
@@ -57,8 +62,8 @@
   height: 100%;
   padding: 0;
   padding-bottom: 0.625rem;
-  @include transition($transition-fade);
-  color: $body-color-secondary;
+  @include transition.transition(variables.$transition-fade);
+  color: custom.$body-color-secondary;
   outline: none;
 }
 
@@ -70,18 +75,18 @@
 .search-popup__input {
   padding-bottom: 0.625rem;
   border: 0;
-  border-bottom: 2px solid $body-color-secondary;
+  border-bottom: 2px solid custom.$body-color-secondary;
   outline: none;
 }
 
 .search-field__focused {
   .search-popup__input {
-    border-bottom-color: $body-color;
+    border-bottom-color: variables.$body-color;
   }
 
   .search-popup__reset,
   .search-popup__submit {
-    color: $body-color;
+    color: variables.$body-color;
   }
 
   .search-popup__submit {
@@ -98,7 +103,7 @@
     position: relative;
     width: auto;
     margin-top: 0;
-    transition: $menu-appear-animation;
+    transition: custom.$menu-appear-animation;
     opacity: 1;
     visibility: visible;
   }
@@ -120,9 +125,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: $search-result-min-height * 0.6;
+  min-height: custom.$search-result-min-height * 0.6;
   margin-top: .5rem;
-  padding-bottom: $search-result-bottom-space * 0.6;
+  padding-bottom: custom.$search-result-bottom-space * 0.6;
   opacity: 0;
   visibility: hidden;
 
@@ -131,24 +136,24 @@
   }
 
   .pc__img-wrapper {
-    padding-top: $search-result-img-height * 0.54;
+    padding-top: custom.$search-result-img-height * 0.54;
   }
 
-  @include media-breakpoint-up(xl) {
-    min-height: $search-result-min-height * 0.8;
-    padding-bottom: $search-result-bottom-space * 0.8;
+  @include breakpoints.media-breakpoint-up(xl) {
+    min-height: custom.$search-result-min-height * 0.8;
+    padding-bottom: custom.$search-result-bottom-space * 0.8;
 
     .pc__img-wrapper {
-      padding-top: $search-result-img-height * 0.8;
+      padding-top: custom.$search-result-img-height * 0.8;
     }
   }
 
-  @include media-breakpoint-up(xxl) {
-    min-height: $search-result-min-height;
-    padding-bottom: $search-result-bottom-space;
+  @include breakpoints.media-breakpoint-up(xxl) {
+    min-height: custom.$search-result-min-height;
+    padding-bottom: custom.$search-result-bottom-space;
 
     .pc__img-wrapper {
-      padding-top: $search-result-img-height;
+      padding-top: custom.$search-result-img-height;
     }
   }
 }

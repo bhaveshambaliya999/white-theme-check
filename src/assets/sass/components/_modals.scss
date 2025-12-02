@@ -1,3 +1,6 @@
+@use "../bootstrap/mixins/breakpoints";
+@use "../settings/variables" as custom;
+
 .size-guide {
   &.modal-dialog {
     width: 60rem;
@@ -23,7 +26,7 @@
     display: flex;
     gap: 2.6875rem;
 
-    @include media-breakpoint-down(md) {
+    @include breakpoints.media-breakpoint-down(md) {
       flex-direction: column;
     }
   }
@@ -32,7 +35,7 @@
     flex: 0 0 42%;
     max-width: 42%;
 
-    @include media-breakpoint-down(md) {
+    @include breakpoints.media-breakpoint-down(md) {
       flex: 0 0 100%;
       max-width: 100%;
     }
@@ -52,7 +55,7 @@
 
       thead {
         th {
-          color: $secondary;
+          color: custom.$secondary;
           padding-bottom: 0.8125rem;
         }
       }
