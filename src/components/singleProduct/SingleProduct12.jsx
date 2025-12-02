@@ -5081,7 +5081,7 @@ export default function SingleProduct12(props) {
                           />
                           {serviceData && serviceData?.length > 0 && (
                             <div className="w-100">
-                              <div className="h6">Services</div>
+                              <h6 className="h6">Services</h6>
                               <div className="d-flex flex-column gap-2">
                                 {serviceData?.length > 0 &&
                                   serviceData?.map((item, i) => {
